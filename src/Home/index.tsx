@@ -136,8 +136,7 @@ function AppContent() {
             </SplideSlide>
             <SplideSlide>
               <img src={Hinh6} alt="Đầm Sen Park" />
-              <button className="btn btn-success kham-pha-button">KHÁM PHÁ NGAY</button>
-            </SplideSlide>
+              <Link to="/khampha"><button className="btn btn-success kham-pha-button">KHÁM PHÁ NGAY</button></Link>            </SplideSlide>
           </Splide>
         </div>
         <img src={Hinh2} alt="Đầm Sen Park2" className="hg" />

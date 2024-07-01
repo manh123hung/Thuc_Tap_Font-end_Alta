@@ -94,7 +94,16 @@ function Khampha() {
     { title: '46', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
     { title: '43', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
     { title: '44', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
-    
+    { title: '45', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '46', content: 'Nội dung thông tin cho Button 1', top: 200, left: 20 },
+    { title: '47', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '48', content: 'Nội dung thông tin cho Button 1', top: 200, left: 20 },
+    { title: '49', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '50', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '51', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '52', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '53', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '54', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
     // ...
   ];
 
@@ -105,8 +114,8 @@ function Khampha() {
           <div className="col-md-3 left-side" style={{ width: '250px' }}>   
           <div className="left-side-content">
           <div className="menu-icon">≡</div>
-          <Link to="/" className="menu-item" style={{ textDecoration: 'underline', color: 'black' }}>TRANG CHỦ</Link>
-          <Link to="/khampha" className="menu-item">KHÁM PHÁ</Link>
+          <Link to="/" className="menu-item" >TRANG CHỦ</Link>
+          <Link to="/khampha" className="menu-item" style={{ textDecoration: 'underline', color: 'black' }}>KHÁM PHÁ</Link>
         
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'white'}}>
   <DropdownItem className="btn btn-white" ><Link to="/settings" >Lịch sử hình thành</Link></DropdownItem>
