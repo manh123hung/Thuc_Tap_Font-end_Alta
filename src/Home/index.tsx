@@ -24,10 +24,10 @@ import '@splidejs/react-splide/css/sea-green';
 
 // or only core styles
 import '@splidejs/react-splide/css/core';
+ // Import ButtonDropdown component
 
 
 
-const customTheme: CustomFlowbiteTheme = { button: { color: { info: "bg-red-500 hover:bg-red-600", }, }, };
 
 
 function AppContent() {
@@ -85,22 +85,19 @@ function AppContent() {
           <div className="menu-icon">≡</div>
           <Link to="/" className="menu-item" style={{ textDecoration: 'underline', color: 'black' }}>TRANG CHỦ</Link>
           <Link to="/khampha" className="menu-item">KHÁM PHÁ</Link>
-          <div className="relative-container">
-          <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  " label="GIỚI THIỆU" placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'white'}}>
-          <DropdownItem className="btn btn-white" ><Link to="/settings" >Lịch sử hình thành</Link></DropdownItem>
-          <DropdownItem className="btn btn-white" ><Link to="/settings" >Thành viên</Link></DropdownItem>
-          <DropdownItem className="btn btn-white" ><Link to="/settings" >Chính sách bảo mật</Link></DropdownItem>
-
+        
+          <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'white'}}>
+  <DropdownItem className="btn btn-white" ><Link to="/settings" >Lịch sử hình thành</Link></DropdownItem>
+  <DropdownItem className="btn btn-white" ><Link to="/settings" >Thành viên</Link></DropdownItem>
+  <DropdownItem className="btn btn-white" ><Link to="/settings" >Chính sách bảo mật</Link></DropdownItem> 
+</Dropdown>
+         
           
-          </Dropdown>
-          </div>
-          
-          <Dropdown  color='#259E58' className="btn btn-success  absolute-dropdown  " label="GIÁ VÉ " placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'white' ,listStyleType:'none'}}>
+          <Dropdown  color='#259E58' className="btn btn-success  absolute-dropdown  dropdown-container" label="GIÁ VÉ " placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'white'}}>
           <DropdownItem className="btn btn-white" ><Link to="/settings" >Vé trong công viên</Link></DropdownItem>
           <DropdownItem className="btn btn-white" ><Link to="/settings" >Vé tập thể</Link></DropdownItem>
           <DropdownItem className="btn btn-white" ><Link to="/settings" >Vé dịch vụ</Link></DropdownItem>
             <DropdownItem className="btn btn-white" ><Link to="/settings" >Vé tập thể dục</Link></DropdownItem>
-
           
           </Dropdown>
           <Link to="/su-kien" className="menu-item">SỰ KIỆN</Link>
@@ -129,7 +126,7 @@ function AppContent() {
         right: 0,
         bottom: 0,
         width: '83%',
-        marginTop: -70,
+        marginTop: -60,
       }}>
         <div className="map-container bs1">
           <Splide aria-label="My Favorite Images">

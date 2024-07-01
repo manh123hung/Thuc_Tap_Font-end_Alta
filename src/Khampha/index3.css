@@ -14,3 +14,38 @@
   border: none;
   cursor: pointer;
 }
+.bs3 {
+  position: relative; /* Đặt vị trí tương đối cho map-container */
+}
+
+.info-container {
+  top: 50%; /* Đặt info-container ở giữa theo chiều dọc */
+  left: 50%; /* Đặt info-container ở giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Di chuyển info-container về vị trí chính xác ở giữa */
+  background-color: white; /* Màu nền */
+  padding: 10px; /* Khoảng cách nội dung */
+  border: 1px solid #ccc; /* Viền */
+  z-index: 10; /* Đảm bảo nó hiển thị trên cùng */
+  display: flex;
+  align-items: center;
+
+
+}
+.info-content {
+  margin-left: 20px; /* Khoảng cách giữa button và nội dung */
+}
+.bt1{
+  position: absolute; /* Cho phép bạn đặt vị trí tuyệt đối */
+  border:2px solid red; 
+  width: 30px;
+  height: 30px;
+  top: 80%; /* Đặt button ở giữa theo chiều dọc */
+  left: 50%; /* Đặt button ở giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Di chuyển button về vị trí chính xác ở giữa */
+  padding: 0; /* Loại bỏ khoảng cách nội dung của button */
+  cursor: pointer; /* Cho phép con trỏ chuột thay đổi khi hover */
+}
+.info-wrapper {
+  display: flex; /* Hiển thị InfoComponent theo chiều ngang */
+  align-items: center; /* Căn chỉnh InfoComponent theo chiều dọc */
+}
