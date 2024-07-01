@@ -90,6 +90,10 @@ function Khampha() {
     { title: '42', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
     { title: '43', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
     { title: '44', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '45', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '46', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '43', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
+    { title: '44', content: 'Nội dung thông tin cho Button 2', top: 400, left: 800 },
     
     // ...
   ];
