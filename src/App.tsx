@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import AppContent from './Home';
 import Khampha from './Khampha/khampha';
+import Sukien from './Sukien/sukien';
 function App() {
   const [data, setData] = useState<DocumentData[]>([]);
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/" element={<AppContent  />} />
         {/* Thêm các routes khác ở đây */}
         <Route path="/khampha" element={<Khampha  />} />
+        <Route path="/Sukien" element={<Sukien  />} />
 
       </Routes>
     </Router>

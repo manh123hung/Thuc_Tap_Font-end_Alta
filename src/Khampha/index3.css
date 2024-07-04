@@ -20,26 +20,48 @@
 
 .info-container {
   top: 50%; /* Đặt info-container ở giữa theo chiều dọc */
-  left: 50%; /* Đặt info-container ở giữa theo chiều ngang */
+  left: 60%; /* Đặt info-container ở giữa theo chiều ngang */
   transform: translate(-50%, -50%); /* Di chuyển info-container về vị trí chính xác ở giữa */
   background-color: white; /* Màu nền */
-  padding: 10px; /* Khoảng cách nội dung */
-  border: 1px solid #ccc; /* Viền */
+   /* Khoảng cách nội dung */
   z-index: 10; /* Đảm bảo nó hiển thị trên cùng */
   display: flex;
   align-items: center;
-
-
+  display: flex;
+  justify-content: space-between;
+width: 260px;
+font-size:16px ;
 }
 .info-content {
-  margin-left: 20px; /* Khoảng cách giữa button và nội dung */
+  margin-left: 40px; /* Khoảng cách giữa button và nội dung */
+  display: flex;
+  justify-content: space-between; /* Sắp xếp nội dung và button theo chiều ngang */
+  position: relative;
+}
+
+.separator {
+  position: absolute;
+  left: 110%; /* Đặt separator ở giữa */
+  transform: translateX(-50%); /* Di chuyển separator về vị trí chính xác ở giữa */
+  top: 0;
+  bottom: 0; /* Kéo dài separator từ trên xuống dưới */
+  width: 1px; /* Độ rộng của separator */
+  border-left: 1px solid #ccc; /* Tạo viền cho separator */
+}
+.separator1 {
+  position: absolute;
+  left: 128%; /* Đặt separator ở giữa */
+  transform: translateX(-50%);/* Di chuyển separator về vị trí chính xác ở giữa */
+  top: 30%;
+  bottom: 0; /* Kéo dài separator từ trên xuống dưới */
+  width: 1px; /* Độ rộng của separator */
 }
 .bt1{
   position: absolute; /* Cho phép bạn đặt vị trí tuyệt đối */
   border:2px solid red; 
   width: 30px;
   height: 30px;
-  top: 80%; /* Đặt button ở giữa theo chiều dọc */
+  top: 110%; /* Đặt button ở giữa theo chiều dọc */
   left: 50%; /* Đặt button ở giữa theo chiều ngang */
   transform: translate(-50%, -50%); /* Di chuyển button về vị trí chính xác ở giữa */
   padding: 0; /* Loại bỏ khoảng cách nội dung của button */
