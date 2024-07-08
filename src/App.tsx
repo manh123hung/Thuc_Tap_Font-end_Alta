@@ -7,6 +7,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import AppContent from './Home';
 import Khampha from './Khampha/khampha';
 import Sukien from './Sukien/sukien';
+import LSHH from './LSHH/LSHH';
+import GiaVe from './GiaVe/GiaVe';
+import VTT from './VeTapThe/VTT';
+import VDD from './Vedichvu/VDD';
+import VTTD from './VeTapTheDuc/VTTD';
 function App() {
   const [data, setData] = useState<DocumentData[]>([]);
 
@@ -37,6 +42,11 @@ function App() {
         {/* Thêm các routes khác ở đây */}
         <Route path="/khampha" element={<Khampha  />} />
         <Route path="/Sukien" element={<Sukien  />} />
+        <Route path="/LSHH" element={<LSHH />} />
+        <Route path="/GiaVe" element={<GiaVe />} />
+        <Route path="/VTT" element={<VTT />} />
+        <Route path="/VDD" element={<VDD />} />
+        <Route path="/VTTD" element={<VTTD />} />
 
       </Routes>
     </Router>

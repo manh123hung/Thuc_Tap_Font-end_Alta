@@ -1,21 +1,47 @@
 .card {
-    border: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .card-img-top {
-    height: 200px;
-    object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 20px;
+  height: 310px;
 }
 
 .card-title {
-    color: #28a745; /* Green color */
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
+  color: #259E58;
 }
 
 .card-text {
-    font-size: 14px;
-    line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Nunito";
+  line-height: 24px;
+}
+
+.btn-group {
+  margin-right: 10px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  margin-top: 20px;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.text-left {
+  margin-top: -20px;
 }
 
 .btn-group button {
@@ -75,3 +101,39 @@ footer {
     font-family: "Nunito", sans-serif; /* Font chữ cho copyright */
     font-size: 14px; /* Kích thước chữ cho copyright */
   }
+
+  .btn-nav {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-nav:hover {
+    background-color: #0056b3;
+  }
+  .f1{
+    color: #EC008C;
+    font-family: "Nunito/20px/20px:SemiBold";
+    font-size: 18px;
+    line-height:30px;
+  }
+  
+  .card-custom {
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+.card-green { background-color: #28a745; }
+.card-pink { background-color: #e83e8c; }
+.card-blue { background-color: #007bff; }
+.icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}

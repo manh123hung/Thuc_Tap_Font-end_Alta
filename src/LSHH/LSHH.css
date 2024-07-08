@@ -1,0 +1,153 @@
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 20px;
+  height: 310px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #259E58;
+}
+
+.card-text {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Nunito";
+  line-height: 24px;
+}
+
+.btn-group {
+  margin-right: 10px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  margin-top: 20px;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.text-left {
+  margin-top: -20px;
+}
+
+.btn-group button {
+    margin-right: 5px;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Green color */
+    border-color: #28a745;
+}
+.bd01{
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+/* Footer */
+footer {
+    background-color: #259E58; /* Màu nền footer */
+    color: white; /* Màu chữ footer */
+    padding: 20px 0; /* Khoảng cách trên dưới footer */
+  }
+  
+  footer .container {
+    display: flex; /* Sử dụng flexbox để căn chỉnh các phần */
+    flex-direction: column; /* Căn chỉnh các phần theo cột */
+  }
+  
+  footer .row {
+    margin-bottom: 20px; /* Khoảng cách giữa các hàng */
+  }
+  
+  footer h5 {
+    font-family: "Bangers"; /* Font chữ cho tiêu đề */
+    font-style: italic; /* Chữ nghiêng cho tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+  }
+  
+  footer ul {
+    /* Loại bỏ dấu chấm tròn trong danh sách */
+    padding: 0; /* Loại bỏ khoảng cách bên trái danh sách */
+  }
+  
+  footer li {
+    margin-bottom: 5px; /* Khoảng cách giữa các mục trong danh sách */
+  }
+  
+  footer .fas {
+    color: white; /* Màu icon */
+    margin-right: 5px; /* Khoảng cách bên phải icon */
+  }
+  
+  footer .img-fluid {
+    max-width: 100%; /* Cho phép hình ảnh tự động điều chỉnh kích thước */
+    height: auto; /* Cho phép hình ảnh tự động điều chỉnh chiều cao */
+  }
+  
+  footer p {
+    font-family: "Nunito", sans-serif; /* Font chữ cho copyright */
+    font-size: 14px; /* Kích thước chữ cho copyright */
+  }
+
+  .highlight-pink { color: #e83e8c; }
+  .highlight-green { color: #28a745; }
+  .box {
+      border: 2px solid #6f42c1;
+      padding: 10px;
+      margin-top: 20px;
+  }
+  .service-card {
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.service-card h4 {
+    color: #259E58;
+    line-height: 42.56px;
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 14px;
+}
+
+.tx {
+    color: #EC008C;
+    font-family: "Bangers"; /* Use cursive for Bangers if it's not available */
+    line-height: 53.2px;
+}
+
+/* Centering the content within the service card */
+.service-card .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wt{
+  background-color: white;
+  height: 200px;
+  
+}
