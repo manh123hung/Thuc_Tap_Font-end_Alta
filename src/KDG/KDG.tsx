@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './VTTD.css'; // Tệp CSS cho kiểu dáng
+import './KDG.css'; // Tệp CSS cho kiểu dáng
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCalendar, faCheck, faCheckCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -28,8 +28,10 @@ import '@splidejs/react-splide/css/core';
 
 
 
-function VTTD() {
- 
+function KDG() {
+  const handlePageChange1 = (page: number) => {
+    setCurrentPage(page);
+  };
 
   const [logoUrl, setLogoUrl] = useState("");
   const [logo1, setlogo1] = useState("");
@@ -40,6 +42,11 @@ function VTTD() {
   const [img2, setimg2] = useState("");
   const [img3, setimg3] = useState("");
   const [img4, setimg4]= useState("");
+  const [img5, setimg5]= useState("");
+  const [img6, setimg6]= useState("");
+  const [img7, setimg7]= useState("");
+  const [img8, setimg8]= useState("");
+
   const navigate = useNavigate();
   const [data, setData] = useState<DocumentData[]>([]);
   const [file, setFile] = useState<File | null>(null);
@@ -58,10 +65,14 @@ function VTTD() {
     const logo2= ref(storage, "png-transparent-youtube-play-button-computer-icons-youtube-television-angle-rectangle.png");
     const logo3= ref(storage, "instagram-logos-png-images-free-download-11641669602cekuhoqisp.png");
     const logo4= ref(storage, "card/logo ngang.png");
-    const img1= ref(storage, "GiaVe/image 468.png");
-    const img2= ref(storage, "GiaVe/clock-five.png");
-    const img3= ref(storage, "GiaVe/clock-five (1).png");
-    const img4= ref(storage, "GiaVe/clock-five (2).png");
+    const img1= ref(storage, "KDG/Rectangle 3 (1).png");
+    const img2= ref(storage, "KDG/Rectangle 3.png");
+    const img3= ref(storage, "KDG/Rectangle 3 (2).png");
+    const img4= ref(storage, "KDG/Rectangle 3 (3).png");
+    const img5= ref(storage, "KDG/Rectangle 1488 (8).png");
+    const img6= ref(storage, "KDG/Rectangle 1488 (9).png");
+    const img7= ref(storage, "KDG/Rectangle 1488 (10).png");
+    const img8= ref(storage, "KDG/Rectangle 1488 (11).png");
 
     Promise.all([
       getDownloadURL(logoRef),
@@ -73,6 +84,11 @@ function VTTD() {
       getDownloadURL(img2),
       getDownloadURL(img3),
       getDownloadURL(img4),
+      getDownloadURL(img5),
+      getDownloadURL(img6),
+      getDownloadURL(img7),
+      getDownloadURL(img8),
+
 
     ])
       .then((urls) => {
@@ -85,6 +101,11 @@ function VTTD() {
         setimg2(urls[6]);
         setimg3(urls[7]);
         setimg4(urls[8]);
+        setimg5(urls[9]);
+        setimg6(urls[10]);
+        setimg7(urls[11]);
+        setimg8(urls[12]);
+
       })
       .catch((error) => {
         console.log("Error getting URLs:", error);
@@ -106,7 +127,39 @@ function VTTD() {
 
     fetchData();
   }, [navigate]);
-  
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+  const data1 = [
+    {
+      image: img5,
+      title: 'Khỉ đuôi dài',
+      description: '04/01/2021',
+    },
+    {
+      image: img6,
+      title: 'Gấu ngựa',
+      description: '02/03/2020',
+    },
+    {
+      image: img7,
+      title: 'Đười ươi Sumatra',
+      description: '05/03/2020',
+    }, {
+      image: img8,
+      title: 'Hà Mã Châu phi',
+      description: '05/03/2020',
+    }, {
+      image: img8,
+      title: 'Quảng trường',
+      description: '20/02/2020',
+    },
+  ];
+  const totalPages = Math.ceil(data1.length / itemsPerPage);
+
+  const displayedItems = data1.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
   <div className="bs">
@@ -116,7 +169,7 @@ function VTTD() {
           <div className="left-side-content">
           <div className="menu-icon">≡</div>
           <Link to="/" className="menu-item" >TRANG CHỦ</Link>
-          <Link to="/khampha" className="menu-item">KHÁM PHÁ</Link>
+          <Link to="/khampha" className="menu-item" style={{color:'black',textDecoration:'underline'}}>KHÁM PHÁ</Link>
         
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right"  style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"white"}}>
           <DropdownItem className="btn btn-white" ><Link to="/LSHH" >Lịch sử hình thành</Link></DropdownItem>
@@ -125,7 +178,7 @@ function VTTD() {
 </Dropdown>
          
           
-          <Dropdown  color='#259E58' className="btn btn-success  absolute-dropdown  dropdown-container" label="GIÁ VÉ " placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'black',textDecoration: 'underline'}}>
+          <Dropdown  color='#259E58' className="btn btn-success  absolute-dropdown  dropdown-container" label="GIÁ VÉ " placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"white"}}>
           <DropdownItem className="btn btn-white" ><Link to="/GiaVe" >Vé trong công viên</Link></DropdownItem>
           <DropdownItem className="btn btn-white" ><Link to="/VTT" >Vé tập thể</Link></DropdownItem>
           <DropdownItem className="btn btn-white" ><Link to="/VDD" >Vé dịch vụ</Link></DropdownItem>
@@ -167,60 +220,129 @@ function VTTD() {
    <header className="header" style={{padding:"40px"}}>
     
     <div className="row">
-      <div className="col-8">
-      <div  style={{ color: '#259E58', textDecoration: 'underline',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
-     <b>VÉ TẬP THỂ DỤC</b>
-     </div>
+      <div className="col-8" style={{}}>
+      <div className='container' style={{borderBottom:"1px solid #259E58" ,color: '#259E58',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
+     <b >KHỈ ĐUÔI DÀI</b>
+    </div> 
+    <div className='container'>
+    <div className='row' style={{}}>
+        <div className="col-3" style={{color:"#EC008C",fontFamily:"Nunito"}}>
+        <FontAwesomeIcon icon={faCalendar} /> Vườn thú     
+      </div>
+      <div className="col-3" style={{color:"#666666",fontFamily:"Nunito"}}>
+      <FontAwesomeIcon icon={faClock} /> 04/01/2021
+      </div>
+      </div>   
+      </div>  
      </div>
      <div className="col-3">
       <div className='' style={{ color: '#4D4D4D',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"22px",}}>
         Mô tả
        </div>
        <div style={{borderBottom:"2px solid #EC008C"}}></div>
-       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>Đầm Sen là nơi tập thể dục yêu thích của hội người cao tuổi</div>
+       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>Khỉ đuôi dài tại vườn thú 
+       Đầm Sen khô</div>
      </div>
     </div>      
    
     </header>
     <div className="container">
       <div className='row'>
-        <div className='col-9'>
-    <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Quý khách có thể vào CVVH Đầm Sen để tập thể dục quanh hồ thoáng mát vào mỗi buổi sáng, trên diện tích 32 hecta với nhiều cây xanh và không khí trong lành của một công viên giải trí hàng đầu Việt Nam.</p></div>
-    <div className='col-3'></div>
+        <div className='col-4'>
+        <img src={img2} className="img-fluid" alt="Responsive image" style={{padding:"40px",height:"386px",width:"475px"}}/>
+        <p className="text-center" style={{fontSize:"12px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}> Loài khỉ đuôi dài</p>
+
+</div>
+    <div className='col-8'>
+    <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+    <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",}}>
+     <b>TÌM HIỂU VỀ KHỈ ĐUÔI DÀI</b>
+     </div>
+       <p>Khỉ đuôi dài (Macaca fascicularis) có đuôi dài gần bằng hoặc hơn chiều dài cơ thể (khoảng 50 cm), và là loài có đuôi dài nhất. Lông chúng thường có màu xám đến nâu đỏ. Màu lông phía sau nhạt hơn, và lông trên đầu mọc hướng về sau. Thường có mào. Mặt có màu hồng. </p>
+       </div>
     </div>
-  <div className="card-container">
-  
-    <div className="card card1  text-white" style={{border:"2px solid #259E58"}}>
-    <div className="card-title text-container1 " ><img src={img2} alt="" /></div>
-      <h2 className="card-title" style={{textAlign:"center",color:"#259E58"}}>GIỜ MỞ CỬA</h2>
-      <div className="card-list">
-        <p>4h00-8h00</p>
-      <p >
-        (mỗi ngày)
-      </p>
-      </div>
+    </div>
+    <div className='row'>
+    <div className='col-8'>
+    <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+    <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",}}>
+     </div>
+       <p>Con đực lớn thường có hai chỏm lông trắng trên miệng như bộ ria. Con cái có lông quanh mồm thưa hơn. Con non sinh ra có màu đen. Thức ăn chủ yếu là quả, hạt, nõn cây, lá và động vật như côn trùng, ếch, nhái, cua…. Chúng hoạt động vào ban ngày và trên cây. Loài này bơi rất giỏi và thường nhảy xuống nước từ cành cây.</p>
+     <p>  Trong tự nhiên, Khỉ đuôi dài sống thành đàn từ 10-100 con. Trung bình 1 con đực sẽ có 2,5 con cái. Mỗi lần mang thai từ 160 – 170 ngày. Và chỉ sinh 1 con. Điểm đặc biệt khỉ chúa là dáng vẻ oai phong. Đồng thời, khỉ chúa chỉ “cưng nhất” một chú khỉ con nào đó. Và chú khỉ con ấy sẽ được xem là “thái tử” kế vị ngôi sau này.</p>
+       </div>
+    </div>
+        <div className='col-4'>
+        <img src={img3} className="img-fluid" alt="Responsive image" style={{padding:"40px",height:"386px",width:"475px"}}/>
+        <p className="text-center" style={{fontSize:"12px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}> Khỉ đuôi dài chúa chăm con</p>
+
+</div>
  
     </div>
-    <div className="card card1 bg-pink text-white" style={{border:"2px solid #FF41B2"}}>
-    <div className="card-title text-container2 " ><img src={img3} alt="" /></div>
-      <h3 className="card-title " style={{textAlign:"center",color:"#FF41B2"}} >GIÁ VÉ</h3>
-      <div className="card-list">
-        <p>5.000 đồng/lượt</p>
+    <div className='row'>
+        <div className='col-4'>
+        <img src={img4} className="img-fluid" alt="Responsive image" style={{padding:"40px",height:"386px",width:"475px"}}/>
+        <p className="text-center" style={{fontSize:"12px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}> Loài khỉ đuôi dài</p>
+
+</div>
+    <div className='col-8'>
+    <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+    <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",}}>
+     <b>CUỘC CHIẾN QUYỀN LỰC</b>
+     </div>
+       <p>Nếu con khỉ đực nào trong bầy có ý định “léng phéng” với các tề thiếp của khỉ chúa, nó sẽ bị đánh đuổi ra khỏi đàn. Còn nếu muốn “đảo chính” thì không hề dễ bởi vóc dáng to lớn của khỉ chúa. Thường thì đám khỉ đực chỉ dám “giành ngôi” khi khỉ chúa già hoặc bệnh tật. Còn không thì chúng phải di tản sang địa bàn khác, hoặc lẩn tránh khi khỉ chúa xuất hiện.
+Những con khỉ bị phế truất như vậy sẽ lang thang tìm bầy khác gia nhập. Hoặc tìm những bầy yếu hơn để khiêu chiến. Chúng đánh nhau “một mất một còn”, và nếu nó thắng, bầy đó là của nó. Đó là bản chất của đời sống hoang dã.
+Loại khỉ đuôi dài này đang được chăm sóc tại khu vườn thú của Công viên Văn hóa Đầm Sen.</p>
+       </div>
+    </div>
+    </div>
+    
+</div>
+<div className='container'>
+    <div className='row'>
+      <div className='col-md-10 f1'>
+      <FontAwesomeIcon icon={faChevronLeft} /> Vượn đen má vàng
+      </div>
+      <div className='col-md-2 f1'>
+      Cá hỏa tiễn <FontAwesomeIcon icon={faChevronRight} />     
         </div>
     </div>
-    <div className="card card1 "  style={{border:"2px solid #3781DB"}}>
-    <div className="card-title text-container3 " ><img src={img4} alt="" /></div>
-      <h3 className="card-title " style={{color:"#3781DB",textAlign:"center"}} >VÉ SILVER</h3>
-      <div className="card-list">
-        <p >Chưa áp dụng</p>
+  </div>
+  <div className='container'><div className="row position-relative">
+    {displayedItems.map((item, index) => (
+      <div className="col-md-3" key={index} >
+        <div className="card border-0 shadow-sm" style={{height:"300px"}}>
+          <img className="card-img-top" src={item.image} />
+          <div className="card-body">
+            <div className='row'>
+            <div className='col-md-8'><div className="card-title" style={{color:"#259E58",fontSize:"13px"}}>{item.title}</div>
+            </div>
+            <div className='col-md-4'><div className="card-text" style={{color:"#666666",fontSize:"13px"}}>{item.description}</div>
+            </div>
+            </div>
+            <div style={{color:"#EC008C",fontSize:"14px"}}><FontAwesomeIcon icon={faCalendar} /> Vườn thú</div>
+          </div>
+        </div>
+      </div>
+    ))}
+    <button
+      className="btn btn-primary position-absolute top-50 start-0 translate-middle-y" style={{width: '40px',color:"#4CAF50",backgroundColor:"white",border:"none"}}
+      onClick={() => handlePageChange1(currentPage - 1)}
+      disabled={currentPage === 1}
+    >
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </button>
+    <button
+      className="btn btn-primary position-absolute top-50 end-0 translate-middle-y" style={{width: '40px',color:"#4CAF50",backgroundColor:"white",border:"none"}}
+      onClick={() => handlePageChange1(currentPage + 1)}
+      disabled={currentPage === totalPages}
+    >
+      <FontAwesomeIcon icon={faChevronRight} />
+    </button>
+  </div></div>
 
-  </div>
-    </div>
-  </div>
-</div>
    
 
-  <br />
+  
 
 </div>
 
@@ -290,4 +412,4 @@ function VTTD() {
   );
 }
 
-export default VTTD;
+export default KDG;

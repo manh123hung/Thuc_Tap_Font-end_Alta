@@ -30,7 +30,25 @@ import '@splidejs/react-splide/css/core';
 
 
 function AppContent() {
-
+  interface Item {
+    id: number;
+    name: string;
+  }
+  
+  const items: Item[] = [
+    { id: 1, name: 'Cá Chép Nhào Lộn' },
+    { id: 2, name: 'Lầu Đài Kinh Dị' },
+    { id: 3, name: 'Phượng Hoàng Bay' },
+    // ... thêm các item khác
+  ];
+  
+ 
+    const [showList, setShowList] = useState(false);
+  
+    const handleClick = () => {
+      setShowList(!showList);
+    };
+  
 
 
 
@@ -134,9 +152,9 @@ const [logo3, setlogo3] = useState("");
           <Link to="/khampha" className="menu-item">KHÁM PHÁ</Link>
         
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'white'}}>
-  <DropdownItem className="btn btn-white" ><Link to="./LSHH" >Lịch sử hình thành</Link></DropdownItem>
+  <DropdownItem className="btn btn-white" ><Link to="/LSHH" >Lịch sử hình thành</Link></DropdownItem>
   <DropdownItem className="btn btn-white" ><Link to="/settings" >Thành viên</Link></DropdownItem>
-  <DropdownItem className="btn btn-white" ><Link to="/settings" >Chính sách bảo mật</Link></DropdownItem> 
+  <DropdownItem className="btn btn-white" ><Link to="/BM" >Chính sách bảo mật</Link></DropdownItem> 
 </Dropdown>
          
           

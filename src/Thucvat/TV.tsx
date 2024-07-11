@@ -27,7 +27,7 @@ import '@splidejs/react-splide/css/core';
 
 
 
-function Sukien() {
+function TV() {
  
 
   const handlePageChange = (page: number) => {
@@ -50,6 +50,7 @@ function Sukien() {
   const [pc11, setpc11] = useState("");
   const [pc12, setpc12] = useState("");
   const [logo4, setlogo4] = useState("");
+  const [img4, setimg4] = useState("");
 
   const navigate = useNavigate();
   const [data, setData] = useState<DocumentData[]>([]);
@@ -65,22 +66,23 @@ function Sukien() {
   useEffect(() => {
     //lay anh
     const logoRef = ref(storage, "Group17.png");
-    const pc1= ref(storage, "card/image 291.png");
-    const pc2= ref(storage, "card/image 291 (1).png");
-    const pc3= ref(storage, "card/image 291 (2).png");
-    const pc4= ref(storage, "card/image 291 (3).png");
+    const pc1= ref(storage, "GDTN/image 291.png");
+    const pc2= ref(storage, "GDTN/image 291 (2).png");
+    const pc3= ref(storage, "GDTN/image 291 (1).png");
+    const pc4= ref(storage, "GDTN/image 291 (3).png");
     const logo1= ref(storage, "png-transparent-facebook-icon-social-media-computer-icons-facebook-facebook-rectangle-logo-website.jpg");
     const logo2= ref(storage, "png-transparent-youtube-play-button-computer-icons-youtube-television-angle-rectangle.png");
     const logo3= ref(storage, "instagram-logos-png-images-free-download-11641669602cekuhoqisp.png");
-    const pc5= ref(storage, "card/image 291 (4).png");
-    const pc6= ref(storage, "card/image 291 (5).png");
-    const pc7= ref(storage, "card/image 291 (6).png");
-    const pc8= ref(storage, "card/image 291 (7).png");
+    const pc5= ref(storage, "GDTN/image 291 (4).png");
+    const pc6= ref(storage, "GDTN/image 291 (5).png");
+    const pc7= ref(storage, "GDTN/image 291 (6).png");
+    const pc8= ref(storage, "GDTN/image 291 (7).png");
     const pc9= ref(storage, "card/Rectangle 1488.png");
     const pc10= ref(storage, "card/Rectangle 1488 (1).png");
     const pc11= ref(storage, "card/Rectangle 1488 (2).png");
     const pc12= ref(storage, "card/Rectangle 1488 (3).png");
     const logo4= ref(storage, "card/logo ngang.png");
+    const img4= ref(storage, "GDTN/bg.png");
 
     Promise.all([
       getDownloadURL(logoRef),
@@ -100,6 +102,7 @@ function Sukien() {
       getDownloadURL(pc11),
       getDownloadURL(pc12),
       getDownloadURL(logo4),
+      getDownloadURL(img4),
 
     ])
       .then((urls) => {
@@ -120,6 +123,7 @@ function Sukien() {
         setpc11(urls[14]);
         setpc12(urls[15]);
         setlogo4(urls[16]);
+        setimg4(urls[17]);
 
       })
       .catch((error) => {
@@ -185,7 +189,7 @@ function Sukien() {
           <div className="left-side-content">
           <div className="menu-icon">≡</div>
           <Link to="/" className="menu-item" >TRANG CHỦ</Link>
-          <Link to="/khampha" className="menu-item">KHÁM PHÁ</Link>
+          <Link to="/khampha" className="menu-item" style={{ textDecoration: 'underline', color: 'black' }}>KHÁM PHÁ</Link>
         
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'white'}}>
   <DropdownItem className="btn btn-white" ><Link to="/LSHH" >Lịch sử hình thành</Link></DropdownItem>
@@ -201,7 +205,7 @@ function Sukien() {
             <DropdownItem className="btn btn-white" ><Link to="/VTTD" >Vé tập thể dục</Link></DropdownItem>
           
           </Dropdown>
-          <Link to="/Sukien" className="menu-item" style={{ textDecoration: 'underline', color: 'black' }}>SỰ KIỆN</Link>
+          <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
           <br />
           <br />
           <br />
@@ -232,20 +236,71 @@ function Sukien() {
      
    <div className='container bd01'>
    <header className="header" style={{padding:"40px"}}>
-      <div className='container' style={{ color: '#259E58', textDecoration: 'underline',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
-     <b>SỰ KIỆN</b>
-    </div>      
+      <div className='container' style={{ color: '#259E58',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
+     <b style={{borderBottom:"1px solid #259E58"}}>THỰC VẬT</b>
+
+    </div> 
+    <div className='container'>
+    <div className='row' style={{}}>
+        <div className="col-2" style={{color:"#EC008C",fontFamily:"Nunito"}}>
+        <FontAwesomeIcon icon={faCalendar} /> Giáo dục trải nghiệm      
+      </div>
+      <div className="col-3" style={{color:"#666666",fontFamily:"Nunito"}}>
+      <FontAwesomeIcon icon={faClock} /> 29/06/2020
+      </div>
+      </div>   
+      </div>  
     </header>
+    <div className='container'><div className="content1" style={{backgroundImage:`url(${img4})`}}>
+  <h1 className="display-4">Hoa sen</h1>
+  <div className='row'>
+    <div className='col-7'><p className="cp">Hoa sen từ lâu đã được biết tới là loài hoa thanh khiết có ý nghĩa truyền thống lâu đời ở phương Đông. Sen mọc và lớn lên giữa bùn lầy nhưng không hề vì bùn mà bị ô nhiễm, vấy bẩn.</p>
+    <div className='container'>
+    <div className='container'>
+    <div className='container' style={{fontFamily:"Nunito"}}>
+    <div className='row' style={{}}>
+        <div className="col-2">
+        <FontAwesomeIcon icon={faCalendar} /> Thực vật      
+      </div>
+      <div className="col-3">
+      <FontAwesomeIcon icon={faClock} /> 29/06/2020
+      </div>
+
+        </div>
+        <div className='row'>
+        <div className="col-7">
+          <Link to="#" className="btn btn-success" >Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
+      </div>
+      <div className="col-2">
+      
+      </div>
+
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
+
+ <div>
+
+
+</div>
+
+</div></div>
+    
+
+<div className='contaier' style={{padding:"20px"}}>
   <div className="row">
     <div className="col-md-3 mb-4">
     <div className="card">
         <img src={pc1} className="card-img-top" alt="Dam Sen Special" />
         <div className="card-body" > 
-          <h5 className="card-title">Ra mắt vé Đầm Sen Special chơi cả 2 công viên</h5>
-          <p className="card-text">Loại vé này bao gồm cả 2 công viên để chào đón tháng hè đặc biệt của năm nay với chủ đề "quẩy hè đi, chờ chi!"</p>
-          <div className="d-flex justify-content-between align-items-center" style={{ width: '100%' }}> 
+          <h5 className="card-title">Cây Dương Xỉ</h5>
+          <p className="card-text">Là một trong những loài thực vật thuộc nhóm thực vật không có hoa và không có hạt. Nó sinh sản thông qua bào tử và thường được tìm thấy làm cây cảnh.</p>
+          <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '25px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Sự kiện</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} />Thực vật</button>
             </div>
             <Link to={"/"} className="btn btn-success">Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
@@ -260,11 +315,11 @@ function Sukien() {
     <div className="card">
         <img src={pc2} className="card-img-top" alt="Dam Sen Lake Show" />
         <div className="card-body" > 
-          <h5 className="card-title">Sắp ra mắt Đầm Sen Lake Show cuối năm 2020</h5>
-          <p className="card-text">Chỉ còn hơn 1 tháng nữa, Công viên văn hóa Đầm Sen sắp ra mắt dự án Lake Show (biểu diễn nhạc nước trên hồ) trên mặt hồ lớn nh...</p>
-          <div className="d-flex justify-content-between align-items-center" style={{ width: '100%' }}>
+          <h5 className="card-title">Cây Hoa Giấy</h5>
+          <p className="card-text">Là một chi trong thực vật có hoa bản địa khu vực Nam Mỹ, từ Brasil về phía tây tới Peru và về phía nam tới miền nam Argentina.</p>
+          <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '50px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Sự kiện</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
             </div>
             <Link to="" className="btn btn-success" style={{ flexShrink: 0 }}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
@@ -278,16 +333,16 @@ function Sukien() {
     <div className="card">
         <img src={pc3} className="card-img-top" alt="Lễ hội cún cưng" />
         <div className="card-body" > 
-          <h5 className="card-title">Lễ hội cún cưng</h5>
-          <p className="card-text">Ngày 27.10, hàng trăm chủ chó cưng đã tập trung tại khuôn viên Công viên văn hóa Đầm Sen (Q.11, TP.HCM) để tham gia "Lễ...</p>
+          <h5 className="card-title">Cây Lim Sét</h5>
+          <p className="card-text">Cây lim xẹt có hoa màu vàng rực rỡ trông rất đẹp mắt, mang đến cho mọi người không gian sống vô cùng sống động.</p>
           <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '50px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Sự kiện</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
             </div>
             <Link to="#" className="btn btn-success" style={{ flexShrink: 0 }}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 07/12/2018</button>
+            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 06/11/2020</button>
           </div>
         </div>
       </div>
@@ -296,16 +351,16 @@ function Sukien() {
       <div className="card">
         <img src={pc4} className="card-img-top" alt="Ngày hội ẩm thực chay" />
         <div className="card-body">
-          <h5 className="card-title">Ngày hội ẩm thực chay 2019 Đầm Sen: "Vu Lan báo hiếu"</h5>
-          <p className="card-text">Du khách sẽ được thưởng thức hơn 100 món ăn chay, cùng các loại thức uống được chế biến theo chủ đề ẩm thực Sen</p>
-          <div className="d-flex justify-content-between align-items-center">
+          <h5 className="card-title">Cây Lan Ý</h5>
+          <p className="card-text">Là một chi trong thực vật có hoa bản địa khu vực Nam Mỹ, từ Brasil về phía tây tới Peru và về phía nam tới miền nam Argentina.</p>
+          <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '50px'  }}>
             <div className="btn-group">
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Sự kiện</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
             </div>
             <Link to="/" className="btn btn-success">Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left">
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 10/08/2019</button>
+            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 05/11/2020</button>
           </div>
         </div>
       </div>
@@ -316,18 +371,18 @@ function Sukien() {
     <div className="card">
         <img src={pc5} className="card-img-top" alt="Dam Sen Special" />
         <div className="card-body" > 
-          <h5 className="card-title">Cùng bảo chí nói không với rác thải môi trường </h5>
-          <p className="card-text">Chương trình được tổ chức tại khu thiên niên của CVVH Đầm Sen với sự đồng hành của ngân hàng Việt Nam Thương Tín -...</p>
+          <h5 className="card-title">Rau Má Thái</h5>
+          <p className="card-text">Rau má có tên gọi khác là tích tuyết thảo hay liên tiền thảo thường mọc ở những nơi ẩm ướt, râm mát, thung lũng, bờ mương, đất mùn tơi xốp tại các vùng nhiệt đới</p>
           <br></br>
           <div className="d-flex justify-content-between align-items-center" style={{ width: '100%' }}> 
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Sự kiện</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} />Thực vật</button>
             </div>
             <Link to={"/"} className="btn btn-success">Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
 
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 21/06/2019</button>
+            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 29/07/2020</button>
           </div>
         </div>
       </div>
@@ -336,11 +391,11 @@ function Sukien() {
     <div className="card">
         <img src={pc6} className="card-img-top" alt="Dam Sen Lake Show" />
         <div className="card-body" > 
-          <h5 className="card-title">Đón năm mới 2020: nhiều sản phẩm miễn phí</h5>
-          <p className="card-text">Ngoài không gian "sống ảo" tại Đầm Sen, du khách còn được tham gia các sản phẩm miễn phí của giáng sinh và đón năm mới 2020.</p>
-          <div className="d-flex justify-content-between align-items-center" style={{ width: '100%' }}>
+          <h5 className="card-title">Cây Rẻ Quạt</h5>
+          <p className="card-text">Cây rẻ quạt là một dược liệu Đông y quý, có vị đắng, tính hàn vào kinh Can và Phế giúp thanh hoả, giải độc, hành huyết, tiêu đờm.</p>
+          <div className="d-flex justify-content-between align-items-center" style={{ width: '100%',paddingTop: '46px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Sự kiện</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
             </div>
             <Link to="" className="btn btn-success" style={{ flexShrink: 0 }}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
@@ -354,16 +409,16 @@ function Sukien() {
     <div className="card">
         <img src={pc7} className="card-img-top" alt="Lễ hội cún cưng" />
         <div className="card-body" > 
-          <h5 className="card-title">Sắp ra mắt Quảng trường Vua Hùng tại Đầm Sen</h5>
-          <p className="card-text">Nhằm đáp ứng nhu cầu đang hướng trong dịp giỗ tổ Hùng Vương, Đầm Sen sẽ ra mắt Quảng trường Vua Hùng vào ngày...</p>
-          <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%'  }}>
+          <h5 className="card-title">Cây Cọ Dầu</h5>
+          <p className="card-text">Là loại cây mang lại giá trị kinh tế cao do năng suất dầu cao hơn những loại cây có dầu khác.</p>
+          <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '70px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Sự kiện</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
             </div>
             <Link to="#" className="btn btn-success" style={{ flexShrink: 0 }}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 08/04/2019</button>
+            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 02/11/2020</button>
           </div>
         </div>
       </div>
@@ -372,20 +427,21 @@ function Sukien() {
       <div className="card">
         <img src={pc8} className="card-img-top" alt="Ngày hội ẩm thực chay" />
         <div className="card-body">
-          <h5 className="card-title">Hè 2019 và những chương trình đặc biệt cho thiếu nhi</h5>
-          <p className="card-text">Với chủ đề "Đầm Sen Amazing Summer 2019", các chương trình vui chơi tại Đầm Sen bắt đầu từ 25/6 cho đến hết 11/8/2019.</p>
-          <div className="d-flex justify-content-between align-items-center">
+          <h5 className="card-title">Bèo Tây</h5>
+          <p className="card-text">Là một loài thực vật thủy sinh, thân thảo, sống nổi theo dòng nước, thuộc về chi Pontederia của Họ Bèo tây.</p>
+          <div className="d-flex justify-content-between align-items-center" style={{ width: '100%',paddingTop: '48px'  }}>
             <div className="btn-group">
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Sự kiện</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
             </div>
             <Link to="/" className="btn btn-success">Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left">
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 30/05/2019</button>
+            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 14/09/2020</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div className='container'>
     <div className='row'>
@@ -503,4 +559,4 @@ function Sukien() {
   );
 }
 
-export default Sukien;
+export default TV;

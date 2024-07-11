@@ -12,6 +12,13 @@ import GiaVe from './GiaVe/GiaVe';
 import VTT from './VeTapThe/VTT';
 import VDD from './Vedichvu/VDD';
 import VTTD from './VeTapTheDuc/VTTD';
+import BM from './Baomat/BM';
+import TV from './Thucvat/TV';
+import WS from './WS/WS';
+import GD from './GD/GD';
+import CCNL from './CCNL/CCNL';
+import KDG from './KDG/KDG';
+import Thanhvien from './Thanhvien/Thanhvien';
 function App() {
   const [data, setData] = useState<DocumentData[]>([]);
 
@@ -47,6 +54,13 @@ function App() {
         <Route path="/VTT" element={<VTT />} />
         <Route path="/VDD" element={<VDD />} />
         <Route path="/VTTD" element={<VTTD />} />
+        <Route path="/BM" element={<BM />} />
+        <Route path="/TV" element={<TV />} />
+        <Route path="/WS" element={<WS />} />
+        <Route path="/GD" element={<GD />} />
+        <Route path="/CCNL" element={<CCNL />} />
+        <Route path="/KDG" element={<KDG />} />
+        <Route path="/Thanhvien" element={<Thanhvien />} />
 
       </Routes>
     </Router>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './VTTD.css'; // Tệp CSS cho kiểu dáng
+import './BM.css'; // Tệp CSS cho kiểu dáng
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCalendar, faCheck, faCheckCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -28,7 +28,7 @@ import '@splidejs/react-splide/css/core';
 
 
 
-function VTTD() {
+function BM() {
  
 
   const [logoUrl, setLogoUrl] = useState("");
@@ -58,11 +58,8 @@ function VTTD() {
     const logo2= ref(storage, "png-transparent-youtube-play-button-computer-icons-youtube-television-angle-rectangle.png");
     const logo3= ref(storage, "instagram-logos-png-images-free-download-11641669602cekuhoqisp.png");
     const logo4= ref(storage, "card/logo ngang.png");
-    const img1= ref(storage, "GiaVe/image 468.png");
-    const img2= ref(storage, "GiaVe/clock-five.png");
-    const img3= ref(storage, "GiaVe/clock-five (1).png");
-    const img4= ref(storage, "GiaVe/clock-five (2).png");
-
+    const img1= ref(storage, "LSHH/image 480.png");
+    const img2= ref(storage, "LSHH/Rectangle 1508.png");
     Promise.all([
       getDownloadURL(logoRef),
       getDownloadURL(logo1),
@@ -71,8 +68,6 @@ function VTTD() {
       getDownloadURL(logo4),
       getDownloadURL(img1),
       getDownloadURL(img2),
-      getDownloadURL(img3),
-      getDownloadURL(img4),
 
     ])
       .then((urls) => {
@@ -83,8 +78,7 @@ function VTTD() {
         setlogo4(urls[4]);
         setimg1(urls[5]);
         setimg2(urls[6]);
-        setimg3(urls[7]);
-        setimg4(urls[8]);
+
       })
       .catch((error) => {
         console.log("Error getting URLs:", error);
@@ -169,7 +163,7 @@ function VTTD() {
     <div className="row">
       <div className="col-8">
       <div  style={{ color: '#259E58', textDecoration: 'underline',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
-     <b>VÉ TẬP THỂ DỤC</b>
+     <b>CHÍNH SÁCH BẢO MẬT</b>
      </div>
      </div>
      <div className="col-3">
@@ -177,7 +171,7 @@ function VTTD() {
         Mô tả
        </div>
        <div style={{borderBottom:"2px solid #EC008C"}}></div>
-       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>Đầm Sen là nơi tập thể dục yêu thích của hội người cao tuổi</div>
+       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>Chính sách bảo mật này nhằm mục đích giúp bạn hiểu rõ những thông tin chúng tôi thu thập, lý do chúng tôi thu thập và cách bạn có thể cập nhật, quản lý, xuất và xóa thông tin của mình.</div>
      </div>
     </div>      
    
@@ -185,42 +179,104 @@ function VTTD() {
     <div className="container">
       <div className='row'>
         <div className='col-9'>
-    <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Quý khách có thể vào CVVH Đầm Sen để tập thể dục quanh hồ thoáng mát vào mỗi buổi sáng, trên diện tích 32 hecta với nhiều cây xanh và không khí trong lành của một công viên giải trí hàng đầu Việt Nam.</p></div>
+      <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"30px",padding:"30px"}}>
+     <b>CHÚNG TÔI LÀ AI?</b>
+     </div>
+    <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Đầm Sen là một trong những khu du lịch lớn đặc sắc nhất nước Việt Nam. Kiến trúc được kết hợp một cách hoàn mĩ nền văn hóa Đông - Tây và một chút vẻ đẹp thời La Mã. Ngoài những khu vui chơi, Đầm Sen còn có những nhà hàng, khách sạn và hàng chục các loại hình khác để phục vụ khách du lịch. Đầm Sen là nơi vui chơi giải trí rất hấp dẫn cho người trong và ngoài nước.</p></div>
     <div className='col-3'></div>
     </div>
-  <div className="card-container">
-  
-    <div className="card card1  text-white" style={{border:"2px solid #259E58"}}>
-    <div className="card-title text-container1 " ><img src={img2} alt="" /></div>
-      <h2 className="card-title" style={{textAlign:"center",color:"#259E58"}}>GIỜ MỞ CỬA</h2>
-      <div className="card-list">
-        <p>4h00-8h00</p>
-      <p >
-        (mỗi ngày)
-      </p>
-      </div>
- 
-    </div>
-    <div className="card card1 bg-pink text-white" style={{border:"2px solid #FF41B2"}}>
-    <div className="card-title text-container2 " ><img src={img3} alt="" /></div>
-      <h3 className="card-title " style={{textAlign:"center",color:"#FF41B2"}} >GIÁ VÉ</h3>
-      <div className="card-list">
-        <p>5.000 đồng/lượt</p>
-        </div>
-    </div>
-    <div className="card card1 "  style={{border:"2px solid #3781DB"}}>
-    <div className="card-title text-container3 " ><img src={img4} alt="" /></div>
-      <h3 className="card-title " style={{color:"#3781DB",textAlign:"center"}} >VÉ SILVER</h3>
-      <div className="card-list">
-        <p >Chưa áp dụng</p>
+    <img src={img2} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+    <div className='row'>
+        <div className='col-9'>
+      <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"30px",padding:"30px"}}>
+     <b>THÔNG NHÂN CÁ NHÂN NÀO BỊ THU NHẬP VÀ TẠI SAO BỊ THU NHẬP ?</b>
+     </div>
+     <div className='container' style={{padding:"20px",fontFamily:"Nunito"}}>
 
-  </div>
+<div style={{color:"#858585",fontSize:"18px",padding:"10px"}}>
+ <p> <span style={{color:"black"}}><b>1.Bình luận</b></span></p>
+  <div className="list-item"> <p> Khi khách truy cập để lại bình luận trên trang web, chúng tôi thu thập dữ liệu được hiển thị trong mẫu bình luận và cũng là địa chỉ IP của người truy cập và chuỗi user agent của người dùng trình duyệt để giúp phát hiện spam. </p>
+  Một chuỗi ẩn danh được tạo từ địa chỉ email của bạn (còn được gọi là hash) có thể được cung cấp cho dịch vụ Gravatar để xem bạn có đang sử dụng nó hay không. Chính sách bảo mật của dịch vụ Gravatar có tại đây: <Link to="https://automattic.com/privacy/"> https://automattic.com/privacy/. </Link> Sau khi chấp nhận bình luận của bạn, ảnh tiểu sử của bạn được hiển thị công khai trong ngữ cảnh bình luận của bạn.</div>
+  <p> <span style={{color:"black"}}><b>2.Thư viện</b></span></p>
+  <div className="list-item">Nếu bạn tải hình ảnh lên trang web, bạn nên tránh tải lên hình ảnh có dữ liệu vị trí được nhúng (EXIF GPS) đi kèm. Khách truy cập vào trang web có thể tải xuống và giải nén bất kỳ dữ liệu vị trí nào từ hình ảnh trên trang website</div>
+  <p> <span style={{color:"black"}}><b>3. Cookies</b></span></p>
+  <div className="list-item">
+   <p> Nếu bạn viết bình luận trong website, bạn có thể cung cấp cần nhập tên, email địa chỉ website trong cookie. Các thông tin này nhằm giúp bạn không cần nhập thông tin nhiều lần khi viết bình luận khác. Cookie này sẽ được lưu giữ trong một năm.</p>
+   <p>Nếu bạn có tài khoản và đăng nhập và website, chúng tôi sẽ thiết lập một cookie tạm thời để xác định nếu trình duyệt cho phép sử dụng cookie. Cookie này không bao gồm thông tin cá nhân và sẽ được gỡ bỏ khi bạn đóng trình duyệt.</p>
+   <p>Khi bạn đăng nhập, chúng tôi sẽ thiết lập một vài cookie để lưu thông tin đăng nhập và lựa chọn hiển thị. Thông tin đăng nhập gần nhất lưu trong hai ngày và lựa chọn hiển thị gần nhất lưu trong một năm. Nếu bạn chọn “Nhớ tôi”, thông tin đăng nhập sẽ được lưu trong hai tuần. Nếu bạn thoát tài khoản, thông tin cookie đăng nhập sẽ bị xoá.</p>
+Nếu bạn sửa hoặc công bố bài viết, một bản cookie bổ sung sẽ được lưu trong trình duyệt. Cookie này không chứa thông tin cá nhân và chỉ đơn giản bao gồm ID của bài viết bạn đã sửa. Nó tự động hết hạn sau 1 ngày.</div>
+<p> <span style={{color:"black"}}><b>4. Nội dung nhúng từ website khác</b></span></p>
+  <div className="list-item">
+   <p> Các bài viết trên trang web này có thể bao gồm nội dung được nhúng (ví dụ: video, hình ảnh, bài viết, v.v.). Nội dung được nhúng từ các trang web khác hoạt động theo cùng một cách chính xác như khi khách truy cập đã truy cập trang web khác.</p>
+   <p>Những website này có thể thu thập dữ liệu về bạn, sử dụng cookie, nhúng các trình theo dõi của bên thứ ba và giám sát tương tác của bạn với nội dung được nhúng đó, bao gồm theo dõi tương tác của bạn với nội dung được nhúng nếu bạn có tài khoản và đã đăng nhập vào trang web đó.</p>
+   </div>
+</div>
+
+<div className="header" style={{padding:"20px"}}>
+    
+    <div className="row">
+      <div className="col-9">
+      <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"30px",}}>
+     <b>ĐẶT TOUR – SỰ KIỆN – TIỆC</b>
+     </div>
+     </div>
+     <div className="col-3">
+     </div>
+    </div>      
     </div>
-  </div>
+    <div className="list-item" style={{color:"#858585",fontSize:"18px",padding:"10px"}}>
+   <p> Nếu bạn để lại bình luận, bình luận và siêu dữ liệu của nó sẽ được giữ lại vô thời hạn. Điều này là để chúng tôi có thể tự động nhận ra và chấp nhận bất kỳ bình luận nào thay vì giữ chúng trong khu vực đợi kiểm duyệt.</p>
+   <p>Đối với người dùng đăng ký trên trang web của chúng tôi (nếu có), chúng tôi cũng lưu trữ thông tin cá nhân mà họ cung cấp trong hồ sơ người dùng của họ. Tất cả người dùng có thể xem, chỉnh sửa hoặc xóa thông tin cá nhân của họ bất kỳ lúc nào (ngoại trừ họ không thể thay đổi tên người dùng của họ). Quản trị viên trang web cũng có thể xem và chỉnh sửa thông tin đó.</p>
+   </div>
+   <div className="row">
+      <div className="col-12">
+      <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"30px",padding:"20px"}}>
+     <b>CÁC QUYỀN NÀO CỦA BẠN VỚI DỮ LIỆU CỦA MÌNH</b>
+     </div>
+     </div>
+     <div className="col-3">
+     </div>
+    </div>
+    <div className="list-item" style={{color:"#858585",fontSize:"18px",padding:"10px"}}>
+   <p> Nếu bạn có tài khoản trên trang web này hoặc đã để lại nhận xét, bạn có thể yêu cầu nhận tệp xuất dữ liệu cá nhân mà chúng tôi lưu giữ về bạn, bao gồm mọi dữ liệu bạn đã cung cấp cho chúng tôi. Bạn cũng có thể yêu cầu chúng tôi xóa mọi dữ liệu cá nhân mà chúng tôi lưu giữ về bạn. Điều này không bao gồm bất kỳ dữ liệu nào chúng tôi có nghĩa vụ giữ cho các mục đích hành chính, pháp lý hoặc bảo mật.</p>
+   </div>
+   <div className="row">
+      <div className="col-12">
+      <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"30px",padding:"20px"}}>
+     <b>CÁC DỮ LIỆU CỦA BẠN ĐƯỢC GỬI ĐẾN ĐÂU</b>
+     </div>
+     </div>
+     <div className="col-3">
+     </div>
+    </div>
+    <div className="list-item" style={{color:"#858585",fontSize:"18px",padding:"10px"}}>
+   <p>Các bình luận của khách (không phải là thành viên) có thể được kiểm tra thông qua dịch vụ tự động phát hiện spam.</p>
+   </div>
+   <div className="row">
+      <div className="col-9">
+      <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"30px",padding:"20px"}}>
+     <b>THÔNG TIN BỔ SUNG</b>
+     </div>
+     </div>
+     <div className="col-3">
+     </div>
+    </div>
+    <div className="list-item" style={{color:"#858585",fontSize:"18px",padding:"10px"}}>
+   <p>1.Cách chúng tôi bảo vệ dữ liệu của bạn</p>
+   <p>2.Các quá trình tiết lộ dữ liệu mà chúng tôi thực hiện</p>
+   <p>3.Những bên thứ ba chúng tôi nhận dữ liệu từ đó</p>
+   <p>4.Việc quyết định và/hoặc thu thập thông tin tự động mà chúng tôi áp dụng với dữ liệu người dùng</p>
+   <p>5.Các yêu cầu công bố thông tin được quản lí </p>
+   </div>
+      </div>
+      </div>
+    <div className='col-3'></div>
+    </div>
+
 </div>
    
 
-  <br />
+  
 
 </div>
 
@@ -290,4 +346,4 @@ function VTTD() {
   );
 }
 
-export default VTTD;
+export default BM;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './VTT.css'; // Tệp CSS cho kiểu dáng
+import './WS.css'; // Tệp CSS cho kiểu dáng
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCalendar, faCheck, faCheckCircle, faExclamationCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCalendar, faCheck, faCheckCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-solid-svg-icons'; // Icon "Thời gian"
@@ -16,6 +16,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { firestore, storage } from '../firebase';
 import { ref,uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import '@splidejs/react-splide/css';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 
 // or other themes
@@ -27,8 +28,10 @@ import '@splidejs/react-splide/css/core';
 
 
 
-function VDD() {
- 
+function WS() {
+  const handlePageChange1 = (page: number) => {
+    setCurrentPage(page);
+  };
 
   const [logoUrl, setLogoUrl] = useState("");
   const [logo1, setlogo1] = useState("");
@@ -36,6 +39,12 @@ function VDD() {
   const [logo3, setlogo3] = useState("");
   const [logo4, setlogo4] = useState("");
   const [img1, setimg1] = useState("");
+  const [img2, setimg2] = useState("");
+  const [img3, setimg3] = useState("");
+  const [img4, setimg4]= useState("");
+  const [img5, setimg5]= useState("");
+  const [img6, setimg6]= useState("");
+  const [img7, setimg7]= useState("");
 
   const navigate = useNavigate();
   const [data, setData] = useState<DocumentData[]>([]);
@@ -55,7 +64,13 @@ function VDD() {
     const logo2= ref(storage, "png-transparent-youtube-play-button-computer-icons-youtube-television-angle-rectangle.png");
     const logo3= ref(storage, "instagram-logos-png-images-free-download-11641669602cekuhoqisp.png");
     const logo4= ref(storage, "card/logo ngang.png");
-    const img1= ref(storage, "GiaVe/image 467.png");
+    const img1= ref(storage, "GDTN/image 288.png");
+    const img2= ref(storage, "GDTN/image 289.png");
+    const img3= ref(storage, "GDTN/image 290.png");
+    const img4= ref(storage, "GDTN/Rectangle 1488.png");
+    const img5= ref(storage, "GDTN/Rectangle 1488 (1).png");
+    const img6= ref(storage, "GDTN/Rectangle 1488 (2).png");
+    const img7= ref(storage, "GDTN/Rectangle 1488 (3).png");
 
     Promise.all([
       getDownloadURL(logoRef),
@@ -64,6 +79,12 @@ function VDD() {
       getDownloadURL(logo3),
       getDownloadURL(logo4),
       getDownloadURL(img1),
+      getDownloadURL(img2),
+      getDownloadURL(img3),
+      getDownloadURL(img4),
+      getDownloadURL(img5),
+      getDownloadURL(img6),
+      getDownloadURL(img7),
 
 
     ])
@@ -74,7 +95,12 @@ function VDD() {
         setlogo3(urls[3]);
         setlogo4(urls[4]);
         setimg1(urls[5]);
-
+        setimg2(urls[6]);
+        setimg3(urls[7]);
+        setimg4(urls[8]);
+        setimg5(urls[9]);
+        setimg6(urls[10]);
+        setimg7(urls[11]);
       })
       .catch((error) => {
         console.log("Error getting URLs:", error);
@@ -96,7 +122,39 @@ function VDD() {
 
     fetchData();
   }, [navigate]);
-  
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+  const data1 = [
+    {
+      image: img4,
+      title: 'Hà Mã Châu Phi',
+      description: '23/02/2020',
+    },
+    {
+      image: img5,
+      title: 'Vòng xoay không gian',
+      description: '11/02/2020',
+    },
+    {
+      image: img6,
+      title: 'Vòng quay thần tốc',
+      description: '12/02/2020',
+    }, {
+      image: img7,
+      title: 'Cá chép nhào lộn',
+      description: '11/02/2020',
+    }, {
+      image: img7,
+      title: 'Quảng trường',
+      description: '20/02/2020',
+    },
+  ];
+  const totalPages = Math.ceil(data1.length / itemsPerPage);
+
+  const displayedItems = data1.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
   <div className="bs">
@@ -157,111 +215,109 @@ function VDD() {
    <header className="header" style={{padding:"40px"}}>
     
     <div className="row">
-      <div className="col-8">
-      <div  style={{ color: '#259E58', textDecoration: 'underline',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
-     <b>VÉ DỊCH VỤ</b>
-     </div>
+      <div className="col-8" style={{}}>
+      <div className='container' style={{borderBottom:"1px solid #259E58" ,color: '#259E58',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
+     <b >NHẠC NƯỚC ĐẦM SEN WATER SHOW</b>
+    </div> 
+    <div className='container'>
+    <div className='row' style={{}}>
+        <div className="col-3" style={{color:"#EC008C",fontFamily:"Nunito"}}>
+        <FontAwesomeIcon icon={faCalendar} /> Sắp diễn ra      
+      </div>
+      <div className="col-3" style={{color:"#666666",fontFamily:"Nunito"}}>
+      <FontAwesomeIcon icon={faClock} /> 11/02/2020
+      </div>
+      </div>   
+      </div>  
      </div>
      <div className="col-3">
       <div className='' style={{ color: '#4D4D4D',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"22px",}}>
         Mô tả
        </div>
        <div style={{borderBottom:"2px solid #EC008C"}}></div>
-       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>Trải nghiệm các dịch vụ tiện ích của Đầm Sen ngay bạn nhé!</div>
+       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>Sắp ra mắt nhạc nước Đầm Sen Water Show</div>
      </div>
     </div>      
    
     </header>
- 
-  <div className='container' style={{padding:"20px",fontFamily:"Nunito"}}>
- 
-  <div className="content">
-  <div className='dv1' > <h2>Dịch Vụ Xe Điện</h2></div>
-  <div className="note">
- 
-      <FontAwesomeIcon 
-        icon={faExclamationCircle} 
-        className="my-exclamation-icon" 
-      /> <span style={{color:"#DFA100"}}>Lưu ý: Không áp dụng Vé trọn gói Đầm Sen!</span> 
-  </div>
-  <p>Bên cạnh việc tham quan Đầm Sen bằng "đoàn tàu cổ tích" (bao gồm trong <Link to="/VTG" className="link">vé trọn gói</Link> và <Link to="" className='link'> vé Silver</Link>), du khách có thể thưởng ngoạn bằng dịch vụ xe điện riêng của Đầm Sen. Tuy vào loại vé, hành trình xe điện sẽ đưa quý khách từ trạm đón (khu <a href="#" className="link">trò chơi cảm giác mạnh</a> ở quảng trường Âu Lạc), đi quanh Hồ Đầm Sen, tham quan vườn chim thú B, và về vườn Lan rừng để ngắm những loài hoa đẹp nhất tại Đầm Sen.</p>
-  <table>
-    <thead>
-      <tr>
-        <th>Loại hình</th>
-        <th>Số người</th>
-        <th>Số tiền</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Happy car</td>
-        <td>1 - 5</td>
-        <td>150.000 đồng/30 phút</td>
-      </tr>
-      <tr>
-        <td>Family car</td>
-        <td>6 - 7</td>
-        <td>200.000 đồng/30 phút</td>
-      </tr>
-      <tr>
-        <td>Friendly car</td>
-        <td>8 - 10</td>
-        <td>250.000 đồng/30 phút</td>
-      </tr>
-      <tr>
-        <td>Family car</td>
-        <td>11 - 12</td>
-        <td>300.000 đồng/30 phút</td>
-      </tr>
-      <tr>
-        <td>Cung đường</td>
-        <td>1 - 5</td>
-        <td>50.000 đồng/chuyến</td>
-      </tr>
-    </tbody>
-  </table>
-  <div className='dv1' > <h2>Dịch Vụ Cho Thuê</h2></div>
-  <div className="note">
-  <FontAwesomeIcon 
-        icon={faExclamationCircle} 
-        className="my-exclamation-icon" 
-      /> <span style={{color:"#DFA100"}}>Lưu ý: Tiền thế chân từ 300.000 đồng đến 500.000 đồng + CMND</span>
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>Cho thuê</th>
-        <th>Giá Xe</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Xe đẩy</td>
-        <td>50.000 đồng/lần (Cỡ nhỏ)
-          <br /> 80.000 đồng/lần (Cỡ lớn)</td>
-      </tr>
-      <tr>
-        <td>Xe nôi</td>
-        <td>80.000 đồng/lần (Cỡ nhỏ)
-          <br /> 120.000 đồng/lần (Cỡ lớn)</td>
-      </tr>
-      <tr>
-        <td>Xe lăn</td>
-        <td>100.000 đồng/lần</td>
-      </tr>
-      <tr>
-        <td>Tủ giữ đồ</td>
-        <td>20.000 đồng/hộc tủ/lần</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 style={{color:"#EC008C"}}>GHI CHÚ:</h3>
-  <p>Vé dịch vụ này không bao gồm trong các loại vé cổng, hay vé trọn gói, cũng như Silver. Để biết thêm về những loại vé này, xin vui lòng xem <a href="#" className="link">tại đây</a>.</p>
-</div>
+    <div className="container">
+      <div className='row'>
+        <div className='col-9'>
+    <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>CVVH Đầm Sen chuẩn bị ra mắt công trình nhạc nước Đầm Sen Water Show với tổng chiều dài biểu diễn hơn 100 mét, kết hợp với khói lửa, công nghệ Laser dance và màn hình khổng lồ hình rẽ quạt, được tạo bằng nước với chiều ngang 40 mét, và chiều cao 20 mét.</p></div>
+    <div className='col-3'></div>
+    </div>
+    <img src={img2} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666"}}>Ảnh minh họa dự án Đầm Sen Water show</p>
+    <div className='row'>
+        <div className='col-9'>
+    <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+  <p>      Sau đại dịch Covid 19, CVVH Đầm Sen đã dần phục hồi trở lại. 
+      Đặc biệt là tiếp tục triển khai dự án nhạc nước Đầm Sen Water Show.
+       Đây được xem là công trình nhạc nước hoàn toàn mới tại TP.HCM, 
+       được biểu diễn ngay trên mặt hồ của công viên.</p>
+       <p>Điểm đặc biệt của công trình nhạc nước này, là hình ảnh 3D được chiếu trên màn hình rẽ quạt khổng lồ được tạo bằng nước, rộng 40 mét (cao 20 mét). Hệ thống vòi phun nhạc nước hiện đại trên thê giới hiện nay, được lập trình kỹ lưỡng đến từng giây. Hệ thống khói lửa được tạo ra ngay trên mặt hồ. Đồng thời, hệ thống ánh sáng laser hiện đại được nhập từ Châu Âu, và hệ thống âm thanh với cả chục chiếc loa công suất lớn, đặt xung quanh hồ để tạo hiệu ứng cho người xem.</p>
+       </div>
+       </div>
 
+    <div className='col-3'></div>
+    </div>
+    <img src={img3} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666"}}>Vị trí ngồi rộng rãi tại nhà hàng Thủy Ta xem biểu diễn Laser show màn nước 3D trên hồ Đầm Sen 2019</p>
+    <div className='row'>
+        <div className='col-9'>
+    <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+  <p>   Trước đây, CVVH Đầm Sen đã từng có công trình nhạc nước, nhưng với quy mô nhỏ tại khu vực quảng trường La Mã. Rồi đến tháng tư năm 2019, Công ty Cổ phần Dịch vụ Du lịch Phú Thọ (Phuthotourist – cơ quan chủ quản của Đầm Sen) đã quyết định đầu tư giai đoạn 1 của dự án nhạc nước trên mặt hồ với công trình màn nước laser show. Đến nay, giai đoạn 2 của hệ thống đang dần hoàn thiện trong tháng 11. Dự kiến Đầm Sen Water Show sẽ chính thức ra mắt vào đầu tháng 12/2020, để kịp phục vụ du khách vào những sự kiện cuối năm.  </p>
+       <p>Ban lãnh đạo Phuthotourist cũng đang cân nhắc liệu có cho phép du khách được thưởng thức nhạc nước bằng thuyền Pedalo trên mặt hồ. Nếu được, chắc chắn đây sẽ là điểm thú vị cho du khách được trải nghiệm cảm giác ở ngồi trên nước và xem nhạc nước như thế nào.</p>
+       </div>
+       </div>
+
+    <div className='col-3'></div>
+    </div>
 </div>
-    
+<div className='container'>
+    <div className='row'>
+      <div className='col-md-10 f1'>
+      <FontAwesomeIcon icon={faChevronLeft} /> Phượng hoàng bay 
+      </div>
+      <div className='col-md-2 f1'>
+      Tàu vượt thác <FontAwesomeIcon icon={faChevronRight} />     
+        </div>
+    </div>
+  </div>
+  <div className='container'><div className="row position-relative">
+    {displayedItems.map((item, index) => (
+      <div className="col-md-3" key={index} >
+        <div className="card border-0 shadow-sm" style={{height:"300px"}}>
+          <img className="card-img-top" src={item.image} />
+          <div className="card-body">
+            <div className='row'>
+            <div className='col-md-8'><div className="card-title" style={{color:"#259E58",fontSize:"13px"}}>{item.title}</div>
+            </div>
+            <div className='col-md-4'><div className="card-text" style={{color:"#666666",fontSize:"13px"}}>{item.description}</div>
+            </div>
+            </div>
+            <div style={{color:"#EC008C",fontSize:"14px"}}><FontAwesomeIcon icon={faCalendar} /> Cảm giác mạnh</div>
+          </div>
+        </div>
+      </div>
+    ))}
+    <button
+      className="btn btn-primary position-absolute top-50 start-0 translate-middle-y" style={{width: '40px',color:"#4CAF50",backgroundColor:"white",border:"none"}}
+      onClick={() => handlePageChange1(currentPage - 1)}
+      disabled={currentPage === 1}
+    >
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </button>
+    <button
+      className="btn btn-primary position-absolute top-50 end-0 translate-middle-y" style={{width: '40px',color:"#4CAF50",backgroundColor:"white",border:"none"}}
+      onClick={() => handlePageChange1(currentPage + 1)}
+      disabled={currentPage === totalPages}
+    >
+      <FontAwesomeIcon icon={faChevronRight} />
+    </button>
+  </div></div>
+
+   
 
   
 
@@ -333,4 +389,4 @@ function VDD() {
   );
 }
 
-export default VDD;
+export default WS;
