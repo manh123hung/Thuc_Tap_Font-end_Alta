@@ -55,6 +55,11 @@ function Thanhvien() {
   const [img10, setimg10]= useState("");
   const [logo5, setlogo5] = useState("");
   const [logo6, setlogo6] = useState("");
+  const [img11, setimg11]= useState("");
+  const [img12, setimg12]= useState("");
+  const [img13, setimg13]= useState("");
+  const [img14, setimg14]= useState("");
+  const [img15, setimg15]= useState("");
 
   const navigate = useNavigate();
   const [data, setData] = useState<DocumentData[]>([]);
@@ -80,12 +85,17 @@ function Thanhvien() {
     const img4= ref(storage, "Thanhvien/caphe_vuon_da_damsenpark.jpg");
     const img5= ref(storage, "Thanhvien/quan-ca-phe-vuon-da-dam-sen.jpg");
     const img6= ref(storage, "Thanhvien/ca_phe_vuon_da_damsen123.jpg");
-    const img7= ref(storage, "CCNL/Rectangle 1488 (4).png");
-    const img8= ref(storage, "CCNL/Rectangle 1488 (5).png");
-    const img9= ref(storage, "CCNL/Rectangle 1488 (6).png");
-    const img10= ref(storage, "CCNL/Rectangle 1488 (7).png");
+    const img7= ref(storage, "Thanhvien/Rectangle 1488 (12).png");
+    const img8= ref(storage, "Thanhvien/Rectangle 1488 (13).png");
+    const img9= ref(storage, "Thanhvien/Rectangle 1488 (14).png");
+    const img10= ref(storage, "Thanhvien/Rectangle 1488 (15).png");
     const logo5= ref(storage, "Thanhvien/Rectangle 1500.png");
     const logo6= ref(storage, "Thanhvien/Layer_1.png");
+    const img11= ref(storage, "Thanhvien/Image 01 (2).png");
+    const img12= ref(storage, "Thanhvien/Image 13 (4).png");
+    const img13= ref(storage, "Thanhvien/Image 14 (2).png");
+    const img14= ref(storage, "Thanhvien/Image 02 (1).png");
+    const img15= ref(storage, "Thanhvien/Image 03 (2).png");
 
     Promise.all([
       getDownloadURL(logoRef),
@@ -105,7 +115,11 @@ function Thanhvien() {
       getDownloadURL(img10),
       getDownloadURL(logo5),
       getDownloadURL(logo6),
-
+      getDownloadURL(img11),
+      getDownloadURL(img12),
+      getDownloadURL(img13),
+      getDownloadURL(img14),
+      getDownloadURL(img15)
     ])
       .then((urls) => {
         setLogoUrl(urls[0]);
@@ -125,7 +139,11 @@ function Thanhvien() {
         setimg10(urls[14]);
         setlogo5(urls[15]);
         setlogo6(urls[16]);
-
+        setimg11(urls[17]);
+        setimg12(urls[18]);
+        setimg13(urls[19]);
+        setimg14(urls[20]);
+        setimg15(urls[21]);
       })
       .catch((error) => {
         console.log("Error getting URLs:", error);
@@ -147,56 +165,72 @@ function Thanhvien() {
 
     fetchData();
   }, [navigate]);
-  const images: ImageData[] = [
-    { src: img2, alt: 'Image 1', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
-    { src: img3, alt: 'Image 2', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
-    { src: img4, alt: 'Image 3', caption: 'Hai con tàu hình cá chép ' },
-    { src: img5, alt: 'Image 4', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
-    { src: img6, alt: 'Image 5', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
+  const images1: ImageData[] = [
+    { src: img12, alt: 'Image 1', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
+    { src: img13, alt: 'Image 2', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
+    { src: img11, alt: 'Image 3', caption: 'Vua đầu bếp “Jan Can Cook” từng đến giao lưu với đội ngũ bếp của nhà hàng Thủy Tạ Đầm Sen ' },
+    { src: img14, alt: 'Image 4', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
+    { src: img15, alt: 'Image 5', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
   ];
   const images2: ImageData[] = [
     { src: img2, alt: 'Image 1', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
     { src: img3, alt: 'Image 2', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
-    { src: img4, alt: 'Image 3', caption: 'Hai con tàu hình cá chép ' },
+    { src: img4, alt: 'Image 3', caption: 'Quán cà phê Stone Garden tại CVVH Đầm Sen ' },
     { src: img5, alt: 'Image 4', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
     { src: img6, alt: 'Image 5', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
   ];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex1, setCurrentImageIndex1] = useState(0);
+  // State cho carousel 2
+  const [currentImageIndex2, setCurrentImageIndex2] = useState(0);
 
-  const handleNext = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const handleNext1 = () => {
+    setCurrentImageIndex1((prevIndex) => (prevIndex + 1) % images1.length);
   };
 
-  const handlePrev = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+  const handlePrev1 = () => {
+    setCurrentImageIndex1((prevIndex) =>
+      prevIndex === 0 ? images1.length - 1 : prevIndex - 1
     );
   };
 
-  const handleImageClick = (index: number) => {
-    setCurrentImageIndex(index);
+  const handleImageClick1 = (index: number) => {
+    setCurrentImageIndex1(index);
+  };
+
+  const handleNext2 = () => {
+    setCurrentImageIndex2((prevIndex) => (prevIndex + 1) % images2.length);
+  };
+
+  const handlePrev2 = () => {
+    setCurrentImageIndex2((prevIndex) =>
+      prevIndex === 0 ? images2.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleImageClick2 = (index: number) => {
+    setCurrentImageIndex2(index);
   };
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
   const data1 = [
     {
       image: img7,
+      title: 'Hà Mã Châu Phi',
+      description: '23/02/2020',
+    },
+    {
+      image: img8,
       title: 'Vòng xoay không gian',
       description: '11/02/2020',
     },
     {
-      image: img8,
-      title: 'Lâu đài kinh dị',
-      description: '21/02/2020',
-    },
-    {
       image: img9,
-      title: 'Tàu vượt thác',
-      description: '11/02/2020',
+      title: 'Vòng quay thần tốc',
+      description: '12/02/2020',
     }, {
       image: img10,
-      title: 'Spinning Coaster',
-      description: '20/02/2020',
+      title: 'Cá chép nhào lộn',
+      description: '11/02/2020',
     }, {
       image: img7,
       title: 'Quảng trường',
@@ -271,7 +305,7 @@ function Thanhvien() {
     <div className="row">
       <div className="col-8" style={{}}>
       <div className='container' style={{ color: '#259E58',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
-     <b style={{borderBottom:"1px solid #259E58"}}>Thành viên</b>
+     <b style={{borderBottom:"1px solid #259E58"}}>THÀNH VIÊN</b>
     </div> 
      </div>
      <div className="col-3">
@@ -305,38 +339,39 @@ function Thanhvien() {
 
         </div>
         <div className="carousel-container">
-      <div className="carousel-controls">
-        <button onClick={handlePrev}>
-          <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} />          </span>
-        </button>
-        <button onClick={handleNext}>
-          <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} />
-          </span>
-        </button>
+        <div className="carousel-controls">
+          <button onClick={handlePrev1}>
+            <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
+          </button>
+          <button onClick={handleNext1}>
+            <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
+          </button>
+        </div>
+        <div className="carousel-image">
+          <div className="image-container">
+            <img
+              src={images1[currentImageIndex1].src}
+              alt={images1[currentImageIndex1].alt}
+              width={800}
+              height={600}
+            />
+          </div>
+        </div>
+        <div className="image-caption">
+          {images1[currentImageIndex1].caption}
+        </div>
+        <div className="carousel-thumbnails">
+          {images1.map((image, index) => (
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              onClick={() => handleImageClick1(index)}
+              className={`thumbnail ${index === currentImageIndex1 ? 'active' : ''}`}
+            />
+          ))}
+        </div>
       </div>
-      <div className="carousel-image">
-  <div className="image-container">
-    <img
-      src={images[currentImageIndex].src}
-      alt={images[currentImageIndex].alt}
-    />
-  </div>
-</div>
-<div className="image-caption">
-  {images[currentImageIndex].caption}
-</div>
-      <div className="carousel-thumbnails">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            onClick={() => handleImageClick(index)}
-            className={index === currentImageIndex ? 'active' : ''}
-          />
-        ))}
-      </div>
-    </div>
 
     <div className="container">
       <div className='row'>
@@ -360,47 +395,52 @@ function Thanhvien() {
       </div>
 
         </div>
+      
+   
         <div className="carousel-container">
-      <div className="carousel-controls">
-        <button onClick={handlePrev}>
-          <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} />          </span>
-        </button>
-        <button onClick={handleNext}>
-          <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} />
-          </span>
-        </button>
+        <div className="carousel-controls1">
+          <button onClick={handlePrev2}>
+            <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
+          </button>
+          <button onClick={handleNext2}>
+            <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
+          </button>
+        </div>
+        <div className="carousel-image">
+          <div className="image-container">
+            <img
+              src={images2[currentImageIndex2].src}
+              alt={images2[currentImageIndex2].alt}
+              width={800}
+              height={600}
+            />
+          </div>
+        </div>
+        <div className="image-caption">
+          {images2[currentImageIndex2].caption}
+        </div>
+        <div className="carousel-thumbnails">
+          {images2.map((image, index) => (
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              onClick={() => handleImageClick2(index)}
+              className={`thumbnail ${index === currentImageIndex2 ? 'active' : ''}`}
+            />
+          ))}
+        </div>
       </div>
-      <div className="carousel-image">
-  <div className="image-container">
-    <img
-      src={images[currentImageIndex].src}
-      alt={images[currentImageIndex].alt}
-    />
-  </div>
-</div>
-<div className="image-caption">
-  {images[currentImageIndex].caption}
-</div>
-      <div className="carousel-thumbnails">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            onClick={() => handleImageClick(index)}
-            className={index === currentImageIndex ? 'active' : ''}
-          />
-        ))}
-      </div>
-    </div>
+
+    
 
 <div className='container'>
     <div className='row'>
       <div className='col-md-10 f1'>
-      <FontAwesomeIcon icon={faChevronLeft} /> Roller Coaster
+      <FontAwesomeIcon icon={faChevronLeft} /> Phượng hoàng bay
       </div>
       <div className='col-md-2 f1'>
-      Phượng hoàng bay <FontAwesomeIcon icon={faChevronRight} />     
+      Tàu vượt thác <FontAwesomeIcon icon={faChevronRight} />     
         </div>
     </div>
   </div>

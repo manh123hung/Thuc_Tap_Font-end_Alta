@@ -19,6 +19,7 @@ import GD from './GD/GD';
 import CCNL from './CCNL/CCNL';
 import KDG from './KDG/KDG';
 import Thanhvien from './Thanhvien/Thanhvien';
+import QTVH from './QTVH/QTVH';
 function App() {
   const [data, setData] = useState<DocumentData[]>([]);
 
@@ -61,7 +62,7 @@ function App() {
         <Route path="/CCNL" element={<CCNL />} />
         <Route path="/KDG" element={<KDG />} />
         <Route path="/Thanhvien" element={<Thanhvien />} />
-
+        <Route path="/QTVH" element={<QTVH />} />
       </Routes>
     </Router>
   );

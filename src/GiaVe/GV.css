@@ -2,6 +2,22 @@
 
 
 
+.bt12a {
+  background-color: white;
+  border-radius: 50%;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.button-container {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center horizontally */
+}
+.icon2 {
+  font-size: 24px;
+}
 
 .card-container {
   display: flex;

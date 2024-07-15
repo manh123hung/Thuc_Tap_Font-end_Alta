@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './GD.css'; // Tệp CSS cho kiểu dáng
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCalendar, faComment, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-solid-svg-icons'; // Icon "Thời gian"
@@ -28,8 +28,369 @@ import '@splidejs/react-splide/css/core';
 
 
 function GD() {
- 
+  interface Tab {
+    id: string;
+    label: string;
+    content: JSX.Element;
+  }
+  const [activeTab, setActiveTab] = useState<string>('troChoi');
+  const tabs: Tab[] = [
+    {
+      id: 'troChoi',
+      label: 'Trò Chơi',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+   <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>01</span>
+        <Link to="/CCNL" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Cá Chép Nhào Lộn</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>14</span>
+        <Link to="/cinemax8d" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Xem Phim Cinemax 8D</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>19</span>
+        <Link to="/bangdang" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Băng Đăng</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>23</span>
+        <Link to="/echnhay" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Ếch Nhảy</Link>
+      </div>
+    </div>
+    <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>02</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Lâu Đài Kinh dị</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>15</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đua Xe Turbo Racing</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>20</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đu Quay Đứng Ferris Wheel</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>24</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Điệu Nhảy Thiên Thần</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>03</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Phượng Hoàng Bay</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>16</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>9D Virtual Reality</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>21</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Monorail</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>25</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Khinh Khí Cầu Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>04</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Spinning Coaster</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>17</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Bắn Súng Run Raider</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>22</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đạp Vịt Pedalo</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>26</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Hải Cầu Vượt Thác</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>05</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Xe Bay Ảo Tưởng</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>18</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Lâu Đài Kỳ Thú</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>62</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Massage Cá</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>27</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Ngựa Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>06</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Thảm Bay</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>28</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Kids Playground</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>07</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Quay Thần Tốc</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>29</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Khủng Long Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>08</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Power Surge</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>30</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Siêu Nhân Robot</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>09</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Tàu Vượt Thác</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>31</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Rồng Lượn</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>10</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Roller Coaster</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>32</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Lượn Tuổi Thơ</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>11</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Xoay Không Gian</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>33</span>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Pháo Đài Bay</Link>
+        </div>
+      </div>
+    <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}> 
+            <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>12</span>
+            Đấu Trường Bò Tót
+          </Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>
+            <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>34</span>
+            Nhà Hơi Liên Hoàn
+          </Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>
+            <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>13</span>
+            Xe Điện Đụng
+          </Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+      </div>
+    </div>
+      )
+    },
+    {
+      id: 'vuonThu',
+      label: 'Vườn Thú',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+         <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>35</span> 
+            <Link to="/khoiduoidai" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Khỉ Đuôi Dài</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>38</span> 
+            <Link to="/hamachauPhi" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Hà Mã Châu Phi</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>41</span> 
+            <Link to="/thuycung" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Thủy Cung</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>44</span> 
+            <Link to="/cahoatien" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cá Hỏa Tiền</Link> </div>
 
+           </div>
+           <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>36</span> 
+            <Link to="/gaunhua" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Gấu Ngựa</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>39</span> 
+            <Link to="/voichauA" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Voi Châu Á</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>42</span> 
+            <Link to="/vuonchim" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Chim</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>45</span> 
+            <Link to="/denui" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đê Núi</Link> </div>
+
+           </div>
+           <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>37</span> 
+            <Link to="/duoiuruisumatra" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đười Ươi Sumatra</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>40</span> 
+            <Link to="/vuondenmavang" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vượn Đen Má Vàng</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>43</span> 
+            <Link to="/hocahaituong" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Hồ Cá Hải Tượng</Link> </div>
+            <div className='col-3'> </div>
+
+           </div>
+          </div>
+      )
+    },
+    {
+      id: 'canhDep',
+      label: 'Cảnh Đẹp',
+      content: (
+        <div className="container">
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>46</span> 
+   <Link to="/namtuthuonguyen" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nam Tử Thượng Uyển</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>51</span> 
+   <Link to="/quangtruongvuahung" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường Vua Hùng </Link> </div>
+
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>47</span> 
+   <Link to="/daolanrung" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đảo Lan Rừng</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>52</span> 
+   <Link to="/quangtruongaulac" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường Âu Lạc</Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>48</span> 
+   <Link to="/vuonnhatban" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Nhật Bản</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>53</span> 
+   <Link to="/quangtruonglama" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường La Mã</Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>49</span> 
+   <Link to="/vuonxuongrong" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Xuống Rồng</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>54</span> 
+   <Link to="/caucuukhu" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cầu Cửu Khúc </Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>50</span> 
+   <Link to="/diademSongAo" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Địa Điểm Sống Ảo</Link></div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+</div>
+</div>
+      )
+    },
+    {
+      id: 'sanKhau',
+      label: 'Sân Khấu',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>55</span> 
+          <Link to="/sankhaudemmen" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Sân Khấu Đê Mèn</Link></div>
+          <div> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>56</span> 
+          <Link to="/rapxiecthu" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Rạp Xiếc Thú</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>57</span> 
+          <Link to="/sankhaungoisao" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Sân Khấu Ngôi Sao </Link> </div>
+          <div className='col-3'> </div>
+
+         </div>
+      </div>
+      )
+    },
+    {
+      id: 'giaoDuc',
+      label: 'Giáo Dục Trải Nghiệm',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>58</span> 
+          <Link to="/nhatrungbaytieuban" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nhà Trưng Bày Tiêu Bản Động Vật</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>59</span> 
+          <Link to="/thucvat" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Thực Vật</Link></div>
+       
+
+         </div>
+      </div>
+      )
+    },
+    {
+      id: 'amThuc',
+      label: 'Ẩm Thực',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>60</span> 
+          <Link to="/nhahangthuyta" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nhà Hàng Thủy Tạ</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>61</span> 
+          <Link to="/caphevuond" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cà Phê Vườn Đá</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>63</span> 
+          <Link to="/damsenplaza" style={{ textDecoration: 'none', color: '#4D4D4D' }}> DamSen Plaza </Link> </div>
+         </div>
+      </div>
+      )
+    }
+  ];
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+  };
   const [logoUrl, setLogoUrl] = useState("");
   const [logo1, setlogo1] = useState("");
   const [logo2, setlogo2] = useState("");
@@ -126,7 +487,7 @@ function GD() {
       });
     const fetchData = async () => {
       try {
-        const quanlyRef = await getDocs(collection(firestore, "users"));
+        const quanlyRef = await getDocs(collection(firestore, "Gioithieu"));
         const fetchedData: DocumentData[] = [];
 
         quanlyRef.forEach((doc) => {
@@ -141,7 +502,106 @@ function GD() {
 
     fetchData();
   }, [navigate]);
+  const [showMenu, setShowMenu] = useState(true);
+  const [rightSideContent, setRightSideContent] = useState<React.ReactNode>(null); // Khởi tạo bằng null
+  const createRightSideContent = () => {
+    return (
+      <>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',position:"fixed",marginLeft:"1180px",marginTop:"600px" }}>
+    <div className="button-container">
+      <button className='bt12a'><span className='icon2'><FontAwesomeIcon icon={faPhone}color="green" /> </span></button>
+      <button className='bt12a'><span className='icon2'><FontAwesomeIcon icon={faComment} color="green"/> </span></button>
+    </div>
+  </div>
+      </>
+    );
   
+};
+useEffect(() => {
+  setRightSideContent(createRightSideContent());
+}, []);
+
+const toggleMenu = () => {
+  setShowMenu(!showMenu);
+  if (!showMenu) {
+    // Khi menu ẩn đi, cập nhật rightSideContent thành nội dung của tab hiện tại
+    setRightSideContent(
+      <div style={{margin:"100px",position:"fixed",zIndex: 100}}>
+        <table style={{ width: '100%', borderCollapse: 'collapse'}}>
+          <thead>
+            <tr style={{ backgroundColor: '#f2f2f2' }}>
+              {tabs.map((tab) => (
+                <th
+                  key={tab.id}
+                  style={{
+                    padding: '10px',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    backgroundColor: tab.id === activeTab ? '#e6e6e6' : 'inherit'
+                  }}
+                  onClick={() => handleTabClick(tab.id)}
+                >
+                  {tab.label}
+                </th>
+              ))}
+            </tr>
+          </thead>
+        </table>
+
+        <div >
+          {tabs.find((tab) => tab.id === activeTab)?.content}
+        </div>
+      </div>
+    );
+  } else {
+    // Khi menu hiển thị, cập nhật rightSideContent thành nội dung slide
+    setRightSideContent(createRightSideContent());
+  }
+};
+
+// Sử dụng useEffect để cập nhật rightSideContent khi activeTab thay đổi
+useEffect(() => {
+  if (!showMenu) {
+    setRightSideContent(
+      <div style={{marginTop:"40px",backgroundColor:"white",position:"fixed",zIndex: 100,width:"1240px"}}>
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <thead>
+          <tr style={{borderBottom:"1px solid black"}}>
+            {tabs.map((tab) => (
+              <th
+                key={tab.id}
+                style={{
+                  padding: '10px',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  backgroundColor: "white",
+                  border: "none", // Loại bỏ border
+                  color: tab.id === activeTab ? '#EC008C' : 'inherit', 
+                  borderBottom: tab.id === activeTab ? '2px solid #EC008C' : 'none', // Giữ nguyên borderBottom
+                }}
+                onClick={() => handleTabClick(tab.id)}
+              >
+                {tab.label}
+
+              </th>
+
+            ))}
+            
+          </tr>
+          
+        </thead>
+      </table>
+    
+      <div>
+        {tabs.find((tab) => tab.id === activeTab)?.content}
+      </div>
+    </div> 
+    );
+  } else {
+    setRightSideContent(createRightSideContent());
+  }
+}, [activeTab, showMenu]);
+ 
 
   return (
   <div className="bs">
@@ -149,8 +609,9 @@ function GD() {
       <div className="row">
       <div className="col-md-3 left-side" style={{ width: '250px' }}>   
           <div className="left-side-content">
-          <div className="menu-icon">≡</div>
-          <Link to="/" className="menu-item" >TRANG CHỦ</Link>
+          <button className="menu-icon" style={{border:"none"}} onClick={toggleMenu}>
+              {showMenu ? '≡' : 'x'}
+            </button>          <Link to="/" className="menu-item" >TRANG CHỦ</Link>
           <Link to="/khampha" className="menu-item">KHÁM PHÁ</Link>
         
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right"  style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',textDecoration: 'underline', color: 'black'}}>
@@ -192,25 +653,24 @@ function GD() {
           right: 0,
           bottom: 0,
           width: '83%',
-          marginTop: -60,
+           marginTop: -60,
         }}>
            <div style={{backgroundColor:"rgb(230, 255, 210)"}} >
-     
-   <div className='container bd01'>
+           {rightSideContent}
+           <div className='container bd01'>
    <img src={img1} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
-
    <header className="header" style={{padding:"20px"}}>
-    
-  
-     
       <div  style={{ color: '#259E58' ,lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",textAlign:"center"}}>
-     <b style={{borderBottom:"2px solid #259E58"}}>ĐẦM SEN THẾ GIỚI TUYỆT VỜI</b>
+     <b style={{borderBottom:"2px solid #259E58"}}> {data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.Tieude} 
+            </div>
+          ))}
+      </div>
+    )} </b>
      </div>
-    
-    
-   
-     
-   
     </header>
     <div >
    <div className="container ct02">
@@ -219,8 +679,26 @@ function GD() {
 
   </div>
   <div className="section pink" style={{padding:"50px",backgroundColor:"#259E58"}}>
-    <h2 >Hơn 30 trò chơi</h2>
-    <p >Công viên Văn hóa Đầm Sen có 13 trò chơi cảm giác mạnh (Tàu lượn siêu tốc, vượt thác, Power Surge…); 5 trò chơi tương tác ảo công nghệ hiện đại; 5 trò chơi thư giãn; 12 trò chơi thiếu nhi; và nhiều trò chơi khác.</p>
+    <h2 >  {data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.TDND0} 
+            </div>
+          ))}
+  
+      </div>
+    )}   </h2>
+    <p > {data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.Noidung1} 
+            </div>
+          ))}
+  
+      </div>
+    )} </p>
     <p><Link to="/" className="btn btn-white" style={{color:"#259E58",backgroundColor:"white",border:"none", width:"120px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
 
   </div>
@@ -235,8 +713,26 @@ function GD() {
 
   </div>
   <div className="section pink" style={{padding:"50px"}}>
-    <h2 >Nhiều loại thú quý hiếm</h2>
-    <p >Đầm Sen còn được biết đến như vườn thú có thể nuôi sinh sản được các loài động vật quý hiếm (thuộc sách đỏ) như: đười ươi Sumatra (sinh sản 2 lần), vượn má vàng; chim giá đẫy, chim Giang Sen... Ngoài ra còn có một hồ Thủy cung với các loài thủy sinh vật biển và cá Amazon phong phú, như cá mập, cá Hai tượng (2 mét)...</p>
+    <h2 >{data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.TDND1} 
+            </div>
+          ))}
+  
+      </div>
+    )}</h2>
+    <p >{data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.Noidung2} 
+            </div>
+          ))}
+  
+      </div>
+    )}</p>
     <p><Link to="/" className="btn btn-white" style={{color:"#EC008C",backgroundColor:"white",border:"none", width:"120px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
 
   </div>
@@ -251,8 +747,26 @@ function GD() {
 
   </div>
   <div className="section pink" style={{padding:"50px",backgroundColor:"#259E58"}}>
-    <h2 >Nhà hàng Thủy Tạ Đầm Sen</h2>
-    <p >Ẩm thực trong Công viên Văn hóa Đầm Sen gồm nhiều món ăn đường phố trong công viên, đặc biệt là nhà hàng Thủy Tạ, với không gian thưởng thức ẩm thực bên hồ.</p>
+    <h2 >{data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.TDND2} 
+            </div>
+          ))}
+  
+      </div>
+    )}</h2>
+    <p >{data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.Noidung4} 
+            </div>
+          ))}
+  
+      </div>
+    )}</p>
     <p><Link to="/" className="btn btn-white" style={{color:"#259E58",backgroundColor:"white",border:"none", width:"120px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
 
   </div>
@@ -267,16 +781,32 @@ function GD() {
 
   </div>
   <div className="section pink" style={{padding:"50px"}}>
-    <h2 >Cà phê Vườn Đá</h2>
-    <p >Cà phê Vườn đá có không gian rộng, và nhiều cây xanh tại Sài Gòn. Đặc biệt, trong khuôn viên cà phê có một bộ sưu tập đá khổng lồ, với nhiều hình dáng kỳ dị theo nhãn quan của mỗi người. Buổi sáng thứ bảy và chủ nhật, quán thường đông khách do có nhạc sống, với những ca khúc bất hủ của thập niên 70-80, do các ban nhạc chuyên nghiệp TP.HCM biểu diễn.</p>
+    <h2 >{data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.TDND3} 
+            </div>
+          ))}
+  
+      </div>
+    )}</h2>
+    <p >{data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+             {item.Noidung3} 
+            </div>
+          ))}
+  
+      </div>
+    )}</p>
     <p><Link to="/" className="btn btn-white" style={{color:"#EC008C",backgroundColor:"white",border:"none", width:"120px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
 
   </div>
-
 </div>
 <p style={{ fontSize: '0.8em',color:"#666666",marginLeft:"550px",marginTop:"-50px"}}>Vườn đến má vàng tại Công viên Văn hóa Đầm Sen.</p>
 </div>
-
 <div className="container mt-5" >
   <h2 className="text-center" style={{color:"#EC008C",lineHeight:"53.2px",fontFamily:"Bangers"}}> <b> NHỮNG LOẠI HÌNH DỊCH VỤ TRONG TÂM</b></h2>
  <div className='container'style={{padding:"20px"}}>
@@ -291,9 +821,7 @@ function GD() {
         (trừ thứ 3)
       </p>
       </div>
- 
     </div>
-     
     </div>
     <div className="col-4 ">
     <div className="card card1  service-card text-white" >
@@ -305,7 +833,6 @@ function GD() {
       Cuối tuần + Lễ: <b>7h30 - 19h00</b>
             </p>
       </div>
- 
     </div>
     </div>
     <div className="col-4 ">
@@ -317,124 +844,164 @@ function GD() {
       <p >
       Cuối tuần + Lễ: <b>7h30 - 21h00 </b></p>
       </div>
- 
+    </div>  
     </div>
-      
-    </div>
-
-  
-  
-   
   </div>
-
  </div>
- 
         </div>
+        <h2 className="text-center" style={{color:"#EC008C",lineHeight:"53.2px",fontFamily:"Bangers"}}> <b> GIÁ VÉ</b></h2>
+        <div className="container" style={{padding:20}} >
+          <div className="row">
+            <div className="col-md-6">
+              <div className=" green-card" style={{backgroundImage:`url(${img6})`,backgroundSize:"600px 400px"}}>
+                <div className="card-body">
+                  <div className="ic1">
+                    <img src={img5} alt="Vượn má vàng" />
+                    <img src={img7} alt="s" style={{marginTop:"-290px",marginLeft:"10px",width:"93px",height:"200px"}} />
 
-<div className="container" style={{padding:20}} >
-  <div className="row">
-    <div className="col-md-6">
-      <div className=" green-card" style={{backgroundImage:`url(${img6})`,backgroundSize:"600px 400px"}}>
-        <div className="card-body">
-          <div className="ic1">
-            <img src={img5} alt="Vượn má vàng" />
-            <img src={img7} alt="s" style={{marginTop:"-290px",marginLeft:"10px",width:"93px",height:"200px"}} />
+                  </div>
 
-          </div>
+                  <div style={{marginTop:"-190px",marginLeft:"200px",color:"white",fontFamily:"Nubito"}}>
+                  <h4 className="card-subtitle mb-2 "><b> {data.map((item, index) => (
+                    <div key={index}>
+                    {item.TV1} 
+                    </div>
+                  ))}</b></h4>
+                  <h4 className="card-subtitle mb-2 "> {data.map((item, index) => (
+                    <div key={index}>
+                    {item.GTV1} 
+                    </div>
+                  ))}</h4>
+                  <p className="card-text" style={{opacity:"70%"}}>{data.map((item, index) => (
+                    <div key={index}>
+                    {item.GiaVe1} 
+                    </div>
+                  ))}</p>
+                  <p><Link to="/" className="btn btn-white" style={{color:"#259E58",backgroundColor:"white",border:"none", width:"120px",marginTop:"20px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
+                  </div>
+                  </div>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className=" pink-card" style={{backgroundImage:`url(${img6})`,backgroundSize:"600px 400px"}}>
+                <div className="card-body">
+                  <div className="ic1">
+                    <img src={img5} alt="Vượn má vàng" />
+                    <img src={img8} alt="s" style={{marginTop:"-290px",marginLeft:"10px",width:"120px",height:"200px"}} />
 
-          <div style={{marginTop:"-190px",marginLeft:"200px",color:"white",fontFamily:"Nubito"}}>
-          <h4 className="card-subtitle mb-2 "><b>VÉ KHÁCH LẺ</b></h4>
-          <h4 className="card-subtitle mb-2 ">80k - 380k/người</h4>
-          <p className="card-text" style={{opacity:"70%"}}>Là loại vé được bán tại các quầy trong công viên cho từng khách. Đây là các loại vé trọn gói đã được trừ vào vé công của quý khách.</p>
-          <p><Link to="/" className="btn btn-white" style={{color:"#259E58",backgroundColor:"white",border:"none", width:"120px",marginTop:"20px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
+                  </div>
+
+                  <div style={{marginTop:"-190px",marginLeft:"200px",color:"white",fontFamily:"Nubito"}}>
+                  <h4 className="card-subtitle mb-2 "><b> {data.map((item, index) => (
+                    <div key={index}>
+                    {item.TV2} 
+                    </div>
+                  ))}</b></h4>
+                  <h4 className="card-subtitle mb-2 "> {data.map((item, index) => (
+                    <div key={index}>
+                    {item.GTV} 
+                    </div>
+                  ))}</h4>
+                  <p className="card-text" style={{opacity:"70%"}}>{data.map((item, index) => (
+                    <div key={index}>
+                    {item.GiaVe2} 
+                    </div>
+                  ))}</p>
+                  <p><Link to="/" className="btn btn-white" style={{color:"#EC008C",backgroundColor:"white",border:"none", width:"120px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
+                  </div>
+                  </div>
+              </div>
+            </div>
           </div>
+          <br />
+          <div className="row">
+            <div className="col-md-6">
+              <div className=" pink-card" style={{backgroundImage:`url(${img6})`,backgroundSize:"600px 400px"}}>
+
+                <div className="card-body">
+                  <div className="ic1">
+                    <img src={img5} alt="Vượn má vàng" />
+                    <img src={img9} alt="s" style={{position:"absolute",marginLeft:"-210px",marginTop:"15px", width:"180px",height:"150px",  }} />
+                    <button className="service-title" style={{backgroundColor:"#F3F7E9",color:"#D9248F",marginTop:"-10px",marginLeft:"-30px",zIndex:"10"}}>Dịch vụ</button>
+
+                  </div>
+                  <div style={{marginTop:"-170px",marginLeft:"200px",color:"white",fontFamily:"Nubito"}}>
+                  <h4 className="card-subtitle mb-2 "><b>
+                    {data.map((item, index) => (
+                    <div key={index}>
+                    {item.TV3} 
+                    </div>
+                  ))}</b></h4>
+                  <h4 className="card-subtitle mb-2 ">{data.map((item, index) => (
+                    <div key={index}>
+                    {item.GTV2} 
+                    </div>
+                  ))}</h4>
+                  <p className="card-text" style={{opacity:"70%"}}>{data.map((item, index) => (
+                    <div key={index}>
+                    {item.GiaVe
+                    } 
+                    </div>
+                  ))}</p>
+                  <p><Link to="/" className="btn btn-white" style={{color:"#EC008C",backgroundColor:"white",border:"none", width:"120px",marginTop:"48px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
+                  </div>
+                  </div>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className=" green-card" style={{backgroundImage:`url(${img6})`,backgroundSize:"600px 400px"}}>
+                <div className="card-body">
+                  <div className="ic1">
+                    <img src={img5} alt="Vượn má vàng" />
+                    <img src={img10} alt="s" style={{marginTop:"-290px",marginLeft:"-20px",width:"200px",height:"200px"}} />
+
+                  </div>
+
+                  <div style={{marginTop:"-190px",marginLeft:"200px",color:"white",fontFamily:"Nubito"}}>
+                  <h4 className="card-subtitle mb-2 "><b>{data.map((item, index) => (
+                    <div key={index}>
+                    {item.VT4
+                    } 
+                    </div>
+                  ))} </b></h4>
+                  <h4 className="card-subtitle mb-2 ">{data.map((item, index) => (
+                    <div key={index}>
+                    {item.GTV3
+                    } 
+                    </div>
+                  ))}
+                  </h4>
+                  <p className="card-text" style={{opacity:"70%"}}>{data.map((item, index) => (
+                    <div key={index}>
+                    {item.Giave
+                    } 
+                    </div>
+                  ))}
+                  </p>
+                  <p><Link to="/" className="btn btn-white" style={{color:"#259E58",backgroundColor:"white",border:"none", width:"120px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
+                  </div>
+                  </div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div className='container' style={{padding:"20px"}}>
+              <h2 className="ghi-chu">GHI CHÚ:</h2>
+
+                <ul style={{color:"#858585",fontSize:"18px"}}>
+                {data.map((item, index) => (
+                            <div key={index}>
+                              <div dangerouslySetInnerHTML={{ __html: item.Ghichu }} />
+                            </div>
+                          ))}
+                </ul>
+              </div>
       </div>
-    </div>
-    <div className="col-md-6">
-      <div className=" pink-card" style={{backgroundImage:`url(${img6})`,backgroundSize:"600px 400px"}}>
-        <div className="card-body">
-          <div className="ic1">
-            <img src={img5} alt="Vượn má vàng" />
-            <img src={img8} alt="s" style={{marginTop:"-290px",marginLeft:"10px",width:"120px",height:"200px"}} />
-
-          </div>
-
-          <div style={{marginTop:"-190px",marginLeft:"200px",color:"white",fontFamily:"Nubito"}}>
-          <h4 className="card-subtitle mb-2 "><b>VÉ THỂ DỤC</b></h4>
-          <h4 className="card-subtitle mb-2 ">5k/vé/người</h4>
-          <p className="card-text" style={{opacity:"70%"}}>Quý khách có thể vào CVVH Đầm Sen để tập thể dục quanh hồ thoáng mát vào mỗi buổi sáng, trên diện tích 32 hecta với nhiều cây xanh và không khí trong lành</p>
-          <p><Link to="/" className="btn btn-white" style={{color:"#EC008C",backgroundColor:"white",border:"none", width:"120px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
-          </div>
-          </div>
-      </div>
-    </div>
-  </div>
-  <br />
-  <div className="row">
-    <div className="col-md-6">
-      <div className=" pink-card" style={{backgroundImage:`url(${img6})`,backgroundSize:"600px 400px"}}>
-
-        <div className="card-body">
-          <div className="ic1">
-            <img src={img5} alt="Vượn má vàng" />
-            <img src={img9} alt="s" style={{position:"absolute",marginLeft:"-210px",marginTop:"15px", width:"180px",height:"150px",  }} />
-            <button className="service-title" style={{backgroundColor:"#F3F7E9",color:"#D9248F",marginTop:"-10px",marginLeft:"-30px",zIndex:"10"}}>Dịch vụ</button>
-
-          </div>
-          <div style={{marginTop:"-170px",marginLeft:"200px",color:"white",fontFamily:"Nubito"}}>
-          <h4 className="card-subtitle mb-2 "><b>VÉ DỊCH VỤ</b></h4>
-          <h4 className="card-subtitle mb-2 ">120k - 380k/vé/người</h4>
-          <p className="card-text" style={{opacity:"70%"}}>Vé dịch vụ gồm có các dịch vụ như xe điện, giữ đồ, cho thuê xe đẩy, xe nôi, xe lăn.</p>
-          <p><Link to="/" className="btn btn-white" style={{color:"#EC008C",backgroundColor:"white",border:"none", width:"120px",marginTop:"48px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
-          </div>
-          </div>
-      </div>
-    </div>
-    <div className="col-md-6">
-      <div className=" green-card" style={{backgroundImage:`url(${img6})`,backgroundSize:"600px 400px"}}>
-        <div className="card-body">
-          <div className="ic1">
-            <img src={img5} alt="Vượn má vàng" />
-            <img src={img10} alt="s" style={{marginTop:"-290px",marginLeft:"-20px",width:"200px",height:"200px"}} />
-
-          </div>
-
-          <div style={{marginTop:"-190px",marginLeft:"200px",color:"white",fontFamily:"Nubito"}}>
-          <h4 className="card-subtitle mb-2 "><b>VÉ TẬP THỂ </b></h4>
-          <h4 className="card-subtitle mb-2 ">120k - 380k/vé/người</h4>
-          <p className="card-text" style={{opacity:"70%"}}>Nhóm bạn, cơ quan đoàn thể, Trường học, công ty du lịch, công nhân, chúng tôi có giá vé tập thể ưu đãi cho Quý cơ quan khi đến tham quan vui chơi tại CVVH Đầm Sen</p>
-          <p><Link to="/" className="btn btn-white" style={{color:"#259E58",backgroundColor:"white",border:"none", width:"120px"}}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>    </p>
-          </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div className='container' style={{padding:"20px"}}>
-      <h2 className="ghi-chu">GHI CHÚ:</h2>
-
-<ul style={{color:"#858585",fontSize:"18px"}}>
-  <li className="list-item"><b>Giờ bán vé:</b> 8 giờ 00 - 17 giờ 30</li>
-  <li className="list-item"><b>Vé mua từ cổng:</b> là vé được bán tại 2 cổng chính số 1A Lạc Long Quân (hoặc số 3 Hòa Bình), cổng số 2 (nhà hàng Thủy Tạ).</li>
-  <li className="list-item"><b>Vé mua trong công viên:</b> là loại vé được bán tại các quầy trong công viên. Đây là các loại vé trọn gói đã được trừ vé vào cổng của quý khách.</li>
-  <li className="list-item"><b>Vé từ cổng Công viên nước:</b> là loại vé bán từ cổng liên thông phía công viên nước. Đây là vé dành cho các du khách vui chơi phía công viên nước, và muốn sang CVVH Đầm Sen.</li>
-  <li className="list-item"><b>&gt;1.4m:</b> người cao trên 1.4m</li>
-  <li className="list-item"><b>&lt;1.4m: </b>người cao dưới 1.4m</li>
-  <li className="list-item"><b>Trẻ em dưới 1m được miễn phí</b> (nhưng phải đi cùng với người lớn).</li>
-  <li className="list-item"><b>Có vé mời, được giảm 50% vé trọn gói</b> (áp dụng mua từ cổng).</li>
-</ul>
-
-      </div>
-
-</div>
-
      </div>
-          </div>
+      </div>
           <footer style={{ backgroundColor: "#259E58", color: "white" }}>
   <div className="" style={{ padding: "20px" }}>
-    
+  
     <div className="row" style={{ fontFamily: "Nunito", lineHeight: "27px", fontSize: "18px" }}>
       <div className="col-md-4">
       <h5 style={{ fontFamily: "Bangers", fontStyle: "italic" }}><b>TRỰC THUỘC</b></h5>
@@ -457,11 +1024,8 @@ function GD() {
           </li>
           <br />
           <h5 style={{ color: "white" }}><b> GIỜ MỞ CỬA</b></h5>
-
           </ul>
-
           <ul style={{  padding: 0 }}>
-
            <li>Ngày thường: <b>8h00 - 18h00</b> (bán vé 7h30 - 16h00)</li>
             <li>Cuối tuần + Lễ: <b>7h30 - 21h00</b> (bán vé từ 7h30 - 19h00)</li>
              <li>Công viên nghỉ <b>thứ 3</b> hàng tuần</li> 
@@ -489,9 +1053,6 @@ function GD() {
         </div>
       </div>
     </div>
-  
-   
-  
   );
 }
 

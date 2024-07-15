@@ -107,7 +107,7 @@ function WS() {
       });
     const fetchData = async () => {
       try {
-        const quanlyRef = await getDocs(collection(firestore, "users"));
+        const quanlyRef = await getDocs(collection(firestore, "WS"));
         const fetchedData: DocumentData[] = [];
 
         quanlyRef.forEach((doc) => {
@@ -217,15 +217,43 @@ function WS() {
     <div className="row">
       <div className="col-8" style={{}}>
       <div className='container' style={{borderBottom:"1px solid #259E58" ,color: '#259E58',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
-     <b >NHẠC NƯỚC ĐẦM SEN WATER SHOW</b>
+     <b > {data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+          {item.Tieude} 
+            </div>
+          ))}
+  
+      </div>
+    )} </b>
     </div> 
     <div className='container'>
     <div className='row' style={{}}>
         <div className="col-3" style={{color:"#EC008C",fontFamily:"Nunito"}}>
-        <FontAwesomeIcon icon={faCalendar} /> Sắp diễn ra      
+        {data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+        <FontAwesomeIcon icon={faCalendar} />  {item.Danhmuc} 
+            </div>
+          ))}
+  
+      </div>
+    )} 
+          
       </div>
       <div className="col-3" style={{color:"#666666",fontFamily:"Nunito"}}>
-      <FontAwesomeIcon icon={faClock} /> 11/02/2020
+      {data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+            <FontAwesomeIcon icon={faClock} />  {item.Ngay} 
+            </div>
+          ))}
+  
+      </div>
+    )} 
       </div>
       </div>   
       </div>  
@@ -235,7 +263,16 @@ function WS() {
         Mô tả
        </div>
        <div style={{borderBottom:"2px solid #EC008C"}}></div>
-       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>Sắp ra mắt nhạc nước Đầm Sen Water Show</div>
+       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}> {data.length > 0 && (
+      <div>
+          {data.map((item, index) => (
+            <div key={index}>
+          {item.Mota} 
+            </div>
+          ))}
+  
+      </div>
+    )} </div>
      </div>
     </div>      
    
@@ -243,7 +280,11 @@ function WS() {
     <div className="container">
       <div className='row'>
         <div className='col-9'>
-    <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>CVVH Đầm Sen chuẩn bị ra mắt công trình nhạc nước Đầm Sen Water Show với tổng chiều dài biểu diễn hơn 100 mét, kết hợp với khói lửa, công nghệ Laser dance và màn hình khổng lồ hình rẽ quạt, được tạo bằng nước với chiều ngang 40 mét, và chiều cao 20 mét.</p></div>
+    <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>          {data.map((item, index) => (
+            <div key={index}>
+          {item.Noidung1} 
+            </div>
+          ))}</p></div>
     <div className='col-3'></div>
     </div>
     <img src={img2} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
@@ -251,11 +292,17 @@ function WS() {
     <div className='row'>
         <div className='col-9'>
     <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
-  <p>      Sau đại dịch Covid 19, CVVH Đầm Sen đã dần phục hồi trở lại. 
-      Đặc biệt là tiếp tục triển khai dự án nhạc nước Đầm Sen Water Show.
-       Đây được xem là công trình nhạc nước hoàn toàn mới tại TP.HCM, 
-       được biểu diễn ngay trên mặt hồ của công viên.</p>
-       <p>Điểm đặc biệt của công trình nhạc nước này, là hình ảnh 3D được chiếu trên màn hình rẽ quạt khổng lồ được tạo bằng nước, rộng 40 mét (cao 20 mét). Hệ thống vòi phun nhạc nước hiện đại trên thê giới hiện nay, được lập trình kỹ lưỡng đến từng giây. Hệ thống khói lửa được tạo ra ngay trên mặt hồ. Đồng thời, hệ thống ánh sáng laser hiện đại được nhập từ Châu Âu, và hệ thống âm thanh với cả chục chiếc loa công suất lớn, đặt xung quanh hồ để tạo hiệu ứng cho người xem.</p>
+  <p>                {data.map((item, index) => (
+            <div key={index}>
+          {item.Noidung2} 
+            </div>
+          ))}</p>
+       <p>        
+          {data.map((item, index) => (
+            <div key={index}>
+          {item.Noidung3} 
+            </div>
+          ))}</p>
        </div>
        </div>
 
@@ -266,8 +313,8 @@ function WS() {
     <div className='row'>
         <div className='col-9'>
     <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
-  <p>   Trước đây, CVVH Đầm Sen đã từng có công trình nhạc nước, nhưng với quy mô nhỏ tại khu vực quảng trường La Mã. Rồi đến tháng tư năm 2019, Công ty Cổ phần Dịch vụ Du lịch Phú Thọ (Phuthotourist – cơ quan chủ quản của Đầm Sen) đã quyết định đầu tư giai đoạn 1 của dự án nhạc nước trên mặt hồ với công trình màn nước laser show. Đến nay, giai đoạn 2 của hệ thống đang dần hoàn thiện trong tháng 11. Dự kiến Đầm Sen Water Show sẽ chính thức ra mắt vào đầu tháng 12/2020, để kịp phục vụ du khách vào những sự kiện cuối năm.  </p>
-       <p>Ban lãnh đạo Phuthotourist cũng đang cân nhắc liệu có cho phép du khách được thưởng thức nhạc nước bằng thuyền Pedalo trên mặt hồ. Nếu được, chắc chắn đây sẽ là điểm thú vị cho du khách được trải nghiệm cảm giác ở ngồi trên nước và xem nhạc nước như thế nào.</p>
+  <p>   Trước đây, CVVH Đầm Sen đã từng có công trình nhạc nước, nhưng với quy mô nhỏ tại khu vực <Link to="/">quảng trường La Mã</Link>. Rồi đến tháng tư năm 2019, Công ty Cổ phần <Link to="/"> Dịch vụ Du lịch Phú Thọ </Link> (Phuthotourist – cơ quan chủ quản của Đầm Sen) đã quyết định đầu tư giai đoạn 1 của dự án nhạc nước trên mặt hồ với <Link to="/">công trình màn nước laser show</Link>. Đến nay, giai đoạn 2 của hệ thống đang dần hoàn thiện trong tháng 11. Dự kiến Đầm Sen Water Show sẽ chính thức ra mắt vào đầu tháng 12/2020, để kịp phục vụ du khách vào những sự kiện cuối năm.  </p>
+       <p>Ban lãnh đạo Phuthotourist cũng đang cân nhắc liệu có cho phép du khách được thưởng thức nhạc nước bằng <Link to="/">thuyền Pedalo</Link> trên mặt hồ. Nếu được, chắc chắn đây sẽ là điểm thú vị cho du khách được trải nghiệm cảm giác ở ngồi trên nước và xem nhạc nước như thế nào.</p>
        </div>
        </div>
 

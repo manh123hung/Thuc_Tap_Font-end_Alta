@@ -6,14 +6,14 @@
   margin: 50px auto;
 }
 
-.carousel-controls {
+.carousel-controls6 {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
   justify-content: center; /* Căn chỉnh các nút mũi tên ở giữa */
 }
 
-.carousel-controls button {
+.carousel-controls6 button {
   background-color: transparent;
   border: none;
   padding: 10px;
@@ -53,17 +53,17 @@
 }
 
 /* Thêm kiểu cho mũi tên */
-.carousel-controls button {
+.carousel-controls6 button {
   position: absolute; /* Đặt nút mũi tên ở vị trí tuyệt đối */
   top: 178%; /* Căn chỉnh nút mũi tên ở giữa theo chiều dọc */
   transform: translateY(50%); /* Di chuyển nút mũi tên lên trên */
 }
 
-.carousel-controls button:first-child {
+.carousel-controls6 button:first-child {
   left: 540px; /* Đặt nút mũi tên trái */
 }
 
-.carousel-controls button:last-child {
+.carousel-controls6 button:last-child {
   right: 300px; /* Đặt nút mũi tên phải */
 }
 .material-icons{
