@@ -890,30 +890,23 @@ const [logo3, setlogo3] = useState("");
               if (slide1) { // Kiểm tra xem hình ảnh đã được tải về chưa
                 return (
                   <>
-                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',position:"fixed",marginLeft:"1180px",marginTop:"500px" }}>
+                 
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',position:"fixed",marginLeft:"1180px",marginTop:"500px" }}>
+      
       <div className="button-container">
         <button className='bt12a'><span className='icon2'><FontAwesomeIcon icon={faPhone}color="green" /> </span></button>
         <button className='bt12a'><span className='icon2'><FontAwesomeIcon icon={faComment} color="green"/> </span></button>
       </div>
+     
       </div>
-              <div className="map-container bs3">
-            <img src={slide1} alt="caijdo" />
-            {infoData.map((info, index) => (
-              <div key={index} style={{ 
-                position: 'absolute', 
-                top: `${info.top}px`, 
-                left: `${info.left}px` 
-              }}>
-                <div className="info-wrapper"> 
-                  <InfoComponent 
-                    title={info.title} 
-                    content={info.content} 
-                    link={info.link} // Truyền link cho InfoComponent
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+      <div>           
+               <div className="zoom-buttons" >
+  <div className="zoom-button">-</div>
+  <div className="zoom-button">+</div>
+</div>
+</div>
+        
+          
         </>
       );
     } else {
@@ -1066,7 +1059,30 @@ const [logo3, setlogo3] = useState("");
               marginTop:-40
             }}>
                       {rightSideContent}
-
+                      <div className="map-container bs3">
+             
+             <img src={slide1} alt="caijdo" />
+           
+ 
+             {infoData.map((info, index) => (
+               <div key={index} style={{ 
+                 position: 'absolute', 
+                 top: `${info.top}px`, 
+                 left: `${info.left}px` 
+               }}>
+               
+ 
+                 <div className="info-wrapper"> 
+                   <InfoComponent 
+                     title={info.title} 
+                     content={info.content} 
+                     link={info.link} // Truyền link cho InfoComponent
+                   />
+                 </div>
+               </div>
+             ))}
+              
+           </div>
             </div>
           </div>
         </div>
