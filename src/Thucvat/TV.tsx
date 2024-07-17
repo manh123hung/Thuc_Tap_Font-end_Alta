@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './sukien.css'; // Tệp CSS cho kiểu dáng
+import './TV.css'; // Tệp CSS cho kiểu dáng
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCalendar, faComment, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-solid-svg-icons'; // Icon "Thời gian"
@@ -28,7 +28,384 @@ import '@splidejs/react-splide/css/core';
 
 
 function TV() {
- 
+  interface Tab {
+    id: string;
+    label: string;
+    content: JSX.Element;
+  }
+  const [activeTab, setActiveTab] = useState<string>('troChoi');
+  const tabs: Tab[] = [
+    {
+      id: 'troChoi',
+      label: 'Trò Chơi',
+      content: (
+
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+           <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "14px" }}>
+  <div className='col-3'>
+    <h5  style={{ textDecoration: 'none', color: '#259E58' }}> <b>CẢM GIÁC MẠNH</b> </h5>
+  </div>
+  <div className='col-3'>
+    <h5  style={{ textDecoration: 'none', color: '#259E58' }}><b>TƯƠNG TÁC ẢO </b></h5>
+  </div>
+  <div className='col-3'>
+    <h5  style={{ textDecoration: 'none', color: '#259E58' }}><b>GIẢI TRÍ</b></h5>
+  </div>
+  <div className='col-3'>
+    <h5  style={{ textDecoration: 'none', color: '#259E58' }}><b>THIẾU NHI</b></h5>
+  </div>
+</div>
+ <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>01</span>
+    <Link to="/CCNL" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Cá Chép Nhào Lộn</Link>
+  </div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>14</span>
+    <Link to="/cinemax8d" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Xem Phim Cinemax 8D</Link>
+  </div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>19</span>
+    <Link to="/bangdang" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Băng Đăng</Link>
+  </div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>23</span>
+    <Link to="/echnhay" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Ếch Nhảy</Link>
+  </div>
+</div>
+        <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>02</span>&nbsp;
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Lâu Đài Kinh dị</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>15</span>&nbsp;
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đua Xe Turbo Racing</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>20</span>&nbsp;
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đu Quay Đứng Ferris Wheel</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>24</span>&nbsp;
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Điệu Nhảy Thiên Thần</Link>
+      </div>
+    </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>03</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Phượng Hoàng Bay</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>16</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>9D Virtual Reality</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>21</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Monorail</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>25</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Khinh Khí Cầu Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>04</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Spinning Coaster</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>17</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Bắn Súng Run Raider</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>22</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đạp Vịt Pedalo</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>26</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Hải Cầu Vượt Thác</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>05</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Xe Bay Ảo Tưởng</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>18</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Lâu Đài Kỳ Thú</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>62</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Massage Cá</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>27</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Ngựa Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>06</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Thảm Bay</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>28</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Kids Playground</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>07</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Quay Thần Tốc</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>29</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Khủng Long Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>08</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Power Surge</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>30</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Siêu Nhân Robot</Link>
+        </div>
+      </div>
+      <div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>09</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Tàu Vượt Thác</Link>
+  </div>
+  <div className='col-3'></div>
+  <div className='col-3'></div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>31</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Rồng Lượn</Link>
+  </div>
+</div>
+<div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>10</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Roller Coaster</Link>
+  </div>
+  <div className='col-3'></div>
+  <div className='col-3'></div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>32</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Lượn Tuổi Thơ</Link>
+  </div>
+</div>
+<div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>11</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Xoay Không Gian</Link>
+  </div>
+  <div className='col-3'></div>
+  <div className='col-3'></div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>33</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Pháo Đài Bay</Link>
+  </div>
+</div>
+<div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>
+      <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>12</span>&nbsp;Đấu Trường Bò Tót
+    </Link>
+  </div>
+  <div className='col-3'></div>
+  <div className='col-3'></div>
+  <div className='col-3'>
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>
+      <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>34</span>&nbsp;Nhà Hơi Liên Hoàn
+    </Link>
+  </div>
+</div>   </div>
+
+    <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+      <div className='col-3'>
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D', display: 'flex', alignItems: 'center' }}>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>13</span>
+          Xe Điện Đụng
+        </Link>
+      </div>
+      <div className='col-3'></div>
+      <div className='col-3'></div>
+      <div className='col-3'></div>
+    </div>
+    </div>
+      )
+    },
+    {
+      id: 'vuonThu',
+      label: 'Vườn Thú',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+         <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>35</span> 
+            <Link to="/KDG" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Khỉ Đuôi Dài</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>38</span> 
+            <Link to="/hamachauPhi" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Hà Mã Châu Phi</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>41</span> 
+            <Link to="/thuycung" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Thủy Cung</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>44</span> 
+            <Link to="/cahoatien" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cá Hỏa Tiền</Link> </div>
+
+           </div>
+           <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>36</span> 
+            <Link to="/gaunhua" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Gấu Ngựa</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>39</span> 
+            <Link to="/voichauA" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Voi Châu Á</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>42</span> 
+            <Link to="/vuonchim" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Chim</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>45</span> 
+            <Link to="/denui" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đê Núi</Link> </div>
+
+           </div>
+           <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>37</span> 
+            <Link to="/duoiuruisumatra" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đười Ươi Sumatra</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>40</span> 
+            <Link to="/vuondenmavang" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vượn Đen Má Vàng</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>43</span> 
+            <Link to="/hocahaituong" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Hồ Cá Hải Tượng</Link> </div>
+            <div className='col-3'> </div>
+
+           </div>
+          </div>
+      )
+    },
+    {
+      id: 'canhDep',
+      label: 'Cảnh Đẹp',
+      content: (
+        <div className="container">
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>46</span> 
+   <Link to="/namtuthuonguyen" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nam Tử Thượng Uyển</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>51</span> 
+   <Link to="/QTVH" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường Vua Hùng </Link> </div>
+
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>47</span> 
+   <Link to="/daolanrung" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đảo Lan Rừng</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>52</span> 
+   <Link to="/quangtruongaulac" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường Âu Lạc</Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>48</span> 
+   <Link to="/vuonnhatban" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Nhật Bản</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>53</span> 
+   <Link to="/quangtruonglama" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường La Mã</Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>49</span> 
+   <Link to="/vuonxuongrong" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Xuống Rồng</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>54</span> 
+   <Link to="/caucuukhu" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cầu Cửu Khúc </Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>50</span> 
+   <Link to="/diademSongAo" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Địa Điểm Sống Ảo</Link></div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+</div>
+</div>
+      )
+    },
+    {
+      id: 'sanKhau',
+      label: 'Sân Khấu',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>55</span> 
+          <Link to="/sankhaudemmen" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Sân Khấu Đê Mèn</Link></div>
+          <div> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>56</span> 
+          <Link to="/rapxiecthu" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Rạp Xiếc Thú</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>57</span> 
+          <Link to="/sankhaungoisao" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Sân Khấu Ngôi Sao </Link> </div>
+          <div className='col-3'> </div>
+
+         </div>
+      </div>
+      )
+    },
+    {
+      id: 'giaoDuc',
+      label: 'Giáo Dục Trải Nghiệm',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>58</span> 
+          <Link to="/nhatrungbaytieuban" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nhà Trưng Bày Tiêu Bản Động Vật</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>59</span> 
+          <Link to="/TV" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Thực Vật</Link></div>
+       
+
+         </div>
+      </div>
+      )
+    },
+    {
+      id: 'amThuc',
+      label: 'Ẩm Thực',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>60</span> 
+          <Link to="/nhahangthuyta" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nhà Hàng Thủy Tạ</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>61</span> 
+          <Link to="/caphevuond" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cà Phê Vườn Đá</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>63</span> 
+          <Link to="/damsenplaza" style={{ textDecoration: 'none', color: '#4D4D4D' }}> DamSen Plaza </Link> </div>
+         </div>
+      </div>
+      )
+    }
+  ];
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+  };
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -131,7 +508,7 @@ function TV() {
       });
     const fetchData = async () => {
       try {
-        const quanlyRef = await getDocs(collection(firestore, "users"));
+        const quanlyRef = await getDocs(collection(firestore, "TV"));
         const fetchedData: DocumentData[] = [];
 
         quanlyRef.forEach((doc) => {
@@ -146,27 +523,174 @@ function TV() {
 
     fetchData();
   }, [navigate]);
+  const [showMenu, setShowMenu] = useState(true);
+  const [rightSideContent, setRightSideContent] = useState<React.ReactNode>(null); // Khởi tạo bằng null
+  const createRightSideContent = () => {
+      return (
+        <>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',position:"fixed",marginLeft:"1180px",marginTop:"600px",zIndex: 100 }}>
+      <div className="button-container">
+        <button className='bt12a'><span className='icon2'><FontAwesomeIcon icon={faPhone}color="green" /> </span></button>
+        <button className='bt12a'><span className='icon2'><FontAwesomeIcon icon={faComment} color="green"/> </span></button>
+      </div>
+    </div>
+        </>
+      );
+    
+  };
+  useEffect(() => {
+    setRightSideContent(createRightSideContent());
+  }, []);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+    if (!showMenu) {
+      // Khi menu ẩn đi, cập nhật rightSideContent thành nội dung của tab hiện tại
+      setRightSideContent(
+        <div style={{margin:"100px",position:"fixed",zIndex: 100}}>
+          <table style={{ width: '100%', borderCollapse: 'collapse'}}>
+            <thead>
+              <tr style={{ backgroundColor: '#f2f2f2' }}>
+                {tabs.map((tab) => (
+                  <th
+                    key={tab.id}
+                    style={{
+                      padding: '10px',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      backgroundColor: tab.id === activeTab ? '#e6e6e6' : 'inherit'
+                    }}
+                    onClick={() => handleTabClick(tab.id)}
+                  >
+                    {tab.label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+          </table>
+
+          <div >
+            {tabs.find((tab) => tab.id === activeTab)?.content}
+          </div>
+        </div>
+      );
+    } else {
+      // Khi menu hiển thị, cập nhật rightSideContent thành nội dung slide
+      setRightSideContent(createRightSideContent());
+    }
+  };
+
+  // Sử dụng useEffect để cập nhật rightSideContent khi activeTab thay đổi
+  useEffect(() => {
+    if (!showMenu) {
+      setRightSideContent(
+        <div style={{marginTop:"25px",backgroundColor:"white",position:"fixed",zIndex: 100,width:"1240px"}}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr style={{borderBottom:"1px solid black"}}>
+              {tabs.map((tab) => (
+                <th
+                  key={tab.id}
+                  style={{
+                    padding: '10px',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    backgroundColor: "white",
+                    border: "none", // Loại bỏ border
+                    color: tab.id === activeTab ? '#EC008C' : 'inherit', 
+                    borderBottom: tab.id === activeTab ? '2px solid #EC008C' : 'none', // Giữ nguyên borderBottom
+                  }}
+                  onClick={() => handleTabClick(tab.id)}
+                >
+                  {tab.label}
+
+                </th>
+
+              ))}
+              
+            </tr>
+            
+          </thead>
+        </table>
+      
+        <div>
+          {tabs.find((tab) => tab.id === activeTab)?.content}
+        </div>
+      </div> 
+      );
+    } else {
+      setRightSideContent(createRightSideContent());
+    }
+  }, [activeTab, showMenu]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
   const data1 = [
     {
       image: pc9,
-      title: 'Địa điểm sống ảo',
-      description: '20/02/2020',
+      title:  <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T9}} />
+        </div>
+      ))}
+    </div>,
+      description:  <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.D09}} />
+        </div>
+      ))}
+    </div>,
     },
     {
       image: pc10,
-      title: 'Quảng trường Âu Lạc',
-      description: '20/02/2020',
+      title:  <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T10}} />
+        </div>
+      ))}
+    </div>,
+      description:  <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.D10}} />
+        </div>
+      ))}
+    </div>,
     },
     {
       image: pc11,
-      title: 'Quảng trường La Mã',
-      description: '20/02/2020',
+      title: <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T11}} />
+        </div>
+      ))}
+    </div>,
+      description:  <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.D11}} />
+        </div>
+      ))}
+    </div>,
     }, {
       image: pc12,
-      title: 'Cầu cửu khúc',
-      description: '20/02/2020',
+      title:  <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T12}} />
+        </div>
+      ))}
+    </div>,
+      description:  <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.D12}} />
+        </div>
+      ))}
+    </div>,
     }, {
       image: pc10,
       title: 'Quảng trường',
@@ -187,13 +711,14 @@ function TV() {
       <div className="row">
       <div className="col-md-3 left-side" style={{ width: '250px' }}>   
           <div className="left-side-content">
-          <div className="menu-icon">≡</div>
-          <Link to="/" className="menu-item" >TRANG CHỦ</Link>
+          <button className="menu-icon" style={{border:"none"}} onClick={toggleMenu}>
+              {showMenu ? '≡' : 'x'}
+            </button>            <Link to="/" className="menu-item" >TRANG CHỦ</Link>
           <Link to="/khampha" className="menu-item" style={{ textDecoration: 'underline', color: 'black' }}>KHÁM PHÁ</Link>
         
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:'white'}}>
   <DropdownItem className="btn btn-white" ><Link to="/LSHH" >Lịch sử hình thành</Link></DropdownItem>
-  <DropdownItem className="btn btn-white" ><Link to="/settings" >Thành viên</Link></DropdownItem>
+  <DropdownItem className="btn btn-white" ><Link to="/Thanhvien" >Thành viên</Link></DropdownItem>
   <DropdownItem className="btn btn-white" ><Link to="/BM" >Chính sách bảo mật</Link></DropdownItem> 
 </Dropdown>
          
@@ -233,37 +758,70 @@ function TV() {
           marginTop: -60,
         }}>
            <div style={{backgroundColor:"rgb(230, 255, 210)"}} >
-     
+           {rightSideContent}
+
    <div className='container bd01'>
    <header className="header" style={{padding:"40px"}}>
       <div className='container' style={{ color: '#259E58',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
-     <b style={{borderBottom:"1px solid #259E58"}}>THỰC VẬT</b>
+     <b > <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div style={{borderBottom:"1px solid #259E58"}} dangerouslySetInnerHTML={{ __html: item.Tieude}} />
+        </div>
+      ))}
+    </div></b>
 
     </div> 
     <div className='container'>
     <div className='row' style={{}}>
         <div className="col-2" style={{color:"#EC008C",fontFamily:"Nunito"}}>
-        <FontAwesomeIcon icon={faCalendar} /> Giáo dục trải nghiệm      
-      </div>
+        {data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.Danhmuc} 
+                              </div>
+                            ))}      </div>
       <div className="col-3" style={{color:"#666666",fontFamily:"Nunito"}}>
-      <FontAwesomeIcon icon={faClock} /> 29/06/2020
-      </div>
+      {data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faClock} />  {item.Ngay} 
+                              </div>
+                            ))}      </div>
       </div>   
       </div>  
     </header>
     <div className='container'><div className="content1" style={{backgroundImage:`url(${img4})`}}>
-  <h1 className="display-4">Hoa sen</h1>
+  <h1 className="display-4"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.TD1}} />
+        </div>
+      ))}
+    </div></h1>
   <div className='row'>
-    <div className='col-7'><p className="cp">Hoa sen từ lâu đã được biết tới là loài hoa thanh khiết có ý nghĩa truyền thống lâu đời ở phương Đông. Sen mọc và lớn lên giữa bùn lầy nhưng không hề vì bùn mà bị ô nhiễm, vấy bẩn.</p>
+    <div className='col-7'><p className="cp"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.ND1}} />
+        </div>
+      ))}
+    </div></p>
     <div className='container'>
     <div className='container'>
     <div className='container' style={{fontFamily:"Nunito"}}>
     <div className='row' style={{}}>
         <div className="col-2">
-        <FontAwesomeIcon icon={faCalendar} /> Thực vật      
+        {data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.Danhmuc} 
+                              </div>
+                            ))}   
       </div>
       <div className="col-3">
-      <FontAwesomeIcon icon={faClock} /> 29/06/2020
+       {data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faClock} />  {item.Ngay} 
+                              </div>
+                            ))}
       </div>
 
         </div>
@@ -296,17 +854,37 @@ function TV() {
     <div className="card">
         <img src={pc1} className="card-img-top" alt="Dam Sen Special" />
         <div className="card-body" > 
-          <h5 className="card-title">Cây Dương Xỉ</h5>
-          <p className="card-text">Là một trong những loài thực vật thuộc nhóm thực vật không có hoa và không có hạt. Nó sinh sản thông qua bào tử và thường được tìm thấy làm cây cảnh.</p>
+          <h5 className="card-title"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T1}} />
+        </div>
+      ))}
+    </div></h5>
+          <p className="card-text"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.N1}} />
+        </div>
+      ))}
+    </div></p>
           <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '25px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} />Thực vật</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</button>
             </div>
             <Link to={"/"} className="btn btn-success">Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
 
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 06/11/2020</button>
+            <button type="button" className="btn btn-sm">{data.map((item, index) => (
+                              <div key={index}>
+                              <FontAwesomeIcon icon={faClock} />  {item.D01} 
+                              </div>
+                            ))}</button>
           </div>
         </div>
       </div>
@@ -315,16 +893,36 @@ function TV() {
     <div className="card">
         <img src={pc2} className="card-img-top" alt="Dam Sen Lake Show" />
         <div className="card-body" > 
-          <h5 className="card-title">Cây Hoa Giấy</h5>
-          <p className="card-text">Là một chi trong thực vật có hoa bản địa khu vực Nam Mỹ, từ Brasil về phía tây tới Peru và về phía nam tới miền nam Argentina.</p>
+          <h5 className="card-title"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T2}} />
+        </div>
+      ))}
+    </div></h5>
+          <p className="card-text"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.N2}} />
+        </div>
+      ))}
+    </div></p>
           <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '50px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</button>
             </div>
             <Link to="" className="btn btn-success" style={{ flexShrink: 0 }}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 05/11/2020</button>
+            <button type="button" className="btn btn-sm">{data.map((item, index) => (
+                              <div key={index}>
+                              <FontAwesomeIcon icon={faClock} />  {item.D02} 
+                              </div>
+                            ))}</button>
           </div>
         </div>
       </div>
@@ -333,16 +931,36 @@ function TV() {
     <div className="card">
         <img src={pc3} className="card-img-top" alt="Lễ hội cún cưng" />
         <div className="card-body" > 
-          <h5 className="card-title">Cây Lim Sét</h5>
-          <p className="card-text">Cây lim xẹt có hoa màu vàng rực rỡ trông rất đẹp mắt, mang đến cho mọi người không gian sống vô cùng sống động.</p>
+          <h5 className="card-title"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T3}} />
+        </div>
+      ))}
+    </div></h5>
+          <p className="card-text"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.N3}} />
+        </div>
+      ))}
+    </div></p>
           <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '50px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</button>
             </div>
             <Link to="#" className="btn btn-success" style={{ flexShrink: 0 }}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 06/11/2020</button>
+            <button type="button" className="btn btn-sm">{data.map((item, index) => (
+                              <div key={index}>
+                              <FontAwesomeIcon icon={faClock} />  {item.D03} 
+                              </div>
+                            ))}</button>
           </div>
         </div>
       </div>
@@ -351,16 +969,36 @@ function TV() {
       <div className="card">
         <img src={pc4} className="card-img-top" alt="Ngày hội ẩm thực chay" />
         <div className="card-body">
-          <h5 className="card-title">Cây Lan Ý</h5>
-          <p className="card-text">Là một chi trong thực vật có hoa bản địa khu vực Nam Mỹ, từ Brasil về phía tây tới Peru và về phía nam tới miền nam Argentina.</p>
+          <h5 className="card-title"> <div>
+              {data.map((item, index) => (
+                <div key={index}>
+                  <div dangerouslySetInnerHTML={{ __html: item.T4}} />
+                </div>
+              ))}
+            </div></h5>
+          <p className="card-text"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.N4}} />
+        </div>
+      ))}
+    </div></p>
           <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '50px'  }}>
             <div className="btn-group">
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</button>
             </div>
             <Link to="/" className="btn btn-success">Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left">
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 05/11/2020</button>
+            <button type="button" className="btn btn-sm">{data.map((item, index) => (
+                              <div key={index}>
+                              <FontAwesomeIcon icon={faClock} />  {item.D04} 
+                              </div>
+                            ))}</button>
           </div>
         </div>
       </div>
@@ -371,18 +1009,38 @@ function TV() {
     <div className="card">
         <img src={pc5} className="card-img-top" alt="Dam Sen Special" />
         <div className="card-body" > 
-          <h5 className="card-title">Rau Má Thái</h5>
-          <p className="card-text">Rau má có tên gọi khác là tích tuyết thảo hay liên tiền thảo thường mọc ở những nơi ẩm ướt, râm mát, thung lũng, bờ mương, đất mùn tơi xốp tại các vùng nhiệt đới</p>
+          <h5 className="card-title"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T5}} />
+        </div>
+      ))}
+    </div></h5>
+          <p className="card-text"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.N5}} />
+        </div>
+      ))}
+    </div></p>
           <br></br>
           <div className="d-flex justify-content-between align-items-center" style={{ width: '100%' }}> 
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} />Thực vật</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</button>
             </div>
             <Link to={"/"} className="btn btn-success">Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
 
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 29/07/2020</button>
+            <button type="button" className="btn btn-sm"> {data.map((item, index) => (
+                              <div key={index}>
+                              <FontAwesomeIcon icon={faClock} />  {item.D05} 
+                              </div>
+                            ))}</button>
           </div>
         </div>
       </div>
@@ -391,16 +1049,34 @@ function TV() {
     <div className="card">
         <img src={pc6} className="card-img-top" alt="Dam Sen Lake Show" />
         <div className="card-body" > 
-          <h5 className="card-title">Cây Rẻ Quạt</h5>
-          <p className="card-text">Cây rẻ quạt là một dược liệu Đông y quý, có vị đắng, tính hàn vào kinh Can và Phế giúp thanh hoả, giải độc, hành huyết, tiêu đờm.</p>
+          <h5 className="card-title">{data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T6}} />
+        </div>
+      ))}</h5>
+          <p className="card-text"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.N6}} />
+        </div>
+      ))}
+    </div></p>
           <div className="d-flex justify-content-between align-items-center" style={{ width: '100%',paddingTop: '46px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</button>
             </div>
             <Link to="" className="btn btn-success" style={{ flexShrink: 0 }}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 29/07/2020</button>
+            <button type="button" className="btn btn-sm"> {data.map((item, index) => (
+                              <div key={index}>
+                              <FontAwesomeIcon icon={faClock} />  {item.D06} 
+                              </div>
+                            ))}</button>
           </div>
         </div>
       </div>
@@ -409,16 +1085,36 @@ function TV() {
     <div className="card">
         <img src={pc7} className="card-img-top" alt="Lễ hội cún cưng" />
         <div className="card-body" > 
-          <h5 className="card-title">Cây Cọ Dầu</h5>
-          <p className="card-text">Là loại cây mang lại giá trị kinh tế cao do năng suất dầu cao hơn những loại cây có dầu khác.</p>
+          <h5 className="card-title"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T7}} />
+        </div>
+      ))}
+    </div></h5>
+          <p className="card-text"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.N7}} />
+        </div>
+      ))}
+    </div></p>
           <div className="d-flex justify-content-between align-items-center"  style={{ width: '100%',paddingTop: '70px'  }}>
             <div className="btn-group" style={{ flexShrink: 0 }}>
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</button>
             </div>
             <Link to="#" className="btn btn-success" style={{ flexShrink: 0 }}>Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left" style={{ flexShrink: 0 }}>
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 02/11/2020</button>
+            <button type="button" className="btn btn-sm">{data.map((item, index) => (
+                              <div key={index}>
+                              <FontAwesomeIcon icon={faClock} />  {item.D07} 
+                              </div>
+                            ))}</button>
           </div>
         </div>
       </div>
@@ -427,16 +1123,36 @@ function TV() {
       <div className="card">
         <img src={pc8} className="card-img-top" alt="Ngày hội ẩm thực chay" />
         <div className="card-body">
-          <h5 className="card-title">Bèo Tây</h5>
-          <p className="card-text">Là một loài thực vật thủy sinh, thân thảo, sống nổi theo dòng nước, thuộc về chi Pontederia của Họ Bèo tây.</p>
+          <h5 className="card-title"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T8}} />
+        </div>
+      ))}
+    </div></h5>
+          <p className="card-text"> <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.N8}} />
+        </div>
+      ))}
+    </div></p>
           <div className="d-flex justify-content-between align-items-center" style={{ width: '100%',paddingTop: '48px'  }}>
             <div className="btn-group">
-              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}><FontAwesomeIcon icon={faCalendar} /> Thực vật</button>
+              <button type="button" className="btn btn-sm" style={{color:'#EC008C'}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</button>
             </div>
             <Link to="/" className="btn btn-success">Xem thêm <FontAwesomeIcon icon={faArrowRight} /></Link>
           </div>
           <div className="text-left">
-            <button type="button" className="btn btn-sm"><FontAwesomeIcon icon={faClock} /> 14/09/2020</button>
+            <button type="button" className="btn btn-sm"> {data.map((item, index) => (
+                              <div key={index}>
+                              <FontAwesomeIcon icon={faClock} />  {item.D08} 
+                              </div>
+                            ))}</button>
           </div>
         </div>
       </div>
@@ -445,12 +1161,25 @@ function TV() {
   </div>
   <div className='container'>
     <div className='row'>
-      <div className='col-md-10 f1'>
-      <FontAwesomeIcon icon={faChevronLeft} /> Địa Điểm Sống Ảo 
-      </div>
-      <div className='col-md-2 f1'>
-      Quảng Trường Âu lạc <FontAwesomeIcon icon={faChevronRight} />     
-        </div>
+    <div className='col-md-10 f1'>
+             <Link to="/" style={{textDecoration:"none"}} className='f1'><div>
+                              {data.map((item, index) => (
+                              <div key={index}>
+                               <FontAwesomeIcon icon={faChevronLeft} />   {item.C01} 
+                              </div>
+                            ))}
+                              </div></Link>
+              </div>
+              <div className='col-md-2 f1'>
+              <Link to="/" style={{textDecoration:"none"}} className='f1'>
+                        <div>
+                              {data.map((item, index) => (
+                              <div key={index}>
+                                {item.C02} <FontAwesomeIcon icon={faChevronRight} />
+                              </div>
+                            ))}
+                              </div></Link>   
+                        </div>
     </div>
   </div>
   <div className="container">
@@ -471,7 +1200,11 @@ function TV() {
             <div className='col-md-4'><div className="card-text" style={{color:"#666666",fontSize:"13px"}}>{item.description}</div>
             </div>
             </div>
-            <div style={{color:"#EC008C",fontSize:"14px"}}><FontAwesomeIcon icon={faCalendar} /> Cảnh đẹp</div>
+            <div style={{color:"#EC008C",fontSize:"14px"}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM2} 
+                              </div>
+                            ))}</div>
           </div>
         </div>
       </div>

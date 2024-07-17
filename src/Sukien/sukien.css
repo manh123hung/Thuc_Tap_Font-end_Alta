@@ -130,10 +130,150 @@ footer {
     padding: 20px;
     color: white;
 }
-.card-green { background-color: #28a745; }
-.card-pink { background-color: #e83e8c; }
-.card-blue { background-color: #007bff; }
-.icon {
-    font-size: 50px;
-    margin-bottom: 10px;
+.hidden-text {
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  color: transparent; /* Chữ vô hình */
+  font-size: 30px; /* Kích thước chữ */
+  /* Thêm các kiểu dáng khác cho chữ vô hình */
+}
+.hidden-text p {
+  font-size: 12px;
+}
+.c12a.active .hidden-text {
+  color: rgb(255, 255, 255); /* Hiển thị chữ khi slide được chọn */
+}
+#item-1:checked ~ .cards #song-1 img, #item-2:checked ~ .cards #song-2 img, #item-3:checked ~ .cards #song-3 img,
+#item-4:checked ~ .cards #song-4 img, #item-5:checked ~ .cards #song-5 img {
+  box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+}
+
+#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2,
+#item-4:checked ~ .cards #song-1, #item-5:checked ~ .cards #song-2,
+#item-1:checked ~ .cards #song-5, #item-2:checked ~ .cards #song-4, #item-3:checked ~ .cards #song-5,
+#item-4:checked ~ .cards #song-3, #item-5:checked ~ .cards #song-4 {
+  transform: translatex(-40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1,
+#item-4:checked ~ .cards #song-2, #item-5:checked ~ .cards #song-3,
+#item-1:checked ~ .cards #song-4, #item-2:checked ~ .cards #song-5, #item-3:checked ~ .cards #song-4,
+#item-4:checked ~ .cards #song-1, #item-5:checked ~ .cards #song-1 {
+  transform: translatex(40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3,
+#item-4:checked ~ .cards #song-4, #item-5:checked ~ .cards #song-5 {
+  transform: translatex(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+#item-1:checked ~ .cards #song-1 img, #item-2:checked ~ .cards #song-2 img, #item-3:checked ~ .cards #song-3 img,
+#item-4:checked ~ .cards #song-4 img, #item-5:checked ~ .cards #song-5 img {
+  box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+}
+.player {
+
+  margin-top: -105px;
+  margin-left: -730px;
+}
+.cs16{
+  
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: center; 
+  
+}
+.cs16 button{
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+  
+}
+.cs16 button {
+  position: absolute; /* Đặt nút mũi tên ở vị trí tuyệt đối */
+  transform: translateY(50%); /* Di chuyển nút mũi tên lên trên */
+}
+
+.cs16 button:first-child {
+  margin-right: 60px;
+}
+
+.cs16 button:last-child {
+  margin-left: 96px;
+
+}
+.upper-part {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  height: 36px;
+  overflow: hidden;
+}
+
+.play-icon {
+  margin-right: 10px;
+}
+.img2{
+  
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+input[type=radio] {
+  background-color: #259E58;
+  /* Màu của vòng tròn khi radio button được chọn */
+  accent-color: #259E58;
+  
+}
+.img2 {
+  
+  height: 500px;
+  border-radius: 10px;
+}
+.cards1 {
+  width: 100%;
+  height: 100%;
+}
+.ct06{
+  width: 100%;
+  max-width: 800px;
+  max-height: 600px;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+.c12a{
+    position: absolute;
+    width: 45%;
+    height: 40%;
+    margin-right: 296px;
+    right: 0;
+    margin-top: -500px;   
+    transition: transform .4s ease;
+
 }

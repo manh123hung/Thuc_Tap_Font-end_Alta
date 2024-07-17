@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Thanhvien.css'; // Tệp CSS cho kiểu dáng
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCalendar, faCheck, faCheckCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCalendar, faCheck, faCheckCircle, faComment, faPhone, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-solid-svg-icons'; // Icon "Thời gian"
@@ -37,7 +37,384 @@ function QTVH() {
   const handlePageChange1 = (page: number) => {
     setCurrentPage(page);
   };
+  interface Tab {
+    id: string;
+    label: string;
+    content: JSX.Element;
+  }
+  const [activeTab, setActiveTab] = useState<string>('troChoi');
+  const tabs: Tab[] = [
+    {
+      id: 'troChoi',
+      label: 'Trò Chơi',
+      content: (
 
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+           <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "14px" }}>
+  <div className='col-3'>
+    <h5  style={{ textDecoration: 'none', color: '#259E58' }}> <b>CẢM GIÁC MẠNH</b> </h5>
+  </div>
+  <div className='col-3'>
+    <h5  style={{ textDecoration: 'none', color: '#259E58' }}><b>TƯƠNG TÁC ẢO </b></h5>
+  </div>
+  <div className='col-3'>
+    <h5  style={{ textDecoration: 'none', color: '#259E58' }}><b>GIẢI TRÍ</b></h5>
+  </div>
+  <div className='col-3'>
+    <h5  style={{ textDecoration: 'none', color: '#259E58' }}><b>THIẾU NHI</b></h5>
+  </div>
+</div>
+ <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>01</span>
+    <Link to="/CCNL" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Cá Chép Nhào Lộn</Link>
+  </div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>14</span>
+    <Link to="/cinemax8d" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Xem Phim Cinemax 8D</Link>
+  </div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>19</span>
+    <Link to="/bangdang" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Băng Đăng</Link>
+  </div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>23</span>
+    <Link to="/echnhay" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Ếch Nhảy</Link>
+  </div>
+</div>
+        <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>02</span>&nbsp;
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Lâu Đài Kinh dị</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>15</span>&nbsp;
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đua Xe Turbo Racing</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>20</span>&nbsp;
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đu Quay Đứng Ferris Wheel</Link>
+      </div>
+      <div className='col-3'>
+        <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>24</span>&nbsp;
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Điệu Nhảy Thiên Thần</Link>
+      </div>
+    </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>03</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Phượng Hoàng Bay</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>16</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>9D Virtual Reality</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>21</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Monorail</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>25</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Khinh Khí Cầu Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>04</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Spinning Coaster</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>17</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Bắn Súng Run Raider</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>22</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Đạp Vịt Pedalo</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>26</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Hải Cầu Vượt Thác</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>05</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Xe Bay Ảo Tưởng</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>18</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Lâu Đài Kỳ Thú</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>62</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Massage Cá</Link>
+        </div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>27</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Ngựa Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>06</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Thảm Bay</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>28</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Kids Playground</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>07</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Quay Thần Tốc</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>29</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Khủng Long Bay</Link>
+        </div>
+      </div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>08</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Power Surge</Link>
+        </div>
+        <div className='col-3'></div>
+        <div className='col-3'></div>
+        <div className='col-3'>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>30</span>&nbsp;
+          <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Siêu Nhân Robot</Link>
+        </div>
+      </div>
+      <div>
+      <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>09</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Tàu Vượt Thác</Link>
+  </div>
+  <div className='col-3'></div>
+  <div className='col-3'></div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>31</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Rồng Lượn</Link>
+  </div>
+</div>
+<div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>10</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Roller Coaster</Link>
+  </div>
+  <div className='col-3'></div>
+  <div className='col-3'></div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>32</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Lượn Tuổi Thơ</Link>
+  </div>
+</div>
+<div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>11</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Vòng Xoay Không Gian</Link>
+  </div>
+  <div className='col-3'></div>
+  <div className='col-3'></div>
+  <div className='col-3'>
+    <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>33</span>&nbsp;
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>Pháo Đài Bay</Link>
+  </div>
+</div>
+<div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+  <div className='col-3'>
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>
+      <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>12</span>&nbsp;Đấu Trường Bò Tót
+    </Link>
+  </div>
+  <div className='col-3'></div>
+  <div className='col-3'></div>
+  <div className='col-3'>
+    <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D' }}>
+      <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px' }}>34</span>&nbsp;Nhà Hơi Liên Hoàn
+    </Link>
+  </div>
+</div>   </div>
+
+    <div className='row' style={{ color: "#4D4D4D", lineHeight: "48px", fontSize: "16px" }}>
+      <div className='col-3'>
+        <Link to="/" style={{ textDecoration: 'none', color: '#4D4D4D', display: 'flex', alignItems: 'center' }}>
+          <span style={{ color: "#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginRight: '8px' }}>13</span>
+          Xe Điện Đụng
+        </Link>
+      </div>
+      <div className='col-3'></div>
+      <div className='col-3'></div>
+      <div className='col-3'></div>
+    </div>
+    </div>
+      )
+    },
+    {
+      id: 'vuonThu',
+      label: 'Vườn Thú',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+         <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>35</span> 
+            <Link to="/KDG" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Khỉ Đuôi Dài</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>38</span> 
+            <Link to="/hamachauPhi" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Hà Mã Châu Phi</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>41</span> 
+            <Link to="/thuycung" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Thủy Cung</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>44</span> 
+            <Link to="/cahoatien" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cá Hỏa Tiền</Link> </div>
+
+           </div>
+           <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>36</span> 
+            <Link to="/gaunhua" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Gấu Ngựa</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>39</span> 
+            <Link to="/voichauA" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Voi Châu Á</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>42</span> 
+            <Link to="/vuonchim" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Chim</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>45</span> 
+            <Link to="/denui" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đê Núi</Link> </div>
+
+           </div>
+           <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+            <div className='col-3'>
+            <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>37</span> 
+            <Link to="/duoiuruisumatra" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đười Ươi Sumatra</Link></div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>40</span> 
+            <Link to="/vuondenmavang" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vượn Đen Má Vàng</Link> </div>
+            <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>43</span> 
+            <Link to="/hocahaituong" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Hồ Cá Hải Tượng</Link> </div>
+            <div className='col-3'> </div>
+
+           </div>
+          </div>
+      )
+    },
+    {
+      id: 'canhDep',
+      label: 'Cảnh Đẹp',
+      content: (
+        <div className="container">
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>46</span> 
+   <Link to="/namtuthuonguyen" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nam Tử Thượng Uyển</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>51</span> 
+   <Link to="/QTVH" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường Vua Hùng </Link> </div>
+
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>47</span> 
+   <Link to="/daolanrung" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Đảo Lan Rừng</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>52</span> 
+   <Link to="/quangtruongaulac" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường Âu Lạc</Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>48</span> 
+   <Link to="/vuonnhatban" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Nhật Bản</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>53</span> 
+   <Link to="/quangtruonglama" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Quảng Trường La Mã</Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>49</span> 
+   <Link to="/vuonxuongrong" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Vườn Xuống Rồng</Link></div>
+   <div className='col-3'> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>54</span> 
+   <Link to="/caucuukhu" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cầu Cửu Khúc </Link> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+  <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+   <div className='col-3'>
+   <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>50</span> 
+   <Link to="/diademSongAo" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Địa Điểm Sống Ảo</Link></div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+   <div className='col-3'> </div>
+
+  </div>
+</div>
+</div>
+      )
+    },
+    {
+      id: 'sanKhau',
+      label: 'Sân Khấu',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>55</span> 
+          <Link to="/sankhaudemmen" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Sân Khấu Đê Mèn</Link></div>
+          <div> <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>56</span> 
+          <Link to="/rapxiecthu" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Rạp Xiếc Thú</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>57</span> 
+          <Link to="/sankhaungoisao" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Sân Khấu Ngôi Sao </Link> </div>
+          <div className='col-3'> </div>
+
+         </div>
+      </div>
+      )
+    },
+    {
+      id: 'giaoDuc',
+      label: 'Giáo Dục Trải Nghiệm',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>58</span> 
+          <Link to="/nhatrungbaytieuban" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nhà Trưng Bày Tiêu Bản Động Vật</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>59</span> 
+          <Link to="/TV" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Thực Vật</Link></div>
+       
+
+         </div>
+      </div>
+      )
+    },
+    {
+      id: 'amThuc',
+      label: 'Ẩm Thực',
+      content: (
+        <div className='container' style={{fontFamily:"Nunito",height:"700px"}}>
+        <div className='row' style={{color:"#4D4D4D",lineHeight:"48px",fontSize:"16px"}}>
+          <div className='col-3'>
+          <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>60</span> 
+          <Link to="/nhahangthuyta" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Nhà Hàng Thủy Tạ</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>61</span> 
+          <Link to="/caphevuond" style={{ textDecoration: 'none', color: '#4D4D4D' }}> Cà Phê Vườn Đá</Link></div>
+          <div > <span style={{color:"#EC008C", borderRadius: '50%', display: 'inline-block', padding: '0 5px', border: "1px solid #EC008C", height: "30px", textAlign: 'center', lineHeight: '30px', marginLeft: '10px' }}>63</span> 
+          <Link to="/damsenplaza" style={{ textDecoration: 'none', color: '#4D4D4D' }}> DamSen Plaza </Link> </div>
+         </div>
+      </div>
+      )
+    }
+  ];
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+  };
   const [logoUrl, setLogoUrl] = useState("");
   const [logo1, setlogo1] = useState("");
   const [logo2, setlogo2] = useState("");
@@ -185,7 +562,7 @@ function QTVH() {
       });
     const fetchData = async () => {
       try {
-        const quanlyRef = await getDocs(collection(firestore, "users"));
+        const quanlyRef = await getDocs(collection(firestore, "QTVH"));
         const fetchedData: DocumentData[] = [];
 
         quanlyRef.forEach((doc) => {
@@ -200,6 +577,105 @@ function QTVH() {
 
     fetchData();
   }, [navigate]);
+  const [showMenu, setShowMenu] = useState(true);
+  const [rightSideContent, setRightSideContent] = useState<React.ReactNode>(null); // Khởi tạo bằng null
+  const createRightSideContent = () => {
+      return (
+        <>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',position:"fixed",marginLeft:"1180px",marginTop:"600px" }}>
+      <div className="button-container">
+        <button className='bt12a'><span className='icon2'><FontAwesomeIcon icon={faPhone}color="green" /> </span></button>
+        <button className='bt12a'><span className='icon2'><FontAwesomeIcon icon={faComment} color="green"/> </span></button>
+      </div>
+    </div>
+        </>
+      );
+    
+  };
+  useEffect(() => {
+    setRightSideContent(createRightSideContent());
+  }, []);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+    if (!showMenu) {
+      // Khi menu ẩn đi, cập nhật rightSideContent thành nội dung của tab hiện tại
+      setRightSideContent(
+        <div style={{margin:"100px",position:"fixed",zIndex: 100}}>
+          <table style={{ width: '100%', borderCollapse: 'collapse'}}>
+            <thead>
+              <tr style={{ backgroundColor: '#f2f2f2' }}>
+                {tabs.map((tab) => (
+                  <th
+                    key={tab.id}
+                    style={{
+                      padding: '10px',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      backgroundColor: tab.id === activeTab ? '#e6e6e6' : 'inherit'
+                    }}
+                    onClick={() => handleTabClick(tab.id)}
+                  >
+                    {tab.label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+          </table>
+
+          <div >
+            {tabs.find((tab) => tab.id === activeTab)?.content}
+          </div>
+        </div>
+      );
+    } else {
+      // Khi menu hiển thị, cập nhật rightSideContent thành nội dung slide
+      setRightSideContent(createRightSideContent());
+    }
+  };
+
+  // Sử dụng useEffect để cập nhật rightSideContent khi activeTab thay đổi
+  useEffect(() => {
+    if (!showMenu) {
+      setRightSideContent(
+        <div style={{marginTop:"25px",backgroundColor:"white",position:"fixed",zIndex: 100,width:"1240px"}}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr style={{borderBottom:"1px solid black"}}>
+              {tabs.map((tab) => (
+                <th
+                  key={tab.id}
+                  style={{
+                    padding: '10px',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    backgroundColor: "white",
+                    border: "none", // Loại bỏ border
+                    color: tab.id === activeTab ? '#EC008C' : 'inherit', 
+                    borderBottom: tab.id === activeTab ? '2px solid #EC008C' : 'none', // Giữ nguyên borderBottom
+                  }}
+                  onClick={() => handleTabClick(tab.id)}
+                >
+                  {tab.label}
+
+                </th>
+
+              ))}
+              
+            </tr>
+            
+          </thead>
+        </table>
+      
+        <div>
+          {tabs.find((tab) => tab.id === activeTab)?.content}
+        </div>
+      </div> 
+      );
+    } else {
+      setRightSideContent(createRightSideContent());
+    }
+  }, [activeTab, showMenu]);
   const images1: ImageData[] = [
     { src: img8, alt: 'Image 1', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
     { src: img1, alt: 'Image 2', caption: 'Xem phim Cinemax 8D tại CVVH Đầm Sen' },
@@ -333,13 +809,15 @@ function QTVH() {
       <div className="row">
       <div className="col-md-3 left-side" style={{ width: '250px' }}>   
           <div className="left-side-content">
-          <div className="menu-icon">≡</div>
-          <Link to="/" className="menu-item" >TRANG CHỦ</Link>
+          <button className="menu-icon" style={{border:"none"}} onClick={toggleMenu}>
+              {showMenu ? '≡' : 'x'}
+            </button>         
+             <Link to="/" className="menu-item" >TRANG CHỦ</Link>
           <Link to="/khampha" className="menu-item">KHÁM PHÁ</Link>
         
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right"  style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"black",textDecoration: 'underline'}}>
           <DropdownItem className="btn btn-white" ><Link to="/LSHH" >Lịch sử hình thành</Link></DropdownItem>
-          <DropdownItem className="btn btn-white" ><Link to="/settings" >Thành viên</Link></DropdownItem>
+          <DropdownItem className="btn btn-white" ><Link to="/Thanhvien" >Thành viên</Link></DropdownItem>
   <DropdownItem className="btn btn-white" ><Link to="/BM" >Chính sách bảo mật</Link></DropdownItem> 
 </Dropdown>
          
@@ -379,414 +857,619 @@ function QTVH() {
           marginTop: -60,
         }}>
            <div style={{backgroundColor:"rgb(230, 255, 210)"}} >
-     
-   <div className='container bd01'>
-   <img src={img1} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+                     {rightSideContent}
 
-   <header className="header" style={{padding:"40px"}}>
-    
-    <div className="row">
-      <div className="col-8" style={{}}>
-      <div className='container' style={{ color: '#259E58',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
-     <b style={{borderBottom:"1px solid #259E58"}}>QUẢNG TRƯỜNG VUA HÙNG</b>
-    </div> 
-    <div className='container'>
-    <div className='row' style={{}}>
-        <div className="col-3" style={{color:"#EC008C",fontFamily:"Nunito"}}>
-        <FontAwesomeIcon icon={faCalendar} /> Cảnh đẹp      
-      </div>
-      <div className="col-3" style={{color:"#666666",fontFamily:"Nunito"}}>
-      <FontAwesomeIcon icon={faClock} /> 11/02/2020
-      </div>
-      </div>   
-      </div> 
-     </div>
-     <div className="col-3">
-      <div className='' style={{ color: '#4D4D4D',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"22px",}}>
-        Mô tả
-       </div>
-       <div style={{borderBottom:"2px solid #EC008C"}}></div>
-       <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>Quảng trường Vua Hùng trong ngày giỗ quốc tổ</div>
-     </div>
-    </div>      
-    </header>
-    <div className="container">
+          <div className='container bd01'>
+          <img src={img1} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
 
-
-      <div className='row'>
-        <div className='col-10'>
-    <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Hàng ngàn du khách đã đến dâng hương trước tượng Hùng Vương tại Quảng trường vua Hùng trong ngày 14/4/2019. Đây là quảng trường thứ 3 của CVVH Đầm Sen đưa vào hoạt động. (Trước đó, Đầm Sen đã có quảng trường Âu Lạc và quảng trường La Mã chuyên phục vụ sự kiện). Đền thờ này được xem như một cúng phẩm dâng lên trong ngày giổ Quốc tổ.</p></div>
-    <div className='col-3'></div>
-    </div>
-
-
-    <div className='row'>
-        <div className='col-9'>
-        <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",padding:"30px",marginTop:"-20px"}}>
-     <b>Ra mắt Quảng trường vua Hùng</b>
-
-     </div>
-     <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px",marginTop:"-30px"}}>Quảng trường này có tổng diện tích gần 1000m2. Bao gồm sân hành lễ được lát đá Granite với hoa văn mặt trời đặt ở chính giữa. Kế đến là thang rồng, tiết diện bề ngang 4,5 mét, đáp ứng đoàn khách 5 hàng. Trên cùng là khu vực dâng hương, được thiết kế 3 đền thờ. Chính giữa là chánh điện với tượng vua Hùng cao 1,7 mét, được làm bằng chất liệu composite phủ đồng, đặt trên bệ đá cao 0,8m.</p>
-
-     </div>
-    <div className='col-3'></div>
-    </div>
-
-    <img src={img2} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
-    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>Quảng trường vua Hùng trong ngày giỗ quốc tổ</p>
-
-
-    <div className='row'>
-        <div className='col-11'>
-    <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
-  <p>Bức tượng vua Hùng tại Đầm Sen đã được Thạc sĩ – Điêu khắc gia Phạm Văn Út thực hiện. Tác giả đã xây dựng bố cục vua Hùng ngồi trên ngai, cách điệu từ hoa văn trống đồng. Mặt tượng nhìn thẳng thể hiện sự tôn nghiêm. Tay phải nắm chùm bông lúa, ý muốn đề cao một nền văn hóa lúa nước của dân tộc Việt, cho con cháu đời sau phải gìn giữ và tôn vinh. Tay trái để tự nhiên trong tư thế ngồi trao đổi với các Lạc tướng, Lạc hầu. Các hoa văn trang trí trên bộ trang phục, được lấy cảm hứng từ đường nét của nền văn hóa Đông Sơn. Đặc biệt là hoa văn trên trống đồng Ngọc Lũ.</p>
-       </div>
-       </div>
-
-    <div className='col-3'></div>
-    
-    </div>
-
-
-    <div className='row'>
-        <div className='col-5'>
-   
-        <img src={img3} className="img-fluid" alt="Responsive image" style={{padding:"40px",height:"620px"}}/>
-        <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>Bức tượng vua Hùng mới được đặt tại Đầm Sen</p>
-
-       </div>
-
-    <div className='col-7'><img src={img4} className="img-fluid" alt="Responsive image" style={{padding:"40px",height:"620px",marginLeft:"-100px"}}/>
-    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginLeft:"-180px",marginTop:"-20px"}}>Điêu khắc gia Phạm Văn Út</p>
-    </div>
-    </div>
-
-
-    <img src={img5} className="img-fluid" alt="Responsive image" style={{padding:"40px",marginTop:"-40px"}}/>
-    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>Chánh điện thờ vua Hùng trong ngày giỗ tổ</p>
-    <div className='row'>
-        <div className='col-11'>
-    <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
-  <p>   Bên cạnh đó, chủ tịch Hồ Chí Minh từng nói: “Các vua Hùng đã có công dựng nước, Bác cháu ta phải cùng nhau giữ lấy nước” (xem lịch sử câu nói tại đây). Thấu hiểu điều đó, Phuthotourist không chỉ hướng ý thức của du khách đến viếng người có công dựng nước, mà còn muốn nhắc đến công giữ nước của những danh tướng đã làm nên lịch sử. Đó là đền thờ Hưng Đạo Vương, vị vua từng đánh tan hai cuộc xâm lược của quân Nguyên – Mông (năm 1285 và năm 1288). Hưng Đạo Vương còn lưu truyền thế hệ sau bằng bài thơ “Hịch tướng sĩ”.</p>
-       </div>
-       </div>
-
-    <div className='col-3'></div>
-    </div>
-    <img src={img6} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
-    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>Gian thờ Hưng Đạo Vương đặt bên phải, với bào thơ Hịch Tướng Sĩ</p>
-    <div className='row'>
-        <div className='col-11'>
-    <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
-  <p>  Danh tướng thứ hai là Hai Bà Trưng (xem thông tin lịch sử tại đây). Hai nữ anh hùng dân tộc đầu tiên của đất Việt, phất cờ khởi nghĩa. Và lập quốc gia với kinh đô tại Mê Linh. Bà Trưng Trắc lên ngôi Nữ vương, trở thành vị vua nữ đầu tiên trong trong lịch sử Việt Nam. Với danh hiệu Trưng Nữ Vương. Cả hai biểu tượng danh tướng đều được đặt hai bên chánh điện, trong khuôn viên của quảng trường vua Hùng. (xem thêm về lễ khánh thành tượng Hai Bà Trưng tại đây)</p>
-       </div>
-       </div>
-
-    <div className='col-3'></div>
-    </div>
-    <img src={img7} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
-    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>Tượng Hai Bà Trưng trên mình voi</p>
-  
-</div>
-<div className="container">
-      <div className='row'>
-        <div className='col-12'>
-        <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",padding:"30px"}}>
-     <b>NGÀY GIỖ TỔ ĐẦU TIÊN TRƯỚC LINH TƯỢNG</b>
-     </div>
-     <div className='row'>
-        <div className='col-8'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>8 giờ sáng ngày 14/4/2019, Phuthotourist cùng UBND Quận 11, Mặt trận tổ quốc VN Quận 11, Viện Lịch sử các dòng họ, đã tổ chức lễ dâng hương đầu tiên trước linh tượng vua Hùng. Và đây cũng là sự kiện ra mắt quảng trường Hùng Vương tại Đầm Sen. Hàng ngàn người dân và du khách đã đem lễ vật đến đây để dâng lên quốc tổ, cùng ôn lại lịch sử dân tộc ngàn năm.
-        </p> 
-       
-        </div>
-        <div className='col-4'>
-        </div>
-        </div>
-        </div>
-      </div>
-        </div>
-        <div className="carousel-container" style={{marginTop:"-30px"}}>
-        <div className="carousel-controls2">
-          <button onClick={handlePrev1}>
-            <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
-          </button>
-          <button onClick={handleNext1}>
-            <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
-          </button>
-        </div>
-        <div className="carousel-image">
-          <div className="image-container">
-            <img
-              src={images1[currentImageIndex1].src}
-              alt={images1[currentImageIndex1].alt}
-              width={800}
-              height={600}
-            />
-          </div>
-        </div>
-        <div className="image-caption">
-          {images1[currentImageIndex1].caption}
-        </div>
-        <div className="carousel-thumbnails">
-          {images1.map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              onClick={() => handleImageClick1(index)}
-              className={`thumbnail ${index === currentImageIndex1 ? 'active' : ''}`}
-            />
+          <header className="header" style={{padding:"40px"}}>
+            
+            <div className="row">
+              <div className="col-8" style={{}}>
+              <div className='container' style={{ color: '#259E58',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"46px",}}>
+            <b style={{borderBottom:"1px solid #259E58"}}>
+              <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.Tieude }} />
+            </div>
           ))}
         </div>
-      </div>
-    <div className="container">
-     <div className='row'>
-        <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Bên cạnh đó, Đầm Sen cũng tổ chức thi nấu bánh chưng với sự tham gia của các đơn vị trong quận 11. Tổng số bánh chưng 3000 chiếc đã được phát lộc cho du khách đến dâng hương tại quảng trường ngay trong buổi sáng giỗ tổ.
-        </p>
-        </div>
-        <div className='col-4'>
-        </div>
+        </b>
+            </div> 
+            <div className='container'>
+            <div className='row' style={{}}>
+                <div className="col-3" style={{color:"#EC008C",fontFamily:"Nunito"}}>
+                                {data.length > 0 && (
+                <div>
+                    {data.map((item, index) => (
+                      <div key={index}>
+                       <FontAwesomeIcon icon={faCalendar} />  {item.Danhmuc} 
+                      </div>
+                    ))}
+            
+                </div>
+              )}        
+              </div>
+              <div className="col-3" style={{color:"#666666",fontFamily:"Nunito"}}>
+              {data.length > 0 && (
+                <div>
+                    {data.map((item, index) => (
+                      <div key={index}>
+                      <FontAwesomeIcon icon={faClock} />  {item.Date} 
+                      </div>
+                    ))}
+            
+                </div>
+              )}                </div>
+              </div>   
+              </div> 
+            </div>
+            <div className="col-3">
+              <div className='' style={{ color: '#4D4D4D',lineHeight:'102,14px',fontFamily:'Bangers',fontSize:"22px",}}>
+                Mô tả
+              </div>
+              <div style={{borderBottom:"2px solid #EC008C"}}></div>
+              <div style={{fontSize:"16px",color:"#666666",fontFamily:"Nunito"}}>
+              <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.Mota}} />
+            </div>
+          ))}
         </div>
 
-</div>
-        <div className="carousel-container"  style={{marginTop:"-30px"}} >
-        <div className="carousel-controls3">
-          <button onClick={handlePrev2}>
-            <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
-          </button>
-          <button onClick={handleNext2}>
-            <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
-          </button>
-        </div>
-        <div className="carousel-image">
-          <div className="image-container">
-            <img
-              src={images2[currentImageIndex2].src}
-              alt={images2[currentImageIndex2].alt}
-              width={800}
-              height={600}
-            />
-          </div>
-        </div>
-        <div className="image-caption">
-          {images2[currentImageIndex2].caption}
-        </div>
-        <div className="carousel-thumbnails">
-          {images2.map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              onClick={() => handleImageClick2(index)}
-              className={`thumbnail ${index === currentImageIndex2 ? 'active' : ''}`}
-            />
+              </div>
+            </div>
+            </div>      
+            </header>
+            <div className="container">
+
+
+              <div className='row'>
+                <div className='col-10'>
+            <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+            <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.Noidung1}} />
+            </div>
           ))}
         </div>
-      </div>
-      <div className='container'>
-      <div className='row'>
-        <div className='col-11'>
-          <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Trước 2007, Phuthotourist từng tự tổ chức ngày giổ tổ Hùng Vương tại Đầm Sen vào ngày 10/3 âm lịch. Với mục đích ban đầu là tạo địa điểm để nhân viên Phuthotourist và những du khách tưởng nhớ tổ tiên dân tộc. Số lượng khách tham dự lúc bấy giờ lên đến cả chục ngàn người, vượt xa dự tính ban đầu.
-        </p> 
-       
-        </div>
-        <div className='col-4'>
-        </div>
-        </div>
-        </div>
-      
-      <div className="carousel-container"  style={{marginTop:"-30px"}}>
-        <div className="carousel-controls4">
-          <button onClick={handlePrev3}>
-            <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
-          </button>
-          <button onClick={handleNext3}>
-            <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
-          </button>
-        </div>
-        <div className="carousel-image">
-          <div className="image-container">
-            <img
-              src={images3[currentImageIndex3].src}
-              alt={images3[currentImageIndex3].alt}
-              width={800}
-              height={600}
-            />
-          </div>
-        </div>
-        <div className="image-caption">
-          {images3[currentImageIndex3].caption}
-        </div>
-        <div className="carousel-thumbnails">
-          {images3.map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              onClick={() => handleImageClick3(index)}
-              className={`thumbnail ${index === currentImageIndex3 ? 'active' : ''}`}
-            />
-          ))}
-        </div>
-      </div>
-      <div className='container'>
-      <div className='row'>
-      <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",marginLeft:"30px"}}>
-     <b>TỪ CHIẾC BÁNH KHỔNG LỒ</b>
-     </div>
-        <div className='col-11'>
-          <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Trước 2007, Phuthotourist từng tự tổ chức ngày giổ tổ Hùng Vương tại Đầm Sen vào ngày 10/3 âm lịch. Với mục đích ban đầu là tạo địa điểm để nhân viên Phuthotourist và những du khách tưởng nhớ tổ tiên dân tộc. Số lượng khách tham dự lúc bấy giờ lên đến cả chục ngàn người, vượt xa dự tính ban đầu.
-        </p> 
-       
-        </div>
-        <div className='col-4'>
-        </div>
-        </div>
-        </div>
-      <div className="carousel-container"  style={{marginTop:"-30px"}}>
-        <div className="carousel-controls5">
-          <button onClick={handlePrev4}>
-            <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
-          </button>
-          <button onClick={handleNext4}>
-            <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
-          </button>
-        </div>
-        <div className="carousel-image">
-          <div className="image-container">
-            <img
-              src={images4[currentImageIndex4].src}
-              alt={images4[currentImageIndex4].alt}
-              width={800}
-              height={600}
-            />
-          </div>
-        </div>
-        <div className="image-caption">
-          {images4[currentImageIndex4].caption}
-        </div>
-        <div className="carousel-thumbnails">
-          {images4.map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              onClick={() => handleImageClick4(index)}
-              className={`thumbnail ${index === currentImageIndex4 ? 'active' : ''}`}
-            />
-          ))}
-        </div>
-      </div>
-      <div className='container'>
-      <div className='row'>
-        <div className='col-11'>
-          <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Sau khi Quốc Hội quyết định công nhận ngày quốc tổ vào tháng 4/2007, Phuthotourist đã phối hợp với UBMT Tổ Quốc Quận 11, tổ chức nhiều hoạt động lớn hơn. Tuy nhiên, Đầm Sen vẫn mong muốn làm được cống vật gì xứng đáng. Và phải mang ý nghĩa góp công sức của tập thể. Vậy là ý tưởng về chiếc bánh chưng khổng lồ ra đời từ những năm đầu 2010. Và đến năm 2016, Đầm Sen đã xác lập kỷ lục Guinness Thế giới với chiếc bánh chưng khổng lồ nặng nhất: 2,5 Tấn. Để làm chiếc bánh chưng này, đã có hơn 50 người với nhiều công đoạn gói, nấu bánh khác thường. Sau đó luộc suốt 3 ngày liên tục để dâng cúng Quốc tổ.
-        </p> 
-       
-        </div>
-        <div className='col-4'>
-        </div>
-        </div>
-        </div>
-        <div className="container">
-      <div className='row'>
-        <div className='col-12'>
-        <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",padding:"30px"}}>
-     <b>ĐẾN NHU CẦU CẦN MỘT ĐỀN THỜ VUA HÙNG </b>
-     </div>
-     <div className='row'>
-        <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Từ những thành công đó, Phuthotourist lại tiếp tục suy nghĩ: Nếu như nhà thờ không thể thiếu tượng chúa, Đình chùa không thể vắng tượng phật. Thì một nơi mà hàng ngàn người dân cùng hướng về tổ tiên lại càng không thể thiếu một linh tượng.
-        </p> 
-        </div>
-        <div className='col-4'>
-        </div>
-        </div>
-        <img src={logo5} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
-    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>Các vị lãnh đạo và đại biểu lên dâng hương trước linh tượng vua Hùng tại Đầm Sen</p>
-    <div className='row'>
-        <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Qua một khảo sát, cho thấy các địa điểm thờ phụng vua Hùng chỉ tập trung khách viếng vào ngày 10/3 âm lịch. Còn những ngày thường thì do mưu sinh cuộc sống, nên ít người lui tới. Thời gian rảnh rỗi chủ yếu vui chơi để phục hồi sức khỏe làm việc. Vì vậy, việc xây dựng một đền thờ vua Hùng vào khu vui chơi giải trí là việc nên làm. Khi du khách dạo chơi qua đây, sẽ dành vài phút tưởng nhớ đến các bậc anh linh đất Việt. Và truyền dạy cho con trẻ về chân dung của những vị vua nhân ái của đất nước.
-        </p> 
-        </div>
-        <div className='col-4'>
-        </div>
-        </div>
-        </div>
-      </div>
-        </div>
-        <div className="container">
-      <div className='row'>
-        <div className='col-12'>
-        <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",padding:"30px"}}>
-     <b>NHỮNG KHÓ KHĂN KHI THỰC HIỆN </b>
-     </div>
-     <div className='row'>
-        <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Mặc dù đã lên phương án xây dựng một Quảng trường vua Hùng từ nhiều năm. Nhưng khó khăn nhất là vấn đề chân dung của vua Hùng. Trong nhận thức của người Việt, một vị vua cha phải mang những nét anh minh và đức độ; nghiêm khắc nhưng bao dung; hiền hậu nhưng quyết đoán. Để lột tả được những nét đặc trưng đó, quả là điều không dễ. Điều này đã được bàn đi bàn lại, từ đường nét gương mặt; trang phục; vóc dáng; tư thế; cho đến cả chất liệu sao cho dễ di chuyển.
-        </p> 
-        </div>
-        <div className='col-4'>
-        </div>
-        </div>
-        <img src={logo6} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
-    <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>Sân hành lễ với sức chứa hàng ngàn người trong ngày đầu tiên ra mắt quảng trường vua Hùng tại Đầm Sen</p>
-    <div className='row'>
-        <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Khó khăn kế tiếp là mặt bằng để xây dựng đền thờ. Với một nơi quy tụ mọi tầng lớp nhân dân đến vui chơi như Đầm Sen, thì việc tìm vị trí xây dựng khu linh thiêng, trang trọng không phải dễ. Đặc biệt là khi ý thức người dân về bảo vệ môi trường cảnh quan chưa cao. Việc xả rác bừa bãi, ăn nằm vạ vật nơi linh thiêng, chưa kể việc khắc tên vẽ bậy vẫn thường diễn ra ở nhiều nơi tôn nghiêm khiến ban lãnh đạo công ty phải suy nghĩ.
-        Phuthotourist đã phối hợp với Viện nghiên cứu lịch sử, viện lịch sử dòng họ… để tìm giải pháp. Đồng thời tìm kiếm những nhà điêu khắc có kinh nghiệm để cùng bàn bạc ý tưởng; phác họa nên một chân dung vị vua Hùng dân tộc. Và cuối cùng, ngày 14/4/2019, Quảng trường vua Hùng chính thức ra mắt tại Đầm Sen. Mở thêm một địa điểm mới để người dân đến đây dâng hương trong những ngày giỗ quốc tổ.
-        </p> 
-        </div>
-        <div className='col-4'>
-        </div>
-        </div>
-        </div>
-      </div>
-        </div>
-<div className='container'>
-    <div className='row'>
-      <div className='col-md-10 f1'>
-      <FontAwesomeIcon icon={faChevronLeft} /> Địa điểm sống ảo
-      </div>
-      <div className='col-md-2 f1'>
-      Quảng Trường Âu Lạc<FontAwesomeIcon icon={faChevronRight} />     
-        </div>
-    </div>
-  </div>
-  <div className='container'><div className="row position-relative">
-    {displayedItems.map((item, index) => (
-      <div className="col-md-3" key={index} >
-        <div className="card border-0 shadow-sm" style={{height:"300px"}}>
-          <img className="card-img-top" src={item.image} />
-          <div className="card-body">
+              </p></div>
+            <div className='col-3'></div>
+            </div>
+
+
             <div className='row'>
-            <div className='col-md-8'><div className="card-title" style={{color:"#259E58",fontSize:"13px"}}>{item.title}</div>
+                <div className='col-9'>
+                <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",padding:"30px",marginTop:"-20px"}}>
+            <b>          <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TND1}} />
             </div>
-            <div className='col-md-4'><div className="card-text" style={{color:"#666666",fontSize:"13px"}}>{item.description}</div>
+          ))}
+        </div></b>
+
             </div>
+            <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px",marginTop:"-30px"}}>
+            <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.Noidung2}} />
             </div>
-            <div style={{color:"#EC008C",fontSize:"14px"}}><FontAwesomeIcon icon={faCalendar} /> Cảm giác mạnh</div>
-          </div>
+          ))}
         </div>
-      </div>
-    ))}
-    <button
-      className="btn btn-primary position-absolute top-50 start-0 translate-middle-y" style={{width: '40px',color:"#4CAF50",backgroundColor:"white",border:"none"}}
-      onClick={() => handlePageChange1(currentPage - 1)}
-      disabled={currentPage === 1}
-    >
-      <FontAwesomeIcon icon={faChevronLeft} />
-    </button>
-    <button
-      className="btn btn-primary position-absolute top-50 end-0 translate-middle-y" style={{width: '40px',color:"#4CAF50",backgroundColor:"white",border:"none"}}
-      onClick={() => handlePageChange1(currentPage + 1)}
-      disabled={currentPage === totalPages}
-    >
-      <FontAwesomeIcon icon={faChevronRight} />
-    </button>
-  </div></div>
+              </p>
 
-   
+            </div>
+            <div className='col-3'></div>
+            </div>
 
-  
+            <img src={img2} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+            <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>          <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TH1}} />
+            </div>
+          ))}
+        </div></p>
 
-</div>
+
+            <div className='row'>
+                <div className='col-11'>
+            <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+          <p>          <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.Noidung3}} />
+            </div>
+          ))}
+        </div></p>
+              </div>
+              </div>
+
+            <div className='col-3'></div>
+            
+            </div>
+
+
+            <div className='row'>
+                <div className='col-5'>
+          
+                <img src={img3} className="img-fluid" alt="Responsive image" style={{padding:"40px",height:"620px"}}/>
+                <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>          <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TH2}} />
+            </div>
+          ))}
+        </div></p>
+
+              </div>
+
+            <div className='col-7'><img src={img4} className="img-fluid" alt="Responsive image" style={{padding:"40px",height:"620px",marginLeft:"-100px"}}/>
+            <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginLeft:"-180px",marginTop:"-20px"}}>          <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TH3}} />
+            </div>
+          ))}
+        </div></p>
+            </div>
+            </div>
+
+
+            <img src={img5} className="img-fluid" alt="Responsive image" style={{padding:"40px",marginTop:"-40px"}}/>
+            <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>          <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TH4}} />
+            </div>
+          ))}
+        </div></p>
+            <div className='row'>
+                <div className='col-11'>
+            <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+          <p>            <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.Noidung4}} />
+            </div>
+          ))}
+        </div></p>
+              </div>
+              </div>
+
+            <div className='col-3'></div>
+            </div>
+            <img src={img6} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+            <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>
+            <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TH5}} />
+            </div>
+          ))}
+        </div>
+            </p>
+            <div className='row'>
+                <div className='col-11'>
+            <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+          <p>            <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.Noidung5}} />
+            </div>
+          ))}
+        </div></p>
+              </div>
+              </div>
+
+            <div className='col-3'></div>
+            </div>
+            <img src={img7} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+            <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>          <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TH6}} />
+            </div>
+          ))}
+        </div></p>
+          <hr />
+        </div>
+        <div className="container">
+              <div className='row'>
+                <div className='col-12'>
+                <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",padding:"30px"}}>
+            <b>          <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TND2}} />
+            </div>
+          ))}
+        </div></b>
+            </div>
+            <div className='row'>
+                <div className='col-8'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+                        <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.Noidung6}} />
+                    </div>
+                  ))}
+                </div>
+                </p> 
+              
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+                </div>
+              </div>
+                </div>
+                <div className="carousel-container" style={{marginTop:"-30px"}}>
+                <div className="carousel-controls2">
+                  <button onClick={handlePrev1}>
+                    <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
+                  </button>
+                  <button onClick={handleNext1}>
+                    <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
+                  </button>
+                </div>
+                <div className="carousel-image">
+                  <div className="image-container">
+                    <img
+                      src={images1[currentImageIndex1].src}
+                      alt={images1[currentImageIndex1].alt}
+                      width={800}
+                      height={600}
+                    />
+                  </div>
+                </div>
+                <div className="image-caption">
+                  {images1[currentImageIndex1].caption}
+                </div>
+                <div className="carousel-thumbnails">
+                  {images1.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image.src}
+                      alt={image.alt}
+                      onClick={() => handleImageClick1(index)}
+                      className={`thumbnail ${index === currentImageIndex1 ? 'active' : ''}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            <div className="container">
+            <div className='row'>
+                <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>          <div>
+                {data.map((item, index) => (
+                  <div key={index}>
+                    <div dangerouslySetInnerHTML={{ __html: item.Noidung7}} />
+                  </div>
+                ))}
+              </div>
+                </p>
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+
+        </div>
+                <div className="carousel-container"  style={{marginTop:"-30px"}} >
+                <div className="carousel-controls3">
+                  <button onClick={handlePrev2}>
+                    <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
+                  </button>
+                  <button onClick={handleNext2}>
+                    <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
+                  </button>
+                </div>
+                <div className="carousel-image">
+                  <div className="image-container">
+                    <img
+                      src={images2[currentImageIndex2].src}
+                      alt={images2[currentImageIndex2].alt}
+                      width={800}
+                      height={600}
+                    />
+                  </div>
+                </div>
+                <div className="image-caption">
+                  {images2[currentImageIndex2].caption}
+                </div>
+                <div className="carousel-thumbnails">
+                  {images2.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image.src}
+                      alt={image.alt}
+                      onClick={() => handleImageClick2(index)}
+                      className={`thumbnail ${index === currentImageIndex2 ? 'active' : ''}`}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className='container'>
+              <div className='row'>
+                <div className='col-11'>
+                  <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+                  <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.ND2}} />
+                    </div>
+                  ))}
+                </div>
+                </p> 
+              
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+                </div>
+              
+              <div className="carousel-container"  style={{marginTop:"-30px"}}>
+                <div className="carousel-controls4">
+                  <button onClick={handlePrev3}>
+                    <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
+                  </button>
+                  <button onClick={handleNext3}>
+                    <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
+                  </button>
+                </div>
+                <div className="carousel-image">
+                  <div className="image-container">
+                    <img
+                      src={images3[currentImageIndex3].src}
+                      alt={images3[currentImageIndex3].alt}
+                      width={800}
+                      height={600}
+                    />
+                  </div>
+                </div>
+                <div className="image-caption">
+                  {images3[currentImageIndex3].caption}
+                </div>
+                <div className="carousel-thumbnails">
+                  {images3.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image.src}
+                      alt={image.alt}
+                      onClick={() => handleImageClick3(index)}
+                      className={`thumbnail ${index === currentImageIndex3 ? 'active' : ''}`}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className='container'>
+              <div className='row'>
+              <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",marginLeft:"30px"}}>
+            <b>  <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.TND3}} />
+                    </div>
+                  ))}
+                </div></b>
+            </div>
+                <div className='col-11'>
+                  <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+                  <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.Noidung8}} />
+                    </div>
+                  ))}
+                </div>
+                </p> 
+              
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+                </div>
+              <div className="carousel-container"  style={{marginTop:"-30px"}}>
+                <div className="carousel-controls5">
+                  <button onClick={handlePrev4}>
+                    <span className="material-icons"><FontAwesomeIcon icon={faChevronLeft} /></span>
+                  </button>
+                  <button onClick={handleNext4}>
+                    <span className="material-icons"><FontAwesomeIcon icon={faChevronRight} /></span>
+                  </button>
+                </div>
+                <div className="carousel-image">
+                  <div className="image-container">
+                    <img
+                      src={images4[currentImageIndex4].src}
+                      alt={images4[currentImageIndex4].alt}
+                      width={800}
+                      height={600}
+                    />
+                  </div>
+                </div>
+                <div className="image-caption">
+                  {images4[currentImageIndex4].caption}
+                </div>
+                <div className="carousel-thumbnails">
+                  {images4.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image.src}
+                      alt={image.alt}
+                      onClick={() => handleImageClick4(index)}
+                      className={`thumbnail ${index === currentImageIndex4 ? 'active' : ''}`}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className='container'>
+              <div className='row'>
+                <div className='col-11'>
+                  <p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+                  <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.Noidung9}} />
+                    </div>
+                  ))}
+                </div>
+                </p> 
+              
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+                </div>
+                <div className="container">
+              <div className='row'>
+                <div className='col-12'>
+                <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",padding:"30px"}}>
+            <b>  <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.TND4}} />
+                    </div>
+                  ))}
+                </div> </b>
+            </div>
+            <div className='row'>
+                <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+                <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.Noidung10}} />
+                    </div>
+                  ))}
+                </div>
+                </p> 
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+                <img src={logo5} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+            <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>  <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.TH7}} />
+                    </div>
+                  ))}
+                </div></p>
+            <div className='row'>
+                <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+                <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.Noidung11}} />
+                    </div>
+                  ))}
+                </div>
+                </p> 
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+                </div>
+              </div>
+                </div>
+                <div className="container">
+              <div className='row'>
+                <div className='col-12'>
+                <div  style={{ color: '#EC008C',lineHeight:'53.2px',fontFamily:'Bangers',fontSize:"38px",padding:"30px"}}>
+            <b>  <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.TND5}} />
+                    </div>
+                  ))}
+                </div> </b>
+            </div>
+            <div className='row'>
+                <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>Mặc dù đã lên phương án xây dựng một Quảng trường vua Hùng từ nhiều năm. Nhưng khó khăn nhất là vấn đề chân dung của vua Hùng. Trong nhận thức của người Việt, một vị vua cha phải mang những nét anh minh và đức độ; nghiêm khắc nhưng bao dung; hiền hậu nhưng quyết đoán. Để lột tả được những nét đặc trưng đó, quả là điều không dễ. Điều này đã được bàn đi bàn lại, từ đường nét gương mặt; trang phục; vóc dáng; tư thế; cho đến cả chất liệu sao cho dễ di chuyển.
+                </p> 
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+                <img src={logo6} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
+            <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",marginTop:"-20px"}}>
+            <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.TH8}} />
+                    </div>
+                  ))}
+                </div>
+            </p>
+            <div className='row'>
+                <div className='col-11'><p style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
+                <div>
+                  {data.map((item, index) => (
+                    <div key={index}>
+                      <div dangerouslySetInnerHTML={{ __html: item.Noidung13}} />
+                    </div>
+                  ))}
+                </div>
+                </p> 
+                </div>
+                <div className='col-4'>
+                </div>
+                </div>
+                </div>
+              </div>
+                </div>
+        <div className='container'>
+            <div className='row'>
+              <div className='col-md-10 f1'>
+              <FontAwesomeIcon icon={faChevronLeft} /> <Link to="/" style={{textDecoration:"none"}} className='f1'>Địa điểm sống ảo</Link> 
+              </div>
+              <div className='col-md-2 f1'>
+              <Link to="/" style={{textDecoration:"none"}} className='f1'>Quảng Trường Âu Lạc</Link><FontAwesomeIcon icon={faChevronRight} />     
+                </div>
+            </div>
+          </div>
+          <div className='container'><div className="row position-relative">
+            {displayedItems.map((item, index) => (
+              <div className="col-md-3" key={index} >
+                <div className="card border-0 shadow-sm" style={{height:"300px"}}>
+                  <img className="card-img-top" src={item.image} />
+                  <div className="card-body">
+                    <div className='row'>
+                    <div className='col-md-8'><div className="card-title" style={{color:"#259E58",fontSize:"13px"}}>{item.title}</div>
+                    </div>
+                    <div className='col-md-4'><div className="card-text" style={{color:"#666666",fontSize:"13px"}}>{item.description}</div>
+                    </div>
+                    </div>
+                    <div style={{color:"#EC008C",fontSize:"14px"}}><FontAwesomeIcon icon={faCalendar} /> Cảm giác mạnh</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <button
+              className="btn btn-primary position-absolute top-50 start-0 translate-middle-y" style={{width: '40px',color:"#4CAF50",backgroundColor:"white",border:"none"}}
+              onClick={() => handlePageChange1(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button
+              className="btn btn-primary position-absolute top-50 end-0 translate-middle-y" style={{width: '40px',color:"#4CAF50",backgroundColor:"white",border:"none"}}
+              onClick={() => handlePageChange1(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          </div></div>
+
+          
+
+          
+
+        </div>
 
      </div>
      
