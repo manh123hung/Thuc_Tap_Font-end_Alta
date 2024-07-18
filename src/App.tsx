@@ -15,7 +15,7 @@ import VTTD from './VeTapTheDuc/VTTD';
 import BM from './Baomat/BM';
 import TV from './Thucvat/TV';
 import WS from './WS/WS';
-import GD from './GD/GD';
+import GD from './Gioithieu/GD';
 import CCNL from './CCNL/CCNL';
 import KDG from './KDG/KDG';
 import Thanhvien from './Thanhvien/Thanhvien';
