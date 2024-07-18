@@ -1058,8 +1058,8 @@ const [logo3, setlogo3] = useState("");
               width: '100%',
               marginTop:-40
             }}>
-                      {rightSideContent}
-                      <div className="map-container bs3">
+              {rightSideContent}
+              <div className="map-container bs3">
              
              <img src={slide1} alt="caijdo" />
            

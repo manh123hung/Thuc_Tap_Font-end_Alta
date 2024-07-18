@@ -641,22 +641,78 @@ useEffect(() => {
   const data1 = [
     {
       image: img7,
-      title: 'Vòng xoay không gian',
-      description: '11/02/2020',
+      title: <div>
+        {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T1}} />
+        </div>
+      ))}
+
+      </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D01}} />
+      </div>
+    ))}
+
+    </div>,
     },
     {
       image: img8,
-      title: 'Lâu đài kinh dị',
-      description: '21/02/2020',
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T2}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D02}} />
+      </div>
+    ))}
+
+    </div>,
     },
     {
       image: img9,
-      title: 'Tàu vượt thác',
-      description: '11/02/2020',
+      title:<div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T3}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D03}} />
+      </div>
+    ))}
+
+    </div>,
     }, {
       image: img10,
-      title: 'Spinning Coaster',
-      description: '20/02/2020',
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T4}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D04}} />
+      </div>
+    ))}
+
+    </div>,
     }, {
       image: img7,
       title: 'Quảng trường',
@@ -848,15 +904,27 @@ useEffect(() => {
 
 
           <div className='container'>
-              <div className='row'>
-                <div className='col-md-10 f1'>
-                <FontAwesomeIcon icon={faChevronLeft} /> <Link to="/" className='f1' style={{textDecoration:"none"}}> Roller Coaster</Link>
-                </div>
-                <div className='col-md-2 f1'>
-                <Link to="/" className='f1' style={{textDecoration:"none"}}> Phượng hoàng bay</Link> <FontAwesomeIcon icon={faChevronRight} />     
-                  </div>
+          <div className='row'>
+    <div className='col-md-10 f1'>
+             <Link to="/" style={{textDecoration:"none"}} className='f1'><div>
+                              {data.map((item, index) => (
+                              <div key={index}>
+                               <FontAwesomeIcon icon={faChevronLeft} />   {item.C01} 
+                              </div>
+                            ))}
+                              </div></Link>
               </div>
-            </div>
+              <div className='col-md-2 f1'>
+              <Link to="/" style={{textDecoration:"none"}} className='f1'>
+                        <div>
+                              {data.map((item, index) => (
+                              <div key={index}>
+                                {item.C02} <FontAwesomeIcon icon={faChevronRight} />
+                              </div>
+                            ))}
+                              </div></Link>   
+                        </div>
+    </div>            </div>
             <div className='container'><div className="row position-relative">
               {displayedItems.map((item, index) => (
                 <div className="col-md-3" key={index} >
@@ -869,7 +937,11 @@ useEffect(() => {
                       <div className='col-md-4'><div className="card-text" style={{color:"#666666",fontSize:"13px"}}>{item.description}</div>
                       </div>
                       </div>
-                      <div style={{color:"#EC008C",fontSize:"14px"}}><FontAwesomeIcon icon={faCalendar} /> Cảm giác mạnh</div>
+                      <div style={{color:"#EC008C",fontSize:"14px"}}>{data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</div>
                     </div>
                   </div>
                 </div>
