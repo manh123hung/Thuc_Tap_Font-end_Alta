@@ -63,8 +63,12 @@ footer {
     font-size: 14px; /* Kích thước chữ cho copyright */
   }
  
-
-
+.ctv2 ul p span b{
+  color: black;
+}
+.ctv3 ul li  b{
+  color: black;
+}
 
   .list-item {
     margin-bottom: 5px;

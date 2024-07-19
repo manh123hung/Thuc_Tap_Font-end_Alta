@@ -216,17 +216,9 @@ function VDD() {
           <Link to="/VTT" >   <DropdownItem className="btn btn-white" >Vé tập thể</DropdownItem></Link>
           <Link to="/VDD" > <DropdownItem className="btn btn-white" >Vé dịch vụ</DropdownItem></Link>
           <Link to="/VTTD" >   <DropdownItem className="btn btn-white" >Vé tập thể dục</DropdownItem></Link>
-          
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
@@ -234,6 +226,7 @@ function VDD() {
               <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
               <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
             </div>
+          </div>
           </div>
         </div>
           </div>
@@ -306,7 +299,13 @@ function VDD() {
                             ))}
                 </span> 
           </div>
-          <p>Bên cạnh việc tham quan Đầm Sen bằng "đoàn tàu cổ tích" (bao gồm trong <Link to="/VTG" className="link">vé trọn gói</Link> và <Link to="" className='link'> vé Silver</Link>), du khách có thể thưởng ngoạn bằng dịch vụ xe điện riêng của Đầm Sen. Tuy vào loại vé, hành trình xe điện sẽ đưa quý khách từ trạm đón (khu <a href="#" className="link">trò chơi cảm giác mạnh</a> ở quảng trường Âu Lạc), đi quanh Hồ Đầm Sen, tham quan vườn chim thú B, và về vườn Lan rừng để ngắm những loài hoa đẹp nhất tại Đầm Sen.</p>
+          <p>
+          {data.map((item, index) => (
+                  <div key={index} >
+                    <div  dangerouslySetInnerHTML={{ __html: item.N01}} />
+                  </div>
+                ))}
+          </p>
           {data.map((item, index) => (
                   <div key={index} >
                     <div  dangerouslySetInnerHTML={{ __html: item.ND1}} />

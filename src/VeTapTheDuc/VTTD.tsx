@@ -227,7 +227,6 @@ function VTTD() {
               {showMenu ? '≡' : 'x'}
             </button>          <Link to="/" className="menu-item" >TRANG CHỦ</Link>
           <Link to="/khampha" className="menu-item">KHÁM PHÁ</Link>
-        
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right"  style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"white"}}>
           <Link to="/LSHH" > <DropdownItem className="btn btn-white" >Lịch sử hình thành</DropdownItem></Link>
           <Link to="/Thanhvien" > <DropdownItem className="btn btn-white" >Thành viên</DropdownItem></Link>
@@ -243,21 +242,15 @@ function VTTD() {
           
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
-              <a href="#"><img src={logo1} alt="fb" className="social-icon3" /></a>
-              <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
-              <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
+              <Link to="#"><img src={logo1} alt="fb" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo2} alt="youtube" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo3} alt="fb" className="social-icon3" /></Link>
             </div>
+          </div>
           </div>
         </div>
           </div>
@@ -320,6 +313,7 @@ function VTTD() {
                     <div  dangerouslySetInnerHTML={{ __html: item.TD1}} />
                   </div>
                 ))} </h2>
+
               <div className="card-list">
               {data.map((item, index) => (
                   <div key={index} >
@@ -327,7 +321,7 @@ function VTTD() {
                   </div>
                 ))}
               </div>
-        
+  
             </div>
             <div className="card card1 bg-pink text-white" style={{border:"2px solid #FF41B2"}}>
             <div className="card-title text-container2 " ><img src={img3} alt="" /></div>
@@ -343,6 +337,7 @@ function VTTD() {
                   </div>
                 ))}                </div>
             </div>
+
             <div className="card card1 "  style={{border:"2px solid #3781DB"}}>
             <div className="card-title text-container3 " ><img src={img4} alt="" /></div>
               <h3 className="card-title " style={{color:"#3781DB",textAlign:"center"}} >{data.map((item, index) => (
@@ -356,22 +351,16 @@ function VTTD() {
                     <div  dangerouslySetInnerHTML={{ __html: item.S3}} />
                   </div>
                 ))}</p>
-
           </div>
+
             </div>
           </div>
-        </div>
-          
-
+        </div>         
           <br />
-
         </div>
-
      </div>
-     
           </div>
           <Footer />
-
         </div>
       </div>
     </div>

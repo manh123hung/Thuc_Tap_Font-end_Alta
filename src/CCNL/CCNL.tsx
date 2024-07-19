@@ -317,7 +317,8 @@ useEffect(() => {
     ))}
 
     </div>,
-    }, {
+    }, 
+    {
       image: img10,
       title: <div>
       {data.map((item, index) => (
@@ -335,11 +336,26 @@ useEffect(() => {
     ))}
 
     </div>,
-    }, {
-      image: img7,
-      title: 'Quảng trường',
-      description: '20/02/2020',
-    },
+    }, 
+    {
+      image: img10,
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T4}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D04}} />
+      </div>
+    ))}
+
+    </div>,
+    }
   ];
   const totalPages = Math.ceil(data1.length / itemsPerPage);
 
@@ -359,12 +375,12 @@ useEffect(() => {
             </button>           <Link to="/" className="menu-item" >TRANG CHỦ</Link>
           <Link to="/khampha" className="menu-item" style={{color:'black',textDecoration: 'underline'}}>KHÁM PHÁ</Link>
 
-          <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right"  style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"white"}}>
+         <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right"  style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"white"}}>
           <Link to="/LSHH" > <DropdownItem className="btn btn-white" >Lịch sử hình thành</DropdownItem></Link>
           <Link to="/Thanhvien" > <DropdownItem className="btn btn-white" >Thành viên</DropdownItem></Link>
           <Link to="/BM" > <DropdownItem className="btn btn-white" >Chính sách bảo mật</DropdownItem> </Link>
 </Dropdown>
-         
+
           
           <Dropdown  color='#259E58' className="btn btn-success  absolute-dropdown  dropdown-container"  label="GIÁ VÉ " placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"white"}}>
           <Link to="/GiaVe" >  <DropdownItem className="btn btn-white" >Vé trong công viên</DropdownItem></Link>
@@ -373,21 +389,15 @@ useEffect(() => {
           <Link to="/VTTD" >   <DropdownItem className="btn btn-white" >Vé tập thể dục</DropdownItem></Link>
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
-              <a href="#"><img src={logo1} alt="fb" className="social-icon3" /></a>
-              <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
-              <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
+              <Link to="#"><img src={logo1} alt="fb" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo2} alt="youtube" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo3} alt="fb" className="social-icon3" /></Link>
             </div>
+          </div>
           </div>
         </div>
           </div>
@@ -545,7 +555,8 @@ useEffect(() => {
                             ))}
                               </div></Link>   
                         </div>
-    </div>            </div>
+    </div>          
+      </div>
             <div className='container'><div className="row position-relative">
               {displayedItems.map((item, index) => (
                 <div className="col-md-3" key={index} >

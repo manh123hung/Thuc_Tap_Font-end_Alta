@@ -214,24 +214,17 @@ function VTT() {
           <Link to="/VTT" >   <DropdownItem className="btn btn-white" >Vé tập thể</DropdownItem></Link>
           <Link to="/VDD" > <DropdownItem className="btn btn-white" >Vé dịch vụ</DropdownItem></Link>
           <Link to="/VTTD" >   <DropdownItem className="btn btn-white" >Vé tập thể dục</DropdownItem></Link>
-          
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
-              <a href="#"><img src={logo1} alt="fb" className="social-icon3" /></a>
-              <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
-              <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
+              <Link to="#"><img src={logo1} alt="fb" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo2} alt="youtube" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo3} alt="fb" className="social-icon3" /></Link>
             </div>
+          </div>
           </div>
         </div>
           </div>
@@ -277,7 +270,7 @@ function VTT() {
         </header>
     
       <div className='container' style={{padding:"20px",fontFamily:"Nunito"}}>
-
+    <div className='ctv2'>
     <ul style={{color:"#858585",fontSize:"18px"}}>
     {data.map((item, index) => (
                   <div key={index} >
@@ -285,6 +278,7 @@ function VTT() {
                   </div>
                 ))} 
     </ul>
+    </div>
     <div className="header" style={{padding:"20px"}}>
         
         <div className="row">
@@ -302,6 +296,7 @@ function VTT() {
         </div>      
       
         </div>
+        <div className='ctv3'>
         <ul style={{color:"#858585",fontSize:"18px"}}>
         {data.map((item, index) => (
                   <div key={index} >
@@ -309,15 +304,10 @@ function VTT() {
                   </div>
                 ))} 
       </ul>
+      </div>
           </div>
-        
-
-      
-
     </div>
-
      </div>
-     
           </div>
       <Footer />
         </div>

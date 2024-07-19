@@ -310,8 +310,22 @@ function WS() {
     </div>,
     }, {
       image: img7,
-      title: 'Quảng trường',
-      description: '20/02/2020',
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T4}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D04}} />
+      </div>
+    ))}
+
+    </div>,
     },
   ];
   const totalPages = Math.ceil(data1.length / itemsPerPage);
@@ -348,21 +362,15 @@ function WS() {
           
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
-              <a href="#"><img src={logo1} alt="fb" className="social-icon3" /></a>
-              <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
-              <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
+              <Link to="#"><img src={logo1} alt="fb" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo2} alt="youtube" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo3} alt="fb" className="social-icon3" /></Link>
             </div>
+          </div>
           </div>
         </div>
           </div>
@@ -456,11 +464,16 @@ function WS() {
               <div className='col-3'></div>
               </div>
               <img src={img2} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
-              <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666"}}>Ảnh minh họa dự án Đầm Sen Water show</p>
+              <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666"}}>
+                {data.map((item, index) => (
+                  <div key={index} >
+                    <div  dangerouslySetInnerHTML={{ __html: item.TH1}} />
+                  </div>
+                ))}</p>
               <div className='row'>
                   <div className='col-9'>
               <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
-            <p>                {data.map((item, index) => (
+                <p>{data.map((item, index) => (
                       <div key={index}>
                     {item.Noidung2} 
                       </div>
@@ -477,12 +490,21 @@ function WS() {
               <div className='col-3'></div>
               </div>
               <img src={img3} className="img-fluid" alt="Responsive image" style={{padding:"40px"}}/>
-              <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666"}}>Vị trí ngồi rộng rãi tại nhà hàng Thủy Ta xem biểu diễn Laser show màn nước 3D trên hồ Đầm Sen 2019</p>
+              <p className="text-center" style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666"}}>
+              {data.map((item, index) => (
+                  <div key={index} >
+                    <div  dangerouslySetInnerHTML={{ __html: item.TH2}} />
+                  </div>
+                ))}
+              </p>
               <div className='row'>
                   <div className='col-9'>
               <div style={{fontSize:"18px", fontFamily:"Nunito",color:"#666666",padding:"35px"}}>
-            <p>   Trước đây, CVVH Đầm Sen đã từng có công trình nhạc nước, nhưng với quy mô nhỏ tại khu vực <Link to="/">quảng trường La Mã</Link>. Rồi đến tháng tư năm 2019, Công ty Cổ phần <Link to="/"> Dịch vụ Du lịch Phú Thọ </Link> (Phuthotourist – cơ quan chủ quản của Đầm Sen) đã quyết định đầu tư giai đoạn 1 của dự án nhạc nước trên mặt hồ với <Link to="/">công trình màn nước laser show</Link>. Đến nay, giai đoạn 2 của hệ thống đang dần hoàn thiện trong tháng 11. Dự kiến Đầm Sen Water Show sẽ chính thức ra mắt vào đầu tháng 12/2020, để kịp phục vụ du khách vào những sự kiện cuối năm.  </p>
-                <p>Ban lãnh đạo Phuthotourist cũng đang cân nhắc liệu có cho phép du khách được thưởng thức nhạc nước bằng <Link to="/">thuyền Pedalo</Link> trên mặt hồ. Nếu được, chắc chắn đây sẽ là điểm thú vị cho du khách được trải nghiệm cảm giác ở ngồi trên nước và xem nhạc nước như thế nào.</p>
+              {data.map((item, index) => (
+                  <div key={index} >
+                    <div  dangerouslySetInnerHTML={{ __html: item.Noidung4}} />
+                  </div>
+                ))}
                 </div>
                 </div>
 
@@ -510,7 +532,7 @@ function WS() {
                             ))}
                               </div></Link>   
                         </div>
-    </div> 
+        </div> 
             </div>
             <div className='container'><div className="row position-relative">
               {displayedItems.map((item, index) => (
@@ -524,7 +546,8 @@ function WS() {
                       <div className='col-md-4'><div className="card-text" style={{color:"#666666",fontSize:"13px"}}>{item.description}</div>
                       </div>
                       </div>
-                      <div style={{color:"#EC008C",fontSize:"14px"}}>{data.map((item, index) => (
+                      <div style={{color:"#EC008C",fontSize:"14px"}}>
+                        {data.map((item, index) => (
                               <div key={index}>
                              <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
                               </div>

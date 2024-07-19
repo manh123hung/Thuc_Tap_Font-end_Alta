@@ -366,7 +366,8 @@ function Thanhvien() {
         </div>
       ))}
     </div>,
-    }, {
+    }, 
+    {
       image: img10,
       title: <div>
       {data.map((item, index) => (
@@ -382,10 +383,22 @@ function Thanhvien() {
         </div>
       ))}
     </div>,
-    }, {
-      image: img7,
-      title: 'Quảng trường',
-      description: '20/02/2020',
+    },   {
+      image: img10,
+      title: <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.T4}} />
+        </div>
+      ))}
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <div dangerouslySetInnerHTML={{ __html: item.D04}} />
+        </div>
+      ))}
+    </div>,
     },
   ];
   const totalPages = Math.ceil(data1.length / itemsPerPage);
@@ -421,21 +434,15 @@ function Thanhvien() {
           
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
-              <a href="#"><img src={logo1} alt="fb" className="social-icon3" /></a>
-              <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
-              <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
+              <Link to="#"><img src={logo1} alt="fb" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo2} alt="youtube" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo3} alt="fb" className="social-icon3" /></Link>
             </div>
+          </div>
           </div>
         </div>
           </div>

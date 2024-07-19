@@ -226,21 +226,15 @@ function GiaVe() {
           
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
-              <a href="#"><img src={logo1} alt="fb" className="social-icon3" /></a>
-              <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
-              <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
+              <Link to="#"><img src={logo1} alt="fb" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo2} alt="youtube" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo3} alt="fb" className="social-icon3" /></Link>
             </div>
+          </div>
           </div>
         </div>
           </div>
@@ -292,7 +286,15 @@ function GiaVe() {
     <div className="container">
   <div className="card-container">
     <div className="card card1  text-white" style={{border:"2px solid #259E58"}}>
-      <h2 className="card-title text-container1" style={{color:"white"}}>VÉ THAM QUAN</h2>
+      <h2 className="card-title text-container1" style={{color:"white"}}>{data.length > 0 && (
+        <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.T1 }} />
+            </div>
+          ))}
+        </div>
+      )}</h2>
       <ul className="card-list">
         <li>      <FontAwesomeIcon icon={faCheck} color="green" /> Tham quan trong ngày</li>
         <li className="strikethrough">
@@ -315,7 +317,15 @@ function GiaVe() {
       </div>
     </div>
     <div className="card card1 bg-pink text-white" style={{border:"2px solid #FF41B2"}}>
-      <h2 className="card-title text-container2 " style={{color:"white"}} >VÉ TRỌN GÓI</h2>
+      <h2 className="card-title text-container2 " style={{color:"white"}} >{data.length > 0 && (
+        <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.T2 }} />
+            </div>
+          ))}
+        </div>
+      )}</h2>
       <ul className="card-list">
         <li> <FontAwesomeIcon icon={faCheck} color="green" /> Tham quan trong ngày</li>
         <li> <FontAwesomeIcon icon={faCheck} color="green" /> Bao gồm trò chơi</li>
@@ -335,7 +345,15 @@ function GiaVe() {
       </div>
     </div>
     <div className="card card1 "  style={{border:"2px solid #3781DB"}}>
-      <h2 className="card-title text-container3" style={{color:"white"}}>VÉ SILVER</h2>
+      <h2 className="card-title text-container3" style={{color:"white"}}>{data.length > 0 && (
+        <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.T3 }} />
+            </div>
+          ))}
+        </div>
+      )}</h2>
       <ul className="card-list">
         <li><FontAwesomeIcon icon={faCheck} color="green" /> Tham quan trong ngày</li>
         <li><FontAwesomeIcon icon={faCheck} color="green" /> Bao gồm trò chơi</li>
@@ -359,9 +377,17 @@ function GiaVe() {
   </div>
 </div>
       <div className='container' style={{padding:"20px"}}>
-      <h2 className="ghi-chu">GHI CHÚ:</h2>
+      <h2 className="ghi-chu">{data.length > 0 && (
+        <div>
+          {data.map((item, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: item.TD1 }} />
+            </div>
+          ))}
+        </div>
+      )}</h2>
 
-<ul style={{color:"#858585",fontSize:"18px"}}>
+<ul className='ctv1' style={{color:"#858585",fontSize:"18px"}}>
 {data.length > 0 && (
         <div>
           {data.map((item, index) => (

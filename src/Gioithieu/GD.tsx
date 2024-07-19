@@ -268,21 +268,15 @@ useEffect(() => {
           
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
-              <a href="#"><img src={logo1} alt="fb" className="social-icon3" /></a>
-              <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
-              <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
+              <Link to="#"><img src={logo1} alt="fb" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo2} alt="youtube" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo3} alt="fb" className="social-icon3" /></Link>
             </div>
+          </div>
           </div>
         </div>
           </div>
@@ -625,14 +619,25 @@ useEffect(() => {
           </div>
         </div>
         <div className='container' style={{padding:"20px"}}>
-              <h2 className="ghi-chu">GHI CHÚ:</h2>
-
-                <ul style={{color:"#858585",fontSize:"18px"}}>
+              <h2 className="ghi-chu">{data.length > 0 && (
+              <div>
                 {data.map((item, index) => (
+                  <div key={index}>
+                    <div dangerouslySetInnerHTML={{ __html: item.TD1 }} />
+                  </div>
+                ))}
+              </div>
+            )}</h2>
+              <ul className='ctv1' style={{color:"#858585",fontSize:"18px"}}>
+                {data.length > 0 && (
+                        <div>
+                          {data.map((item, index) => (
                             <div key={index}>
                               <div dangerouslySetInnerHTML={{ __html: item.Ghichu }} />
                             </div>
                           ))}
+                        </div>
+                      )}
                 </ul>
               </div>
       </div>

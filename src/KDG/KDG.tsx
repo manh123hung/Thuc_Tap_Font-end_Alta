@@ -235,26 +235,96 @@ function KDG() {
   const data1 = [
     {
       image: img5,
-      title: 'Khỉ đuôi dài',
-      description: '04/01/2021',
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T1}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D01}} />
+      </div>
+    ))}
+
+    </div>,
     },
     {
       image: img6,
-      title: 'Gấu ngựa',
-      description: '02/03/2020',
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T2}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D02}} />
+      </div>
+    ))}
+
+    </div>,
     },
     {
       image: img7,
-      title: 'Đười ươi Sumatra',
-      description: '05/03/2020',
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T3}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D03}} />
+      </div>
+    ))}
+
+    </div>,
     }, {
       image: img8,
-      title: 'Hà Mã Châu phi',
-      description: '05/03/2020',
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T4}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D04}} />
+      </div>
+    ))}
+
+    </div>,
     }, {
       image: img8,
-      title: 'Quảng trường',
-      description: '20/02/2020',
+      title: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.T4}} />
+      </div>
+    ))}
+
+    </div>,
+      description: <div>
+      {data.map((item, index) => (
+      <div key={index}>
+        <div dangerouslySetInnerHTML={{ __html: item.D04}} />
+      </div>
+    ))}
+
+    </div>,
     },
   ];
   const totalPages = Math.ceil(data1.length / itemsPerPage);
@@ -290,21 +360,15 @@ function KDG() {
           
           </Dropdown>
           <Link to="/Sukien" className="menu-item" >SỰ KIỆN</Link>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <div  style={{marginTop:"200px"}}>
           <img src={logoUrl} alt="Đầm Sen Park" className="logo1" />
           <div className="bd">
             <div className="social-icons1">
-              <a href="#"><img src={logo1} alt="fb" className="social-icon3" /></a>
-              <a href="#"><img src={logo2} alt="youtube" className="social-icon3" /></a>
-              <a href="#"><img src={logo3} alt="fb" className="social-icon3" /></a>
+              <Link to="#"><img src={logo1} alt="fb" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo2} alt="youtube" className="social-icon3" /></Link>
+              <Link to="#"><img src={logo3} alt="fb" className="social-icon3" /></Link>
             </div>
+          </div>
           </div>
         </div>
           </div>
@@ -487,7 +551,12 @@ function KDG() {
                         <div className='col-md-4'><div className="card-text" style={{color:"#666666",fontSize:"13px"}}>{item.description}</div>
                         </div>
                         </div>
-                        <div style={{color:"#EC008C",fontSize:"14px"}}><FontAwesomeIcon icon={faCalendar} /> Vườn thú</div>
+                        <div style={{color:"#EC008C",fontSize:"14px"}}>  
+                              {data.map((item, index) => (
+                              <div key={index}>
+                             <FontAwesomeIcon icon={faCalendar} />  {item.DM1} 
+                              </div>
+                            ))}</div>
                       </div>
                     </div>
                   </div>
