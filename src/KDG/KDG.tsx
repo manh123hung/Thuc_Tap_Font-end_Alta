@@ -346,10 +346,11 @@ function KDG() {
           <Link to="/khampha" className="menu-item" style={{color:'black',textDecoration:'underline'}}>KHÁM PHÁ</Link>
         
           <Dropdown  color='#259E58' className="btn btn-success absolute-dropdown  dropdown-container" label="GIỚI THIỆU" placement="right"  style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"white"}}>
+          <Link to="/GD" > <DropdownItem className="btn btn-white" >Giới thiệu</DropdownItem></Link>
           <Link to="/LSHH" > <DropdownItem className="btn btn-white" >Lịch sử hình thành</DropdownItem></Link>
           <Link to="/Thanhvien" > <DropdownItem className="btn btn-white" >Thành viên</DropdownItem></Link>
           <Link to="/BM" > <DropdownItem className="btn btn-white" >Chính sách bảo mật</DropdownItem> </Link>
-</Dropdown>
+          </Dropdown>
          
           
           <Dropdown  color='#259E58' className="btn btn-success  absolute-dropdown  dropdown-container" label="GIÁ VÉ " placement="right" style={{ backgroundColor: '#259E58', border: '#4CAF50', fontWeight: 'bold', fontStyle: 'italic', lineHeight: '34.05px', fontFamily: 'Bangers', fontSize: '20px',color:"white"}}>
@@ -530,14 +531,27 @@ function KDG() {
                 
             </div>
             <div className='container'>
-                <div className='row'>
-                  <div className='col-md-10 f1'>
-                  <FontAwesomeIcon icon={faChevronLeft} /> <Link to="/" style={{textDecoration:"none"}} className='f1'> Vượn đen má vàng </Link>
-                  </div>
-                  <div className='col-md-2 f1'>
-                  <Link to="/" style={{textDecoration:"none"}} className='f1'>  Cá hỏa tiễn </Link><FontAwesomeIcon icon={faChevronRight}  />     
-                    </div>
+            <div className='row'>
+              <div className='col-md-10 f1'>
+             <Link to="/" style={{textDecoration:"none"}} className='f1'><div>
+                              {data.map((item, index) => (
+                              <div key={index}>
+                               <FontAwesomeIcon icon={faChevronLeft} />   {item.C01} 
+                              </div>
+                            ))}
+                              </div></Link>
+              </div>
+              <div className='col-md-2 f1'>
+              <Link to="/" style={{textDecoration:"none"}} className='f1'>
+              <div>
+                              {data.map((item, index) => (
+                              <div key={index}>
+                                {item.C02} <FontAwesomeIcon icon={faChevronRight} />
+                              </div>
+                            ))}
+                              </div></Link>   
                 </div>
+            </div>
               </div>
               <div className='container'><div className="row position-relative">
                 {displayedItems.map((item, index) => (
