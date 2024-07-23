@@ -1,0 +1,194 @@
+.bs {
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+    display: flex;
+  }
+  
+  .left-side {
+    width: 25%;
+    background-color: #259E58;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .menu-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    color: #f05050;
+    margin-bottom: 20px;
+  }
+  
+  .menu-item {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Bangers';
+    line-height: 34.05px;
+    font-style: italic;
+    text-Decoration: none; 
+  }
+  .dropdown-container {
+    z-index: 10; /* Giá trị z-index cao hơn */
+  }
+  
+  .bs1 {
+    z-index: 1; /* Giá trị z-index thấp hơn */
+  }
+  .menu-item:hover {
+    color: #69ef6d;    
+  }
+  
+  .customDropdown {
+    --bs-border-width: 2px !important;
+    --bs-border-style: solid !important;
+    --bs-border-color: red !important;
+  
+    background-color: #4CAF50 !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    font-style: italic !important;
+    line-height: 34.05px !important;
+    font-family: 'Bangers' !important;
+    font-size: 20px !important;
+  }
+  .logo1 {
+    padding: 10px;
+    width: 180px;
+    height: auto;
+    margin-bottom: 60px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .social-icons1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-right: 12px;
+
+  }
+  .bd{
+    border-top:solid 1px white;
+  }
+  .social-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #259E58;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color: #4CAF50;
+    margin: 0 10px;
+  }
+  .social-icon3 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color: #4CAF50;
+    margin: 0 10px;
+  }
+  
+  .right-side {
+    width: 75%;
+    padding: 20px;
+  }
+  
+  .bs1{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+   
+}
+.bs1 img {
+  width: 100%;
+  height: auto;
+}
+.hg{
+  width: auto;
+  height: auto;
+  position: absolute; /* Cho phép bạn đặt vị trí tuyệt đối */
+  top: 30px; /* Khoảng cách từ dưới cùng của hình */
+  left: 59%; /* Căn giữa nút theo chiều ngang */
+  transform: translateX(-50%); /* Điều chỉnh vị trí để căn giữa chính xác */
+}
+.kham-pha-button {
+  /* ... other styles ... */
+  position: absolute; /* Cho phép bạn đặt vị trí tuyệt đối */
+  bottom: 20px; /* Khoảng cách từ dưới cùng của hình */
+  left: 50%; /* Căn giữa nút theo chiều ngang */
+  transform: translateX(-50%); /* Điều chỉnh vị trí để căn giữa chính xác */
+  font-family: 'Nunito'  ;
+  Line-height:'31.37px';
+
+}
+.btn.btn-white {
+  width: 195px;
+  border-bottom: 1px solid #666666;
+  
+  text-decoration: none;
+  color: #666666;
+  background-color: transparent;
+  padding: 5px 10px;
+  
+}
+.btn.btn-success ul {
+  list-style-type: none; 
+}
+
+  .btn.btn-white a {
+  color: #666666;
+  text-decoration: none; 
+ 
+}
+
+
+
+
+
+
+
+.btn.btn-white:hover a {
+  color: #4CAF50;; /* Đặt màu chữ của link ban đầu */
+  /* Thay đổi màu chữ của link khi di chuột vào */
+}
+  .menu-item-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .menu-item-text {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Bangers';
+    line-height: 34.05px;
+    font-style: italic;
+  }
+  
+  .menu-item-arrow {
+    font-size: 20px;
+    color: white;
+  }
+  
+  .left-side-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

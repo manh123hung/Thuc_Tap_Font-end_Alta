@@ -1,0 +1,104 @@
+.bs3 {
+  height: 650px; /* Thiết lập chiều cao ban đầu của container */
+  overflow: auto; /* Cho phép container có thanh cuộn khi nội dung vượt quá kích thước */
+  position: relative; /* Ensure the map container is positioned relatively */
+
+}
+
+.bs3 img {
+  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của container */
+  height: auto; /* Giữ tỷ lệ kích thước của hình ảnh */
+}
+.button {
+  padding: 10px 20px;
+  background-color: #000000;
+  color: rgb(107, 1, 1);
+  border: none;
+  cursor: pointer;
+}
+.bs3 {
+  position: relative; /* Đặt vị trí tương đối cho map-container */
+}
+
+.info-container {
+  top: 50%; /* Đặt info-container ở giữa theo chiều dọc */
+  left: 60%; /* Đặt info-container ở giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Di chuyển info-container về vị trí chính xác ở giữa */
+  background-color: white; /* Màu nền */
+   /* Khoảng cách nội dung */
+  z-index: 10; /* Đảm bảo nó hiển thị trên cùng */
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+width: 260px;
+font-size:16px ;
+}
+.info-content {
+  margin-left: 40px; /* Khoảng cách giữa button và nội dung */
+  display: flex;
+  justify-content: space-between; /* Sắp xếp nội dung và button theo chiều ngang */
+  position: relative;
+}
+
+.separator {
+  position: absolute;
+  left: 110%; /* Đặt separator ở giữa */
+  transform: translateX(-50%); /* Di chuyển separator về vị trí chính xác ở giữa */
+  top: 0;
+  bottom: 0; /* Kéo dài separator từ trên xuống dưới */
+  width: 1px; /* Độ rộng của separator */
+  border-left: 1px solid #ccc; /* Tạo viền cho separator */
+}
+.separator1 {
+  position: absolute;
+  left: 128%; /* Đặt separator ở giữa */
+  transform: translateX(-50%);/* Di chuyển separator về vị trí chính xác ở giữa */
+  top: 30%;
+  bottom: 0; /* Kéo dài separator từ trên xuống dưới */
+  width: 1px; /* Độ rộng của separator */
+}
+.bt1{
+  position: absolute; /* Cho phép bạn đặt vị trí tuyệt đối */
+  border:2px solid red; 
+  width: 30px;
+  height: 30px;
+  top: 110%; /* Đặt button ở giữa theo chiều dọc */
+  left: 50%; /* Đặt button ở giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Di chuyển button về vị trí chính xác ở giữa */
+  padding: 0; /* Loại bỏ khoảng cách nội dung của button */
+  cursor: pointer; /* Cho phép con trỏ chuột thay đổi khi hover */
+}
+.info-wrapper {
+  display: flex; /* Hiển thị InfoComponent theo chiều ngang */
+  align-items: center; /* Căn chỉnh InfoComponent theo chiều dọc */
+}
+.zoom-buttons {
+      display: flex;
+      gap: 0px;
+      padding: 20px;
+      margin-top:-80px;
+      position: fixed; /* Make the buttons fixed to the viewport */
+      z-index: 1001; /* Higher z-index to ensure visibility */
+      bottom: 50px; /* Position them at the bottom */
+      right: 1130px; /* Position them on the right */
+    
+    }
+
+    .zoom-button {
+      width: 35px;
+      height: 35px;
+ 
+      background-color: #eee;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      color: Red; /* Màu tím */
+    }
+
+    .zoom-button:hover {
+      background-color: #ddd;
+    }
